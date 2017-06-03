@@ -1,20 +1,26 @@
 # README
 
-### MVPSs?
+### MVPS
 * Users have accounts and followers
-* Users can post to followers board
-* Users can send private messages to followers
+* Users can post to a location based followers feed
+* Users can leave notes to followers
 * Locations have public boards
 * Users can access location's boards
+* Geolocation
+
+* Auth
 * Hosted on AWS
+* Proposal
 
-
-### Bonus?
+### Bonus
 * Treasure Hunt Map 
 * Send short videos instagram style
+* Direct Message Limitations
 
-
-# Things to Learn?
-* React Native
+# Technology
+* PostgreSQL
+* Ruby / Rails Backend
+* JS / React Native / Redux Frontend
 * GoogleMaps API
-* OmniAuth?
+* Facebook / Google Auth (OmniAuth? OAuth? Facebook Login?)
+* Hooking into iPhone camera
