@@ -7,7 +7,6 @@
 * Locations have public boards
 * Users can access location's boards
 * Geolocation
-
 * Auth
 * Hosted on AWS
 * Proposal
@@ -17,10 +16,16 @@
 * Send short videos instagram style
 * Direct Message Limitations
 
-# Technology
+### Technology
 * PostgreSQL
 * Ruby / Rails Backend
 * JS / React Native / Redux Frontend
 * GoogleMaps API
 * Facebook / Google Auth (OmniAuth? OAuth? Facebook Login?)
 * Hooking into iPhone camera
+
+### Proposal Todo:
+* Wireframes
+* API Endpoints
+* Component Heirarchy
+* Schema
