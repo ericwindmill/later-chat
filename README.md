@@ -10,8 +10,7 @@
 * Auth
 * Hosted on AWS
 * Proposal
-
-### Bonus
+#### Bonus
 * Treasure Hunt Map 
 * Send short videos instagram style
 * Direct Message Limitations
