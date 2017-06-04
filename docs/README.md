@@ -1,5 +1,7 @@
 # README
 
+[Link to live site](https://www.yikyak.com)
+
 ### MVPS
 * Users have accounts and followers
 * Users can post to a location based followers feed
@@ -10,6 +12,7 @@
 * Auth
 * Hosted on AWS
 * Proposal
+
 #### Bonus
 * Treasure Hunt Map
 * Send short videos instagram style
@@ -23,19 +26,12 @@
 * Facebook / Google Auth (OmniAuth? OAuth? Facebook Login?)
 * Hooking into iPhone camera
 
-### Proposal Todo:
-* Wireframes
-* API Endpoints
-* Component Hierarchy
-* Schema
-* Choose a better working title!
-
--Notifications for messages
--Notifications for likes
+### Brainstorming/Features
+Notifications for messages, notifications for likes
 
 How will people add locations?
-Google Places Web Services API - search box
-Google Place Detail Request --> photos for location
+* Google Places Web Services API --> closest 3 by radius
+* Google Place Detail Request --> photos for location
 
 Won't store locations in backend, store location information in post and just use Google locations
 
