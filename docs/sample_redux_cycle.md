@@ -1,4 +1,6 @@
+
 ```javascript
+
 componentWillMount() {
   this.fetchGoogleLocations()
     .then(this.fetchPosts(res.locations, "Notes"));
@@ -8,6 +10,8 @@ componentWillMount() {
 
 // Rails GET "api/posts?query=note"
 ```ruby
+// Rails
+GET "api/posts?query=note"
 def index
   if params[:query] = "post"
     @posts = Post.all.where().order().limit()
@@ -31,3 +35,6 @@ switch(action.type) {
 
 // Two reducers, one for notes and one for posts
 // organize things on backend with ActiveRecord, rather than trying to organize and filter things on the frontend
+
+// Two reducers, one for notes and one for posts
+// organize things on backend with ActiveRecord, rather than trying to organize and filter things on the frontend 

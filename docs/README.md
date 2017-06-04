@@ -1,5 +1,4 @@
 # README
-
 [Link to live site](https://www.yikyak.com)
 
 ### MVPS
@@ -26,12 +25,21 @@
 * Facebook / Google Auth (OmniAuth? OAuth? Facebook Login?)
 * Hooking into iPhone camera
 
+
 ### Brainstorming/Features
 Notifications for messages, notifications for likes
 
 How will people add locations?
 * Google Places Web Services API --> closest 3 by radius
 * Google Place Detail Request --> photos for location
+
+-Notifications for messages
+-Notifications for likes
+
+How will people add locations?
+Google Places Web Services API - search box
+Google Place Detail Request --> photos for location
+
 
 Won't store locations in backend, store location information in post and just use Google locations
 

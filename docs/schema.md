@@ -45,3 +45,4 @@ has_many: recipients (only for notes)
 
 ## Notes
 belongs_to: follower, leader
+
