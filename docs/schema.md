@@ -36,20 +36,12 @@ leader_id   | integer   | not null, foreign key (references users), indexed
 # Associations
 
 ## User
-__has many__
-posts
-notes
-followers
-leaders
+has_many: posts, notes, followers, leaders
 
 ## Post
-__belongs to__
-author
+belongs_to: author
 
-__has many__
-recipients (only for notes)
+has_many: recipients (only for notes)
 
 ## Notes
-__belongs to__
-follower
-leader
+belongs_to: follower, leader
