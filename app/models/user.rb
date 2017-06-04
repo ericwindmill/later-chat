@@ -3,6 +3,38 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
   validates :username, :session_token, uniqueness: true
 
+  has_many :posts,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: "Post"
+
+  has_many :follows,
+    primary_key: :id,
+    foreign_key: :follower_id,
+    class_name: "Follow"
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+  has_many :leads,
+    primary_key: :id,
+    foreign_key: :leader_id,
+    class_name: "Follow"
+
+  has_many :leaders,
+    through: :leads,
+    source: :leader
+
+  has_many :note_posts,
+    primary_key: :id,
+    foreign_key: :recipient_id,
+    class_name: "Note"
+
+  has_many :notes,
+    through: :note_posts,
+    source: :post
+
   after_initialize :ensure_session_token
 
   attr_reader :password
@@ -35,5 +67,5 @@ class User < ApplicationRecord
     end
   end
 
-  
+
 end
