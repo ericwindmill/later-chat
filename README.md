@@ -9,6 +9,7 @@
 * Geolocation
 * Auth
 * Hosted on AWS
+* Demo Page
 
 #### Bonus
 * Treasure Hunt Map 
