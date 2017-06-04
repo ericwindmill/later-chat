@@ -10,8 +10,9 @@
 * Auth
 * Hosted on AWS
 * Proposal
+
 #### Bonus
-* Treasure Hunt Map 
+* Treasure Hunt Map
 * Send short videos instagram style
 * Direct Message Limitations
 
@@ -23,9 +24,15 @@
 * Facebook / Google Auth (OmniAuth? OAuth? Facebook Login?)
 * Hooking into iPhone camera
 
-### Proposal Todo:
-* Wireframes
-* API Endpoints
-* Component Heirarchy
-* Schema
-* Choose a better working title!
+
+### Brainstorming/Features
+-Notifications for messages
+-Notifications for likes
+
+How will people add locations?
+Google Places Web Services API - search box
+Google Place Detail Request --> photos for location
+
+Won't store locations in backend, store location information in post and just use Google locations
+
+Query all posts within a certain radius and use selectors to organize data by location
