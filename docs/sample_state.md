@@ -1,3 +1,4 @@
+```javascript
 {
   currentUser: {
     id: 1,
@@ -84,3 +85,4 @@
   errors : []
 
 }
+```
