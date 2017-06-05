@@ -1,13 +1,18 @@
 class Api::PostsController < ApplicationController
 
   def index
-    
+    @locations = params[:locations]
+    if params[:post]
+      @posts = Post.limit(50).where("public = true AND location IN (?)", @locations)
+    elsif params[:note]
+      @posts = Note.joins(:post).includes(:post).where("notes.recipient_id = ? AND posts.location IN (?)", current_user.id, @locations)
+    end
   end
 
   def create
 
     @post = Post.new(post_params)
-
+    
     if @post.save
       params.post.recipients.each do |recipient|
         Note.create(post_id: @post.id, recipient_id: recipient.id)
