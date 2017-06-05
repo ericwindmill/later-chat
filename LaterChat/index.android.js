@@ -3,4 +3,4 @@ import {
 } from 'react-native';
 import App from './app/components/App';
 
-AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('LaterChat', () => App);
