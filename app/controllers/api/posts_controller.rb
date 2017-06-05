@@ -12,10 +12,11 @@ class Api::PostsController < ApplicationController
   def create
 
     @post = Post.new(post_params)
-    
+
     if @post.save
       params.post.recipients.each do |recipient|
         Note.create(post_id: @post.id, recipient_id: recipient.id)
+        render json: @post
       end
     else
       render json: @post.errors.full_messages, status: 422
