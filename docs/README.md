@@ -1,12 +1,14 @@
 # README
-[Link to live site](https://www.lmgtfy.com)
+[Bulletin](https://www.lmgtfy.com)
 
 ## Background
 It's fun to leave notes like this:
-![bulletin board][http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1496629933/board_riljez.jpg]
+
+![bulletin board](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1496629933/board_riljez.jpg)
 
 But what its 2017 so we're livin' like this: 
-![iPhone kids][http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1496629934/tech_yonvl1.jpg]
+
+![iPhone kids](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_400/v1496629934/tech_yonvl1.jpg)
 
 #### Enter Bulletin. 
 Now you can leave your friends surprise messages at all the places you know they'll go. 
