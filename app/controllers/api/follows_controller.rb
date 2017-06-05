@@ -2,6 +2,7 @@ class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
+    #will we be able to receive current_user the same way we used to be able to?
     @follow.follower_id = current_user.id
     if @follow.save
       render json: @follow.leader
