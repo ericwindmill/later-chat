@@ -17,6 +17,24 @@ Bulletin is a mobile app that allows users to drop notes at a location for their
 
 Users will also be able to post notes to a 'discover' board and 'followers' board based on their current location. Bars, restaurants, parks, etc. You can drop a note anywhere.
 
+## Wireframes
+
+![login-wireframe](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1496691261/Login_khkcus.png)
+
+#### Feeds:
+
+![feed-wireframe](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1496691261/Followers_Feed_AND_Location_Board_Copy_shursp.png)
+
+### Map View:
+
+![map-wireframe](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,w_300/v1496691261/Map_View_evobht.png)
+
+
+Check them all out [here](https://github.com/ericwindmill/later-chat/tree/master/Rails/docs/wireframes)
+
+
+#### 
+
 ## MVPS
 * Users have accounts and followers
 * Users can post to a location based followers feed
