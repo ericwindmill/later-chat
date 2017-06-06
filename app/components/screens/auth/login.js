@@ -3,9 +3,10 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native'
-import fallbackStyles from '../styles/styles'
+import baseStyles from '../styles/styles'
 
 class LogIn extends Component {
   constructor () {
@@ -14,15 +15,24 @@ class LogIn extends Component {
 
   render () {
     return(
-      <View style={styles.container}>
+      <View style={[baseStyles.container, styles.container]}>
         <Text> Hello from AUTH</Text>
+        <TextInput style={baseStyles.input}></TextInput>
+        <TextInput style={baseStyles.input}></TextInput>
+        <TouchableOpacity style={baseStyles.button}>
+          <Text style={styles.buttonText}>LogIn</Text>
+        </TouchableOpacity>
       </View>
     )
   }
 }
 
+export default LogIn
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 60
   }
 })
