@@ -11,8 +11,11 @@ import { Provider } from 'react-redux';
 export default class App extends Component {
 
   render() {
+    const store = configureStore();
+    console.log(store);
+    window.store = store;
     return (
-      <Provider store={configureStore()}>
+      <Provider store={store}>
         <Tabs />
       </Provider>
     );
