@@ -7,7 +7,8 @@ export const login = user => {
       'Accept': 'application/json'
     }
   })
-    .then(res => res.json());
+    .then(res => res.json())
+    .catch(err => console.log(err));
 };
 
 export const signup = user => {
