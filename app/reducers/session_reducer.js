@@ -14,6 +14,7 @@ const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
+      console.log("inside reducer");
       const currentUser = action.currentUser;
       return merge({}, nullUser, {
         currentUser
