@@ -1,30 +1,32 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import {
   View,
   Text,
   TextInput,
   StyleSheet,
   TouchableOpacity
- } from 'react-native'
-import baseStyles from '../styles/styles'
+} from 'react-native';
+import baseStyles from '../styles/styles';
 import { login } from '../../../util/session_api_util';
 
 class LogIn extends Component {
   constructor () {
-    super()
+    super();
     this.state = {
       email: '',
       password: ''
-    }
+    };
 
 
-    this.LogInPressed = this.LogInPressed.bind(this)
+    this.logInPressed = this.logInPressed.bind(this);
   }
 
 
 
-  async LogInPressed () {
-    login({ username: this.state.email, password: this.state.password });
+  logInPressed () {
+    login({ user: { username: this.state.email,
+                    password: this.state.password }
+          });
   }
 
 
@@ -48,7 +50,7 @@ class LogIn extends Component {
         </View>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
-            onPress={this.LogInPressed}
+            onPress={this.logInPressed}
           >
             <Text style={styles.buttonText}>LogIn</Text>
           </TouchableOpacity>
