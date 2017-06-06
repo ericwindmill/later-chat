@@ -29,7 +29,7 @@ const baseStyles = {
   },
 
   link: {
-    textAlign: 'center',
+    textAlign: 'center'
   }
 }
 

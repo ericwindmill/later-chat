@@ -4,22 +4,26 @@ import {
   Text,
   View,
   Image,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView
 } from 'react-native';
 import baseStyles from '../styles/styles'
 
 export default class NewPost extends Component {
   render () {
+    const {navigate} = this.props.navigation
+    console.log(navigate)
     return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}
+      behavior='padding'>
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
-        <TextInput style={baseStyles.input}
-          onFocus={}
-          placeholder='leave a note...'
-          onChangeText={(text) => this.setState({email: text})}
-        />
+          <TextInput style={baseStyles.input}
+            placeholder='leave a note...'
+            onChangeText={(text) => this.setState({email: text})}
+            onPress={() => navigate('selectRecipients')}
+          />
       </View>
-    </View>
+    </KeyboardAvoidingView>
     );
   }
 }
