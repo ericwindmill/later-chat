@@ -13,18 +13,15 @@ class LogIn extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
+      username: '',
       password: ''
     };
-
 
     this.logInPressed = this.logInPressed.bind(this);
   }
 
-
-
   logInPressed() {
-    login({ username: this.state.email,
+    login({ username: this.state.username,
             password: this.state.password
           });
   }
