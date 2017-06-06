@@ -13,24 +13,30 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const signup = user => dispatch => (
-  APIUtil.signup(user).then(userResponse => (
-    dispatch(receiveCurrentUser(userResponse))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+export const signup = user => dispatch => {
+  return (
+    APIUtil.signup(user).then(userResponse => (
+      dispatch(receiveCurrentUser(userResponse))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+  );
+};
 
-export const login = user => dispatch => (
-  APIUtil.login(user).then(userResponse => (
-    dispatch(receiveCurrentUser(userResponse))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+export const login = user => dispatch => {
+  return (
+    APIUtil.login(user).then(userResponse => (
+      dispatch(receiveCurrentUser(userResponse))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+  );
+};
 
-export const logout = () => dispatch => (
-  APIUtil.logout().then(() => (
-    dispatch(receiveCurrentUser(null))
-  ))
-);
+export const logout = () => dispatch => {
+  return (
+    APIUtil.logout().then(() => (
+      dispatch(receiveCurrentUser(null))
+    ))
+  );
+};
