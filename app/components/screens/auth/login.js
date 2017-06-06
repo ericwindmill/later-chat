@@ -10,7 +10,7 @@ import baseStyles from '../styles/styles';
 import { login } from '../../../util/session_api_util';
 
 class LogIn extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       email: '',
@@ -23,15 +23,13 @@ class LogIn extends Component {
 
 
 
-  logInPressed () {
-    console.log(login);
+  logInPressed() {
     login({ username: this.state.email,
             password: this.state.password
           });
   }
 
-
-  render () {
+  render() {
     return (
       <View style={[baseStyles.container, styles.container]}>
         <View style={styles.inputsContainer}>
