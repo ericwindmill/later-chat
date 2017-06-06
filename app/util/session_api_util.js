@@ -7,31 +7,23 @@ export const login = user => {
       'Accept': 'application/json'
     }
   })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+    .then(res => res.json());
 };
-
-// export const fetchAllPosts = () => {
-//   fetch('http://localhost:3000/api/posts', {
-//     headers: {
-//       'Accept': 'application/json'
-//     }
-//   })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error))
-// }
 
 export const signup = user => {
-  return fetch('/api/user', {
+  return fetch('http://localhost:3000/api/users', {
     method: 'POST',
-    data: user
-  });
+    body: JSON.stringify({ user }),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .then(res => res.json());
 };
 
-export const logout = () => {
-  return fetch('/api/session', {
-    method: 'POST'
+export const logout = user => {
+  return fetch('http://localhost:3000/api/session', {
+    method: 'DELETE',
   });
 };
