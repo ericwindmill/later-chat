@@ -7,7 +7,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles';
-import { login } from '../../../actions/session_actions';
 
 class LogIn extends Component {
   constructor() {
@@ -21,9 +20,10 @@ class LogIn extends Component {
   }
 
   logInPressed() {
-    login({ username: this.state.username,
-            password: this.state.password
-          });
+    console.log(this.props);
+    // this.props.login({ username: this.state.username,
+    //         password: this.state.password
+    //       });
   }
 
   render() {

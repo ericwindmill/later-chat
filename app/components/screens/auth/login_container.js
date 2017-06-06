@@ -1,4 +1,4 @@
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 import { login, signup, logout } from '../../../actions/session_actions';
 import LogIn from './login';
