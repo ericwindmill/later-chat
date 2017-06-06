@@ -20,10 +20,9 @@ class LogIn extends Component {
   }
 
   logInPressed() {
-    console.log(this.props);
-    // this.props.login({ username: this.state.username,
-    //         password: this.state.password
-    //       });
+    this.props.login({ username: this.state.username,
+                       password: this.state.password
+          });
   }
 
   render() {
