@@ -1,5 +1,4 @@
 export const login = user => {
-  console.log("inside API util");
   return fetch('http://localhost:3000/api/session', {
     method: 'POST',
     body: JSON.stringify({ user }),
