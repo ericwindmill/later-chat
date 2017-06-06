@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles';
-import { login } from '../../../util/session_api_util';
+import { login } from '../../../actions/session_actions';
 
 class LogIn extends Component {
   constructor() {
