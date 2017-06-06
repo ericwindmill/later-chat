@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
+import ASYNC from '../util/async_util.js';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -15,11 +16,14 @@ export const receiveErrors = errors => ({
 
 export const signup = user => dispatch => {
   return (
-    APIUtil.signup(user).then(userResponse => (
-      dispatch(receiveCurrentUser(userResponse))
-    ), err => (
+    APIUtil.signup(user).then(userJSON => {
+      ASYNC.setItem('token', userJSON.auth_token);
+      const currentUser = { id: userJSON.id, username: userJSON.username };
+      return dispatch(receiveCurrentUser(currentUser));
+    }, err => (
       dispatch(receiveErrors(err.responseJSON))
     ))
+    .then( () => ASYNC.getItem('token'))
   );
 };
 
