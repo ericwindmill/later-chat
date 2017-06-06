@@ -7,7 +7,7 @@ import {
   TouchableOpacity
  } from 'react-native'
 import baseStyles from '../styles/styles'
-import {fetchAllPosts} from '../../../util/posts_api_util'
+import { login } from '../../../util/session_api_util';
 
 class LogIn extends Component {
   constructor () {
@@ -24,9 +24,9 @@ class LogIn extends Component {
 
 
   async LogInPressed () {
-    fetchAllPosts()
+    login({ username: this.state.email, password: this.state.password });
   }
-  
+
 
   render () {
     return (
@@ -54,7 +54,7 @@ class LogIn extends Component {
           </TouchableOpacity>
           <TouchableOpacity style={baseStyles.buttonContainer}>
             <Text style={baseStyles.buttonText}>Already a member? Sign Up!</Text>
-          </TouchableOpacity>  
+          </TouchableOpacity>
         </View>
         <Text>{this.state.email}</Text>
         <Text>{this.state.password}</Text>
