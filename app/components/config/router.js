@@ -5,7 +5,7 @@ import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
 import MapScreen from '../screens/map/map';
 import Notifications from '../screens/notifications/notifications';
-import LogIn from '../screens/auth/login';
+import LogInContainer from '../screens/auth/login_container';
 
 export const Tabs = TabNavigator({
   Home: {
@@ -24,6 +24,6 @@ export const Tabs = TabNavigator({
     screen: Notifications
   },
   Auth: {
-    screen: LogIn
+    screen: LogInContainer
   }
 });
