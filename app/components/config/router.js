@@ -5,13 +5,14 @@ import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
 import MapScreen from '../screens/map/map';
 import Notifications from '../screens/notifications/notifications';
+import LogIn from '../screens/auth/login';
 
 export const Tabs = TabNavigator({
   Home: {
-    screen: HomeFeed,
+    screen: HomeFeed
   },
   Discover: {
-    screen: PublicFeed,
+    screen: PublicFeed
   },
   NewPost: {
     screen: NewPost
@@ -21,5 +22,8 @@ export const Tabs = TabNavigator({
   },
   Notifications: {
     screen: Notifications
+  },
+  Auth: {
+    screen: LogIn
   }
 });
