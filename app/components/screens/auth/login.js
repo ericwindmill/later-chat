@@ -1,41 +1,38 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import {
   View,
   Text,
   TextInput,
   StyleSheet,
   TouchableOpacity
- } from 'react-native'
-import baseStyles from '../styles/styles'
-import { login } from '../../../util/session_api_util';
+} from 'react-native';
+import baseStyles from '../styles/styles';
 
 class LogIn extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
     this.state = {
-      email: '',
+      username: '',
       password: ''
-    }
+    };
 
-
-    this.LogInPressed = this.LogInPressed.bind(this)
+    this.logInPressed = this.logInPressed.bind(this);
   }
 
-
-
-  async LogInPressed () {
-    login({ username: this.state.email, password: this.state.password });
+  logInPressed() {
+    this.props.login({ username: this.state.username,
+                       password: this.state.password
+          });
   }
 
-
-  render () {
+  render() {
     return (
       <View style={[baseStyles.container, styles.container]}>
         <View style={styles.inputsContainer}>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
               placeholder='email'
-              onChangeText={(text) => this.setState({email: text})}
+              onChangeText={(text) => this.setState({username: text})}
             />
           </View>
           <View style={baseStyles.inputContainer}>
@@ -48,7 +45,7 @@ class LogIn extends Component {
         </View>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
-            onPress={this.LogInPressed}
+            onPress={this.logInPressed}
           >
             <Text style={styles.buttonText}>LogIn</Text>
           </TouchableOpacity>
