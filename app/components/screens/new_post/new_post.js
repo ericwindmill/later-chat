@@ -14,6 +14,7 @@ export default class NewPost extends Component {
     <View style={styles.container}>
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
         <TextInput style={baseStyles.input}
+          onFocus={}
           placeholder='leave a note...'
           onChangeText={(text) => this.setState({email: text})}
         />
