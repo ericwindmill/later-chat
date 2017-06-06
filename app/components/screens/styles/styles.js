@@ -1,8 +1,6 @@
 const baseStyles = {
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    flex: 1
   },
 
 // reusable UI component styling
@@ -16,6 +14,7 @@ const baseStyles = {
     margin: 2,
     padding: 10
   },
+
   buttonContainer: {
     height: 50,
     borderWidth: 1,
@@ -28,6 +27,7 @@ const baseStyles = {
   buttonText: {
     textAlign: 'center'
   },
+
   link: {
     textAlign: 'center',
   }

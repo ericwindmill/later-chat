@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import HomeFeed from '../screens/feed/home_feed';
 import PublicFeed from '../screens/feed/public_feed';
@@ -10,7 +10,7 @@ import LogIn from '../screens/auth/login';
 
 
 export const Tabs = TabNavigator({
-  home: {
+  Home: {
     screen: HomeFeed
   },
   Discover: {
@@ -31,9 +31,22 @@ export const Tabs = TabNavigator({
 });
 
 
-NewPost.navigationOptions = {
+HomeFeed.navigationOptions = {
+  style: {
+    backgroundColor: 'red'
+  },
   tabBarIcon: () => (
       <Image
         source={require('../../assets/imgs/home.png')}
+        style={styles.icon}
       />
-    )}
+    )
+}
+
+
+const styles = StyleSheet.create({
+  icon: {
+    height: 26,
+    width: 26
+  }
+})

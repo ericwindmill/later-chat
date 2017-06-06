@@ -3,28 +3,35 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
 import baseStyles from '../styles/styles'
 
 export default class NewPost extends Component {
   render () {
     return (
-      <View style={baseStyles.container}>
-        <Text>
-          New Post
-        </Text>
+    <View style={styles.container}>
+      <View style={[baseStyles.inputContainer, styles.inputContainer]}>
+        <TextInput style={baseStyles.input}
+          placeholder='leave a note...'
+          onChangeText={(text) => this.setState({email: text})}
+        />
       </View>
+    </View>
     );
   }
 }
 
 
-/*NewPost.navigationOptions = {
-  tabBarIcon: {
-    icon: () => (
-      <Image
-        source={require('../../../assets/imgs/home.png')}
-      />
-    )}
-}*/
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 60,
+    justifyContent: 'flex-end'
+  },
+  inputContainer: {
+    
+  }
+})
