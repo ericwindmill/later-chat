@@ -24,8 +24,9 @@ class LogIn extends Component {
 
 
   logInPressed () {
-    login({ user: { username: this.state.email,
-                    password: this.state.password }
+    console.log(login);
+    login({ username: this.state.email,
+            password: this.state.password
           });
   }
 
