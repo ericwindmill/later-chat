@@ -5,25 +5,28 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity
-} from 'react-native'
+ } from 'react-native'
 import baseStyles from '../styles/styles'
+import {fetchAllPosts} from '../../../util/posts_api_util'
 
 class LogIn extends Component {
   constructor () {
     super()
-
-    this.LogInPressed = this.LogInPressed.bind(this)
-
     this.state = {
       email: '',
       password: ''
     }
+
+
+    this.LogInPressed = this.LogInPressed.bind(this)
   }
+
 
 
   async LogInPressed () {
-
+    fetchAllPosts()
   }
+  
 
   render () {
     return (
