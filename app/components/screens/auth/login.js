@@ -30,7 +30,7 @@ class LogIn extends Component {
 
   render () {
     return (
-      <View style={[baseStyles.container, styles.container]}>
+      <View style={styles.container}>
         <View style={styles.inputsContainer}>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
@@ -68,6 +68,7 @@ export default LogIn
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-end',
+    flex: 1,
     padding: 60
   },
   loginButton: {

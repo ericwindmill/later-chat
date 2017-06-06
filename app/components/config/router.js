@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native'
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import HomeFeed from '../screens/feed/home_feed';
 import PublicFeed from '../screens/feed/public_feed';
@@ -7,14 +8,15 @@ import MapScreen from '../screens/map/map';
 import Notifications from '../screens/notifications/notifications';
 import LogIn from '../screens/auth/login';
 
+
 export const Tabs = TabNavigator({
-  Home: {
+  home: {
     screen: HomeFeed
   },
   Discover: {
     screen: PublicFeed
   },
-  NewPost: {
+  AddPost: {
     screen: NewPost
   },
   MapScreen: {
@@ -27,3 +29,11 @@ export const Tabs = TabNavigator({
     screen: LogIn
   }
 });
+
+
+NewPost.navigationOptions = {
+  tabBarIcon: () => (
+      <Image
+        source={require('../../assets/imgs/home.png')}
+      />
+    )}

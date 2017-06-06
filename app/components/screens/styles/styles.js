@@ -1,6 +1,8 @@
 const baseStyles = {
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
 // reusable UI component styling

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
+import baseStyles from '../styles/styles'
 
 export default class NewPost extends Component {
-  render() {
+  render () {
     return (
-      <View>
+      <View style={baseStyles.container}>
         <Text>
           New Post
         </Text>
@@ -16,3 +18,13 @@ export default class NewPost extends Component {
     );
   }
 }
+
+
+/*NewPost.navigationOptions = {
+  tabBarIcon: {
+    icon: () => (
+      <Image
+        source={require('../../../assets/imgs/home.png')}
+      />
+    )}
+}*/
