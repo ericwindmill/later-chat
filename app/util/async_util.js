@@ -15,6 +15,7 @@ async getItem(key) {
                 try {
                     result = JSON.parse(result);
                     console.log(result);
+                    return result
                 } catch (e) {
                     console.log('AsyncStorage#getItem error deserializing JSON for key: ' + key, e.message);
                 }
