@@ -24,7 +24,7 @@ class LogIn extends Component {
     // login({ username: this.state.email, password: this.state.password })
       // .then(this.props.navigation.navigate('Tabs'))
       console.log(this.props)
-      this.props.navigation.navigate('Home', {})
+      this.props.navigation.navigate('Tabs', {})
   }
 
   render () {

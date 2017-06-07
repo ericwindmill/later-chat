@@ -13,30 +13,13 @@ import Notifications from '../screens/notifications/notifications';
 // Stack Screens
 import LogIn from '../screens/auth/login';
 
-export const AuthNav = StackNavigator({
-  LogIn: {
-    screen: LogIn,
-    navigationOptions: {
-      title: 'Log In',
-    }
-  },
-  Home: {
-    screen: HomeFeed,
-    navigationOptions: {
-      title: 'Home'
-    }
-  },
-  Tabs: {
-    screen: HomeFeed
-  }
-})
+
 
 
 export const Tabs = TabNavigator({
   Home: {
     screen: HomeFeed,
       navigationOptions: {
-        title: 'Home',
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => <Icon name='list' size={35} color={tintColor} />
       }
@@ -52,5 +35,19 @@ export const Tabs = TabNavigator({
   },
   Notifications: {
     screen: Notifications
+  }
+});
+
+export const AuthNav = StackNavigator({
+  LogIn: {
+    screen: LogIn,
+    navigationOptions: {
+    }
+  },
+  Tabs: {
+    screen: Tabs,
+    navigationOptions: {
+      headerLeft: null
+    }
   }
 });
