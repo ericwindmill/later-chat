@@ -12,7 +12,6 @@ import { Provider } from 'react-redux';
 export default class App extends Component {
 
   render () {
-    console.log('here')
     const store = configureStore();
     window.store = store;
     return (

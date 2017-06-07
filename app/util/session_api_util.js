@@ -8,30 +8,36 @@ export const login = user => {
     }
   })
     .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+    .catch(err => console.log(err));
 };
-
-// export const fetchAllPosts = () => {
-//   fetch('http://localhost:3000/api/posts', {
-//     headers: {
-//       'Accept': 'application/json'
-//     }
-//   })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error))
-// }
 
 export const signup = user => {
-  return fetch('/api/user', {
+  return fetch('http://localhost:3000/api/users', {
     method: 'POST',
-    data: user
+    body: JSON.stringify({ user }),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .then(res => res.json());
+};
+
+export const logout = user => {
+  return fetch('http://localhost:3000/api/session', {
+    method: 'DELETE',
   });
 };
 
-export const logout = () => {
-  return fetch('/api/session', {
-    method: 'POST'
-  });
+export const verify = token => {
+  return fetch('http://localhost:3000/api/session', {
+    method: 'GET',
+    body: JSON.stringify({ token }),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .then(res => res.json())
+    .catch(err => console.log(err));
 };

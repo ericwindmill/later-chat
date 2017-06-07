@@ -12,6 +12,7 @@ import Notifications from '../screens/notifications/notifications';
 
 // Stack Screens
 import LogIn from '../screens/auth/login';
+import LogInContainer from '../screens/auth/login_container';
 
 
 
@@ -42,6 +43,7 @@ export const AuthNav = StackNavigator({
   LogIn: {
     screen: LogIn,
     navigationOptions: {
+      
     }
   },
   Tabs: {
