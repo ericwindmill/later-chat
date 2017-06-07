@@ -21,7 +21,6 @@ export default class HomeFeed extends Component {
   render() {
     return (
       <View>
-        <Image style={width: 50, height: 50}/>
         {this.props.posts.forEach( (post, id) => <PostContainer key={id} post={post} />
         )}
       </View>
