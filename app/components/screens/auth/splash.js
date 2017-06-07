@@ -8,8 +8,22 @@ import baseStyles from '../styles/styles'
 
 export default class SplashScreen extends Component {
   componentWillMount() {
-      this.getToken();
-    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        var initialPosition = position;
+        this.setState({initialPosition});
+        this.props.receiveLocation(initialPosition);
+      },
+      (error) => alert(JSON.stringify(error)),
+      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+    );
+    this.watchID = navigator.geolocation.watchPosition((position) => {
+      var lastPosition = position;
+      this.setState({lastPosition});
+      this.props.receiveLocation(lastPosition);
+    });
+    this.getToken();
+  }
 
     async getToken() {
       try {
