@@ -39,6 +39,7 @@ export default class App extends Component {
   }
 
   render () {
+    window.store = this.store
     return (
       <Provider store={this.store}>
         <AuthNav />

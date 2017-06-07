@@ -4,14 +4,14 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 
 // Tab Screens
-import HomeFeed from '../screens/feed/home_feed';
+import HomeFeedContainer from '../screens/feed/home_feed_container';
 import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
 import MapScreen from '../screens/map/map';
 import LogOutContainer from '../screens/auth/logout_container';
 // Stack Screens
 import LogIn from '../screens/auth/login';
-import SignUp from '../screens/auth/signup';
+import SignUpContainer from '../screens/auth/signup_container';
 import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
 import SplashScreenContainer from '../screens/auth/splash_container';
@@ -29,7 +29,7 @@ export const newPostNav = StackNavigator({
 
 export const Tabs = TabNavigator({
   Home: {
-    screen: HomeFeed,
+    screen: HomeFeedContainer,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => <Icon name='list' size={35} color={tintColor} />
@@ -65,7 +65,7 @@ export const AuthNav = StackNavigator({
       headerLeft: null
     }
   },
-  SignUp: {
-    screen: SignUp
+  SignUpContainer: {
+    screen: SignUpContainer
   }
 });
