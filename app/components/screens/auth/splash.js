@@ -19,6 +19,7 @@ export default class SplashScreen extends Component {
         let accessToken = await this.props.getItem('token');
         if(!accessToken) {
           console.log("Token not set");
+          this.props.navigation.navigate('LogIn');
         } else {
           this.verifyToken(accessToken)
         }
