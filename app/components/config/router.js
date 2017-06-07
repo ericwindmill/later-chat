@@ -15,6 +15,7 @@ import LogIn from '../screens/auth/login';
 import SignUp from '../screens/auth/signup';
 import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
+import SplashScreen from '../screens/splash';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
@@ -49,8 +50,11 @@ export const Tabs = TabNavigator({
 });
 
 export const AuthNav = StackNavigator({
+  SplashScreen: {
+    screen: SplashScreen
+  },
   LogIn: {
-    screen: LogInContainer,
+    screen: LogInContainer
   },
   Tabs: {
     screen: Tabs,
@@ -62,3 +66,4 @@ export const AuthNav = StackNavigator({
     screen: SignUp
   }
 });
+

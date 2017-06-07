@@ -30,7 +30,13 @@ const baseStyles = {
 
   link: {
     textAlign: 'center'
+  },
+
+  headlines: {
+    fontSize: 50
   }
+
+
 }
 
 export default baseStyles

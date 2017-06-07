@@ -18,6 +18,7 @@ class LogIn extends Component {
 
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
+    this.redirectToHome = this.redirectToHome.bind(this);
   }
 
   componentWillMount() {
@@ -66,6 +67,10 @@ class LogIn extends Component {
     this.props.navigation.navigate('SignUp');
   }
 
+  redirectToHome() {
+    this.props.navigation.navigate('Tabs');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -94,6 +99,11 @@ class LogIn extends Component {
             onPress={this.redirectToSignUp}
           >
             <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={baseStyles.buttonContainer}
+            onPress={this.redirectToHome}
+          >
+            <Text style={baseStyles.buttonText}>ByPass for Dev</Text>
           </TouchableOpacity>
         </View>
       </View>
