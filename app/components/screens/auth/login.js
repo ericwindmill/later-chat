@@ -18,41 +18,8 @@ class LogIn extends Component {
 
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
-  }
+    this.redirectToHome = this.redirectToHome.bind(this);
 
-  componentWillMount() {
-    this.getToken();
-  }
-
-  async getToken() {
-    try {
-      let accessToken = await this.props.getItem('token');
-      if(!accessToken) {
-        console.log("Token not set");
-      } else {
-        this.verifyToken(accessToken)
-      }
-    } catch(error) {
-      console.log("Something went wrong");
-    }
-  }
-
-  async verifyToken(token) {
-    let accessToken = token
-    try {
-      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
-      let res = await response.text();
-      if (response.status >= 200 && response.status < 300) {
-        //Verified token means user is logged in so we redirect him to home.
-        this.props.navigation.navigate('Tabs');
-      } else {
-          //Handle error
-          let error = res;
-          throw error;
-      }
-    } catch(error) {
-        console.log("error response: " + error);
-    }
   }
 
   logInPressed() {
@@ -63,7 +30,11 @@ class LogIn extends Component {
   }
 
   redirectToSignUp() {
-    this.props.navigation.navigate('SignUp');
+    this.props.navigation.navigate('SignUpContainer');
+  }
+
+  redirectToHome() {
+    this.props.navigation.navigate('Tabs');
   }
 
   render() {
@@ -94,6 +65,11 @@ class LogIn extends Component {
             onPress={this.redirectToSignUp}
           >
             <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={baseStyles.buttonContainer}
+            onPress={this.redirectToHome}
+          >
+            <Text style={baseStyles.buttonText}>ByPass for Dev</Text>
           </TouchableOpacity>
         </View>
       </View>

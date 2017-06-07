@@ -17,50 +17,24 @@ class SignUp extends Component {
       confirm_password: ''
     };
 
-    this.logInPressed = this.logInPressed.bind(this);
+    this.signUpUser = this.signUpUser.bind(this);
+    this.onSignUpPress = this.onSignUpPress.bind(this);
     this.redirectToSignIn = this.redirectToSignIn.bind(this);
   }
 
-  componentWillMount() {
-    this.getToken();
-  }
-
-  async getToken() {
-    try {
-      let accessToken = await this.props.getItem('token');
-      if(!accessToken) {
-        console.log("Token not set");
-      } else {
-        this.verifyToken(accessToken)
-      }
-    } catch(error) {
-      console.log("Something went wrong");
-    }
-  }
-
-  async verifyToken(token) {
-    let accessToken = token
-    try {
-      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
-      let res = await response.text();
-      if (response.status >= 200 && response.status < 300) {
-        //Verified token means user is logged in so we redirect him to home.
-        this.props.navigation.navigate('Tabs');
-      } else {
-          //Handle error
-          let error = res;
-          throw error;
-      }
-    } catch(error) {
-        console.log("error response: " + error);
-    }
-  }
-
-  logInPressed() {
-    this.props.login({ username: this.state.username,
+  signUpUser() {
+    this.props.signup({ username: this.state.username,
                        password: this.state.password
           })
     .then(user => this.props.navigation.navigate('Tabs'));
+  }
+
+  onSignUpPress() {
+    if (this.state.password === this.state.confirm_password) {
+      this.signUpUser()
+    } else {
+      console.log('passwords dont match')
+    }
   }
 
   redirectToSignIn() {
@@ -94,6 +68,7 @@ class SignUp extends Component {
         </View>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
+            onPress={this.onSignUpPress}
           >
             <Text style={styles.buttonText}>Sign Up!</Text>
           </TouchableOpacity>

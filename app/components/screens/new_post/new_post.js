@@ -9,27 +9,29 @@ import {
   TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles'
+import {fetchAllPosts} from '../../../util/posts_api_util'
 
 export default class NewPost extends Component {
   constructor () {
     super()
 
     this.selectRecipients = this.selectRecipients.bind(this)
+    this.testAPI = this.testAPI.bind(this)
+  }
+
+  testAPI () {
+    fetchAllPosts()
   }
 
   selectRecipients () {
-    console.log(this.props.navigation)
     this.props.navigation.navigate('SelectRecipients')
   }
 
-
-
-  
   render () {
     return (
     <KeyboardAvoidingView style={styles.container}
       behavior='padding'>
-      <TouchableOpacity onPress={this.selectRecipients}><Text>COME ON COME ON COME ON NOW TOUCH ME, BABY</Text></TouchableOpacity>
+      <TouchableOpacity onPress={this.testAPI}><Text>COME ON COME ON COME ON NOW TOUCH ME, BABY</Text></TouchableOpacity>
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
           <TextInput style={baseStyles.input}
             placeholder='leave a note ...'
