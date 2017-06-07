@@ -4,7 +4,7 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements'
 
 // Tab Screens
-import HomeFeed from '../screens/feed/home_feed';
+import HomeFeedContainer from '../screens/feed/home_feed_container';
 import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
 import MapScreen from '../screens/map/map';
@@ -29,7 +29,7 @@ export const newPostNav = StackNavigator({
 
 export const Tabs = TabNavigator({
   Home: {
-    screen: HomeFeed,
+    screen: HomeFeedContainer,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => <Icon name='list' size={35} color={tintColor} />

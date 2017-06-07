@@ -19,6 +19,7 @@ class LogIn extends Component {
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
     this.redirectToHome = this.redirectToHome.bind(this);
+
   }
 
   logInPressed() {
