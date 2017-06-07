@@ -15,7 +15,7 @@ export default class Notifications extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.receiveLocation);
+    // console.log(this.props.receiveLocation);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         var initialPosition = position;
@@ -36,7 +36,7 @@ export default class Notifications extends Component {
     navigator.geolocation.clearWatch(this.watchID);
   }
   render() {
-    console.log(this.props.location);
+    // console.log(this.props.location);
     return (
       <View>
         <Text>
