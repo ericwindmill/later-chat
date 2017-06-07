@@ -28,10 +28,7 @@ export default class SplashScreen extends Component {
     async verifyToken(token) {
       let accessToken = token
       try {
-<<<<<<< HEAD
-=======
         // let response = await fetch('http://later-chat.herokuapp/api/verify?session%5Baccess_token%5D='+accessToken);
->>>>>>> 0ca5907f0ffcba7a4e057ed25a39085ea024602d
         let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
         let res = await response.text();
         if (response.status >= 200 && response.status < 300) {
