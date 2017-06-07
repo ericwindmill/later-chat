@@ -36,6 +36,7 @@ export default class Notifications extends Component {
     navigator.geolocation.clearWatch(this.watchID);
   }
   render() {
+    console.log(this.props.location);
     return (
       <View>
         <Text>
