@@ -17,17 +17,23 @@ class LogIn extends Component {
     };
 
     this.logInPressed = this.logInPressed.bind(this);
+    this.redirectToHome = this.redirectToHome.bind(this);
   }
 
   logInPressed() {
     this.props.login({ username: this.state.username,
                        password: this.state.password
-          });
+          })
+    .then(user => this.props.navigation.navigate('Tabs'));
+  }
+
+  redirectToHome() {
+    this.props.navigation.navigate('Tabs');
   }
 
   render() {
     return (
-      <View style={[baseStyles.container, styles.container]}>
+      <View style={styles.container}>
         <View style={styles.inputsContainer}>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
@@ -49,7 +55,9 @@ class LogIn extends Component {
           >
             <Text style={styles.buttonText}>LogIn</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={baseStyles.buttonContainer}>
+          <TouchableOpacity style={baseStyles.buttonContainer}
+            onPress={this.redirectToHome}
+          >
             <Text style={baseStyles.buttonText}>Already a member? Sign Up!</Text>
           </TouchableOpacity>
         </View>
@@ -65,6 +73,7 @@ export default LogIn
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-end',
+    flex: 1,
     padding: 60
   },
   loginButton: {
