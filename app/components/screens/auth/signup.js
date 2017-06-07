@@ -8,16 +8,17 @@ import {
 } from 'react-native';
 import baseStyles from '../styles/styles';
 
-class LogIn extends Component {
+class SignUp extends Component {
   constructor() {
     super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      confirm_password: ''
     };
 
     this.logInPressed = this.logInPressed.bind(this);
-    this.redirectToSignUp = this.redirectToSignUp.bind(this);
+    this.redirectToSignIn = this.redirectToSignIn.bind(this);
   }
 
   componentWillMount() {
@@ -41,6 +42,7 @@ class LogIn extends Component {
     let accessToken = token
     try {
       let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
+      // let response = await fetch('https://afternoon-beyond-22141.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
       let res = await response.text();
       if (response.status >= 200 && response.status < 300) {
         //Verified token means user is logged in so we redirect him to home.
@@ -62,8 +64,8 @@ class LogIn extends Component {
     .then(user => this.props.navigation.navigate('Tabs'));
   }
 
-  redirectToSignUp() {
-    this.props.navigation.navigate('SignUp');
+  redirectToSignIn() {
+    this.props.navigation.goBack()
   }
 
   render() {
@@ -83,17 +85,23 @@ class LogIn extends Component {
               onChangeText={(text) => this.setState({password: text})}
             />
           </View>
+          <View style={baseStyles.inputContainer}>
+            <TextInput style={baseStyles.input}
+              placeholder='confirm password'
+              secureTextEntry={true}
+              onChangeText={(text) => this.setState({confirm_password: text})}
+            />
+          </View>
         </View>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
-            onPress={this.logInPressed}
           >
-            <Text style={styles.buttonText}>LogIn</Text>
+            <Text style={styles.buttonText}>Sign Up!</Text>
           </TouchableOpacity>
           <TouchableOpacity style={baseStyles.buttonContainer}
-            onPress={this.redirectToSignUp}
+            onPress={this.redirectToSignIn}
           >
-            <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
+            <Text style={baseStyles.buttonText}>Already a member? Sign In!</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -101,7 +109,7 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn
+export default SignUp
 
 const styles = StyleSheet.create({
   container: {
