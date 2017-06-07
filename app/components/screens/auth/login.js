@@ -41,7 +41,6 @@ class LogIn extends Component {
     let accessToken = token
     try {
       let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
-      // let response = await fetch('https://afternoon-beyond-22141.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
       let res = await response.text();
       if (response.status >= 200 && response.status < 300) {
         //Verified token means user is logged in so we redirect him to home.

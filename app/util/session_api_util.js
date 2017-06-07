@@ -28,16 +28,3 @@ export const logout = user => {
     method: 'DELETE',
   });
 };
-
-export const verify = token => {
-  return fetch('http://localhost:3000/api/session', {
-    method: 'GET',
-    body: JSON.stringify({ token }),
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-  })
-    .then(res => res.json())
-    .catch(err => console.log(err));
-};
