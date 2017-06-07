@@ -1,6 +1,6 @@
 
-export const fetchAllPosts = () => {
-  fetch('http://localhost:3000/api/posts', {
+export const fetchAllPostsFromLocation = location => {
+  fetch(`https://later-chat.herokuapp.com/api/posts?type=post&locations[]=${location}`, {
     headers: {
       'Accept': 'application/json'
     }

@@ -9,12 +9,13 @@ import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
 import MapScreen from '../screens/map/map';
 import Notifications from '../screens/notifications/notifications';
-
+import LogOutContainer from '../screens/auth/logout_container';
 // Stack Screens
 import LogIn from '../screens/auth/login';
 import SignUp from '../screens/auth/signup';
 import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
+import SplashScreenContainer from '../screens/auth/splash_container';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
@@ -45,12 +46,18 @@ export const Tabs = TabNavigator({
   },
   Notifications: {
     screen: Notifications
+  },
+  LogOut: {
+    screen: LogOutContainer
   }
 });
 
 export const AuthNav = StackNavigator({
+  SplashScreenContainer: {
+    screen: SplashScreenContainer
+  },
   LogIn: {
-    screen: LogInContainer,
+    screen: LogInContainer
   },
   Tabs: {
     screen: Tabs,
@@ -62,3 +69,4 @@ export const AuthNav = StackNavigator({
     screen: SignUp
   }
 });
+
