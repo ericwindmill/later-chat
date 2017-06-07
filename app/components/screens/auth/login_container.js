@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import { login, signup, logout } from '../../../actions/session_actions';
 import LogIn from './login';
+import ASYNC from '../../../util/async_util.js';
 
 const mapStateToProps = ({ session }) => {
   return {
@@ -13,7 +14,10 @@ const mapStateToProps = ({ session }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     login: user => dispatch(login(user)),
-    signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
+    setItem: ASYNC.setItem,
+    getItem: ASYNC.getItem,
+    removeItem: ASYNC.removeItem
   };
 };
 
