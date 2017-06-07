@@ -8,22 +8,16 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import baseStyles from '../styles/styles'
-export default class NewPost extends Component {
+
+export default class SelectRecipients extends Component {
   
   render () {
-    const {navigate} = this.props.navigation
-    console.log(navigate)
     return (
-    <KeyboardAvoidingView style={styles.container}
-      behavior='padding'>
-      <View style={[baseStyles.inputContainer, styles.inputContainer]}>
-          <TextInput style={baseStyles.input}
-            placeholder='leave a note...'
-            onChangeText={(text) => this.setState({email: text})}
-            onPress={() => navigate('selectRecipients')}
-          />
+      <View> 
+        <Text>
+            HELLO FROM SELECT RECIPIENTS
+        </Text>
       </View>
-    </KeyboardAvoidingView>
     );
   }
 }
