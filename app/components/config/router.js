@@ -6,7 +6,7 @@ import { Icon } from 'react-native-elements'
 // Tab Screens
 import HomeFeedContainer from '../screens/feed/home_feed_container';
 import PublicFeed from '../screens/feed/public_feed';
-import NewPost from '../screens/new_post/new_post';
+import NewPostContainer from '../screens/new_post/new_post_container';
 import MapScreen from '../screens/map/map';
 import Notifications from '../screens/notifications/notifications';
 import LogOutContainer from '../screens/auth/logout_container';
@@ -19,7 +19,7 @@ import SplashScreenContainer from '../screens/auth/splash_container';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
-    screen: NewPost
+    screen: NewPostContainer
   },
   SelectRecipients: {
     screen: SelectRecipients

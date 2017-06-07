@@ -9,18 +9,29 @@ import {
   TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles'
-import {fetchAllPosts} from '../../../util/posts_api_util'
 
 export default class NewPost extends Component {
   constructor () {
     super()
+
+    this.state = {
+      body: ''
+    }
 
     this.selectRecipients = this.selectRecipients.bind(this)
     this.testAPI = this.testAPI.bind(this)
   }
 
   testAPI () {
-    fetchAllPosts()
+    console.log('state:', this.state)
+    console.log('props:', this.props)
+    this.props.createPost({
+      body: this.state.body,
+      location: this.props.location[0]
+      image_url: ' ',
+      author_id: this.props.currentUser.id,
+      public: false
+    })
   }
 
   selectRecipients () {
@@ -35,7 +46,7 @@ export default class NewPost extends Component {
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
           <TextInput style={baseStyles.input}
             placeholder='leave a note ...'
-            onChangeText={(text) => this.setState({email: text})}
+            onChangeText={(text) => this.setState({body: text})}
             onBlur={this.selectRecipients}
           />
       </View>
