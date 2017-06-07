@@ -21,40 +21,40 @@ class LogIn extends Component {
     this.redirectToHome = this.redirectToHome.bind(this);
   }
 
-  componentWillMount() {
-    this.getToken();
-  }
+  // componentWillMount() {
+  //   this.getToken();
+  // }
 
-  async getToken() {
-    try {
-      let accessToken = await this.props.getItem('token');
-      if(!accessToken) {
-        console.log("Token not set");
-      } else {
-        this.verifyToken(accessToken)
-      }
-    } catch(error) {
-      console.log("Something went wrong");
-    }
-  }
+  // async getToken() {
+  //   try {
+  //     let accessToken = await this.props.getItem('token');
+  //     if(!accessToken) {
+  //       console.log("Token not set");
+  //     } else {
+  //       this.verifyToken(accessToken)
+  //     }
+  //   } catch(error) {
+  //     console.log("Something went wrong");
+  //   }
+  // }
 
-  async verifyToken(token) {
-    let accessToken = token
-    try {
-      let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
-      let res = await response.text();
-      if (response.status >= 200 && response.status < 300) {
-        //Verified token means user is logged in so we redirect him to home.
-        this.props.navigation.navigate('Tabs');
-      } else {
-          //Handle error
-          let error = res;
-          throw error;
-      }
-    } catch(error) {
-        console.log("error response: " + error);
-    }
-  }
+  // async verifyToken(token) {
+  //   let accessToken = token
+  //   try {
+  //     let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
+  //     let res = await response.text();
+  //     if (response.status >= 200 && response.status < 300) {
+  //       //Verified token means user is logged in so we redirect him to home.
+  //       this.props.navigation.navigate('Tabs');
+  //     } else {
+  //         //Handle error
+  //         let error = res;
+  //         throw error;
+  //     }
+  //   } catch(error) {
+  //       console.log("error response: " + error);
+  //   }
+  // }
 
   logInPressed() {
     this.props.login({ username: this.state.username,
