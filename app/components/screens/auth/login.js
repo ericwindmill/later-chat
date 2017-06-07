@@ -20,8 +20,11 @@ class LogIn extends Component {
     this.LogInPressed = this.LogInPressed.bind(this)
   }
 
-  async LogInPressed () {
-    login({ username: this.state.email, password: this.state.password });
+  LogInPressed () {
+    // login({ username: this.state.email, password: this.state.password })
+      // .then(this.props.navigation.navigate('Tabs'))
+      console.log(this.props)
+      this.props.navigation.navigate('Home', {})
   }
 
   render () {
@@ -48,7 +51,9 @@ class LogIn extends Component {
           >
             <Text style={styles.buttonText}>LogIn</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={baseStyles.buttonContainer}>
+          <TouchableOpacity style={baseStyles.buttonContainer}
+            onPress={this.LogInPressed}
+          >
             <Text style={baseStyles.buttonText}>Already a member? Sign Up!</Text>
           </TouchableOpacity>
         </View>

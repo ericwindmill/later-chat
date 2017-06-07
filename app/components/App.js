@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { Tabs } from './config/router';
+import { Tabs, AuthNav } from './config/router';
 import  LogIn from './screens/auth/login';
 import { Provider } from 'react-redux';
 
@@ -17,7 +17,7 @@ export default class App extends Component {
     window.store = store;
     return (
       <Provider store={store}>
-        <LogIn />
+        <AuthNav />
       </Provider>
     );
   }
