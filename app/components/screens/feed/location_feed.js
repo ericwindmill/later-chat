@@ -19,7 +19,7 @@ export default class LocationFeed extends Component {
     return (
       <View>
         <Text>{this.props.location}</Text>
-        {this.props.posts.map(post => <Post post={post}/>)}
+        {this.props.posts.map((post, i) => <Post post={post} key={i}/>)}
       </View>
     )
   }
