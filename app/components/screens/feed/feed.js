@@ -23,9 +23,10 @@ export default class HomeFeed extends Component {
   render() {
     return (
       <View>
-        {Object.keys(this.props.posts).map(location => <LocationFeed
+        {Object.keys(this.props.posts).map((location, i) => <LocationFeed
                                                         location={location}
-                                                        posts={this.props.posts[location]}/>)}
+                                                        posts={this.props.posts[location]}
+                                                        key={i}/>)}
       </View>
     );
   };

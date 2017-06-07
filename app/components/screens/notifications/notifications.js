@@ -32,11 +32,13 @@ export default class Notifications extends Component {
     });
   }
 
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID);
-  }
+  // componentWillUnmount() {
+  //   navigator.geolocation.clearWatch(this.watchID);
+  // }
+
+
   render() {
-    // console.log(this.props.location);
+    console.log(this.props.location);
     return (
       <View>
         <Text>
