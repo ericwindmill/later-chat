@@ -12,9 +12,17 @@ import Notifications from '../screens/notifications/notifications';
 
 // Stack Screens
 import LogIn from '../screens/auth/login';
+import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
 
-
+export const newPostNav = StackNavigator({
+  'Add Post': {
+    screen: NewPost
+  },
+  SelectRecipients: {
+    screen: SelectRecipients
+  }
+})
 
 
 export const Tabs = TabNavigator({
@@ -28,8 +36,8 @@ export const Tabs = TabNavigator({
   Discover: {
     screen: PublicFeed
   },
-  AddPost: {
-    screen: NewPost
+  'Add Post': {
+    screen: newPostNav
   },
   MapScreen: {
     screen: MapScreen
@@ -50,3 +58,5 @@ export const AuthNav = StackNavigator({
     }
   }
 });
+
+
