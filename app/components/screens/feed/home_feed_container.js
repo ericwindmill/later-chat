@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { requestAllPosts } from '../../../actions/posts_actions';
 import Feed from './feed';
 
-const mapStateToProps = ({posts, session, errors}) => ({
-  posts,
-  currentUser: session.currentUser,
-  errors
+const mapStateToProps = (state) => ({
+  posts: state.posts,
+  currentUser: state.session.currentUser
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -6,8 +6,10 @@ import {
   Image,
   View
 } from 'react-native';
+import LocationFeed from './location_feed'
 
 import baseStyles from '../styles/styles';
+
 
 export default class HomeFeed extends Component {
   constructor() {
@@ -15,15 +17,16 @@ export default class HomeFeed extends Component {
   }
 
   componentWillMount() {
-    this.props.requestAllPosts(this.props.currentUser.locations)
+    this.props.requestAllPosts(["Dolores Park", "Cafe"]);
   }
 
   render() {
     return (
       <View>
-        {this.props.posts.forEach( (post, id) => <PostContainer key={id} post={post} />
-        )}
+        {Object.keys(this.props.posts).map(location => <LocationFeed
+                                                        location={location}
+                                                        posts={this.props.posts[location]}/>)}
       </View>
     );
-  }
+  };
 }

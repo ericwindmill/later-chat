@@ -1,6 +1,6 @@
 export const fetchAllNotes = (user_id, locations) => {
   locations = locations.map(loc => loc.replace(" ", "%20")).join('&locations[]=')
-  fetch('http://localhost:3000/api/posts?type=note&recipient_id=' + user_id + '&locations[]=' + locations, {
+  fetch('https://later-chat.herokuapp.com/api/posts?type=note&recipient_id=' + user_id + '&locations[]=' + locations, {
     headers: {
       'Accept': 'application/json'
     }

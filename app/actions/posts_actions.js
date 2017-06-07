@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/posts_api_util';
 
-export const RECEIVE_POSTS = 'RECEIVE_CURRENT_USER';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const recievePosts = posts => ({
@@ -16,7 +16,6 @@ export const receiveErrors = errors => ({
 export const requestAllPosts = locations => dispatch => {
   return (
     APIUtil.fetchAllPosts(locations)
-      .then(posts => dispatch(recievePosts(posts)),
-        err => dispatch(receiveErrors(["Couldn't retrieve posts"])))
+      .then(posts => dispatch(recievePosts(posts)))
   )
 }

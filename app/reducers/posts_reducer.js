@@ -5,18 +5,16 @@ import {
   RECEIVE_ERRORS
 } from '../actions/posts_actions';
 
-const initState = Object.freeze({
-  posts: {},
-  errors: []
-});
-
-const PostsReducer = (state = initState, action) => {
+const PostsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_POSTS:
-      return merge({}, initState, action.posts);
+      return merge({}, state, action.posts);
     case RECEIVE_ERRORS:
-      return merge({}, state, action.errors);
+      const errors = action.errors;
+      return merge({}, state, {
+        errors
+      });
     default:
       return state;
   }
