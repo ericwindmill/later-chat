@@ -12,6 +12,7 @@ import Notifications from '../screens/notifications/notifications';
 
 // Stack Screens
 import LogIn from '../screens/auth/login';
+import SignUp from '../screens/auth/signup';
 import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
 
@@ -56,6 +57,9 @@ export const AuthNav = StackNavigator({
     navigationOptions: {
       headerLeft: null
     }
+  },
+  SignUp: {
+    screen: SignUp
   }
 });
 
