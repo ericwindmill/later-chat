@@ -8,8 +8,8 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import baseStyles from '../styles/styles'
-
 export default class NewPost extends Component {
+  
   render () {
     const {navigate} = this.props.navigation
     console.log(navigate)

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native'
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import Icon from 'react-elements'
 import HomeFeed from '../screens/feed/home_feed';
 import PublicFeed from '../screens/feed/public_feed';
 import NewPost from '../screens/new_post/new_post';
@@ -11,7 +12,11 @@ import LogIn from '../screens/auth/login';
 
 export const Tabs = TabNavigator({
   Home: {
-    screen: HomeFeed
+    screen: HomeFeed,
+      navigationOptions: {
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ tintColor }) => <Icon name='list' size={35} color={tintColor} />
+      }
   },
   Discover: {
     screen: PublicFeed
@@ -24,9 +29,6 @@ export const Tabs = TabNavigator({
   },
   Notifications: {
     screen: Notifications
-  },
-  Auth: {
-    screen: LogIn
   }
 });
 

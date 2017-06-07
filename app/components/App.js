@@ -6,17 +6,18 @@ import {
   View
 } from 'react-native';
 import { Tabs } from './config/router';
+import  LogIn from './screens/auth/login';
 import { Provider } from 'react-redux';
 
 export default class App extends Component {
 
-  render() {
+  render () {
+    console.log('here')
     const store = configureStore();
-    console.log(store);
     window.store = store;
     return (
       <Provider store={store}>
-        <Tabs />
+        <LogIn />
       </Provider>
     );
   }

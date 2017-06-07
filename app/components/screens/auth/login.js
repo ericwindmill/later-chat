@@ -17,16 +17,12 @@ class LogIn extends Component {
       password: ''
     }
 
-
     this.LogInPressed = this.LogInPressed.bind(this)
   }
-
-
 
   async LogInPressed () {
     login({ username: this.state.email, password: this.state.password });
   }
-
 
   render () {
     return (
