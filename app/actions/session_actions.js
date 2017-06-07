@@ -30,6 +30,7 @@ export const signup = user => dispatch => {
 export const login = user => dispatch => {
   return (
     APIUtil.login(user).then(userJSON => {
+      console.log(userJSON)
       ASYNC.setItem('token', userJSON.auth_token);
       const currentUser = { id: userJSON.id, username: userJSON.username };
       return dispatch(receiveCurrentUser(currentUser));

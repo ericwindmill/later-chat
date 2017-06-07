@@ -16,8 +16,7 @@ class LogOut extends Component {
 
   handleLogOut() {
     this.props.removeItem('token')
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    .then(this.props.navigation.navigate('LogIn'))
   }
 
   render() {

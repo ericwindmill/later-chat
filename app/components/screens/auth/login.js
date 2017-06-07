@@ -13,58 +13,25 @@ class LogIn extends Component {
     super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      errors: []
     };
 
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
     this.redirectToHome = this.redirectToHome.bind(this);
+
   }
-
-  // componentWillMount() {
-  //   this.getToken();
-  // }
-
-  // async getToken() {
-  //   try {
-  //     let accessToken = await this.props.getItem('token');
-  //     if(!accessToken) {
-  //       console.log("Token not set");
-  //     } else {
-  //       this.verifyToken(accessToken)
-  //     }
-  //   } catch(error) {
-  //     console.log("Something went wrong");
-  //   }
-  // }
-
-  // async verifyToken(token) {
-  //   let accessToken = token
-  //   try {
-  //     let response = await fetch('http://localhost:3000/api/verify?session%5Baccess_token%5D='+accessToken);
-  //     let res = await response.text();
-  //     if (response.status >= 200 && response.status < 300) {
-  //       //Verified token means user is logged in so we redirect him to home.
-  //       this.props.navigation.navigate('Tabs');
-  //     } else {
-  //         //Handle error
-  //         let error = res;
-  //         throw error;
-  //     }
-  //   } catch(error) {
-  //       console.log("error response: " + error);
-  //   }
-  // }
 
   logInPressed() {
     this.props.login({ username: this.state.username,
                        password: this.state.password
           })
-    .then(user => this.props.navigation.navigate('Tabs'));
+    .then(user => this.props.navigation.navigate('Tabs'))
   }
 
   redirectToSignUp() {
-    this.props.navigation.navigate('SignUp');
+    this.props.navigation.navigate('SignUpContainer');
   }
 
   redirectToHome() {
@@ -72,12 +39,20 @@ class LogIn extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
         <View style={styles.inputsContainer}>
+          <View>
+            {this.state.errors.map((error, i) => (
+              <Text key={i}>{error}</Text>
+            ))}
+          </View>
+          <Text>{this.state.errors}</Text>
           <View style={baseStyles.inputContainer}>
+            
             <TextInput style={baseStyles.input}
-              placeholder='email'
+              placeholder='username'
               onChangeText={(text) => this.setState({username: text})}
             />
           </View>
