@@ -13,7 +13,6 @@ export default class App extends Component {
 
   render () {
     const store = configureStore();
-    window.store = store;
     return (
       <Provider store={store}>
         <AuthNav />

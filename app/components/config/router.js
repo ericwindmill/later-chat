@@ -41,10 +41,7 @@ export const Tabs = TabNavigator({
 
 export const AuthNav = StackNavigator({
   LogIn: {
-    screen: LogIn,
-    navigationOptions: {
-      
-    }
+    screen: LogInContainer,
   },
   Tabs: {
     screen: Tabs,

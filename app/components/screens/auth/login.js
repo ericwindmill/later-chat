@@ -17,13 +17,18 @@ class LogIn extends Component {
     };
 
     this.logInPressed = this.logInPressed.bind(this);
+    this.redirectToHome = this.redirectToHome.bind(this);
   }
 
   logInPressed() {
     this.props.login({ username: this.state.username,
                        password: this.state.password
           })
-    .then(user => this.props.navigation.navigate('Tabs'))
+    .then(user => this.props.navigation.navigate('Tabs'));
+  }
+
+  redirectToHome() {
+    this.props.navigation.navigate('Tabs');
   }
 
   render() {
@@ -51,7 +56,7 @@ class LogIn extends Component {
             <Text style={styles.buttonText}>LogIn</Text>
           </TouchableOpacity>
           <TouchableOpacity style={baseStyles.buttonContainer}
-            onPress={this.logInPressed}
+            onPress={this.redirectToHome}
           >
             <Text style={baseStyles.buttonText}>Already a member? Sign Up!</Text>
           </TouchableOpacity>
