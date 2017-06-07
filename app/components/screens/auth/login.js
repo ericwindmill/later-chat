@@ -13,7 +13,8 @@ class LogIn extends Component {
     super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      errors: []
     };
 
     this.logInPressed = this.logInPressed.bind(this);
@@ -26,7 +27,7 @@ class LogIn extends Component {
     this.props.login({ username: this.state.username,
                        password: this.state.password
           })
-    .then(user => this.props.navigation.navigate('Tabs'));
+    .then(user => this.props.navigation.navigate('Tabs'))
   }
 
   redirectToSignUp() {
@@ -38,12 +39,20 @@ class LogIn extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
         <View style={styles.inputsContainer}>
+          <View>
+            {this.state.errors.map((error, i) => (
+              <Text key={i}>{error}</Text>
+            ))}
+          </View>
+          <Text>{this.state.errors}</Text>
           <View style={baseStyles.inputContainer}>
+            
             <TextInput style={baseStyles.input}
-              placeholder='email'
+              placeholder='username'
               onChangeText={(text) => this.setState({username: text})}
             />
           </View>
