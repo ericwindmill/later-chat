@@ -64,7 +64,7 @@ class LogIn extends Component {
   }
 
   redirectToSignUp() {
-    this.props.navigation.navigate('SignUp');
+    this.props.navigation.navigate('SignUpContainer');
   }
 
   redirectToHome() {
