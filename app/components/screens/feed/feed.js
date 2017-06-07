@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { fetchAllPosts } from '../../../util/posts_api_util'
 import {
   StyleSheet,
   TouchableOpacity,
   Text,
+  Image,
   View
 } from 'react-native';
 
@@ -12,25 +12,18 @@ import baseStyles from '../styles/styles';
 export default class HomeFeed extends Component {
   constructor() {
     super();
-
-    this.makeRequest = this.makeRequest.bind(this);
   }
 
-  makeRequest() {
-    this.props.requestAllPosts(["Dolores Park", "Cafe"])
+  componentWillMount() {
+    this.props.requestAllPosts(this.props.currentUser.locations)
   }
 
   render() {
-    window.fetchAllPosts = fetchAllPosts
     return (
       <View>
-        <TouchableOpacity style={baseStyles.buttonContainer}
-          onPress={this.makeRequest}>
-          <Text>send request</Text>
-        </TouchableOpacity>
-        <Text>
-          feed
-        </Text>
+        <Image style={width: 50, height: 50}/>
+        {this.props.posts.forEach( (post, id) => <PostContainer key={id} post={post} />
+        )}
       </View>
     );
   }
