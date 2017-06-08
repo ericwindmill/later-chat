@@ -24,6 +24,7 @@ export default class NewPost extends Component {
 
     this.selectRecipients = this.selectRecipients.bind(this)
     this.renderCamera = this.renderCamera.bind(this)
+    this.pickImage = this.pickImage.bind(this)
   }
 
 
@@ -48,7 +49,8 @@ export default class NewPost extends Component {
 
       <TouchableOpacity onPress={this.renderCamera}><Text>TOUCH ME FOR CAMERA</Text></TouchableOpacity>
       <TouchableOpacity onPress={this.pickImage}><Text>TOUCH ME FOR CAMERA ROLL</Text></TouchableOpacity>
-      <TouchableOpacity onPress={this.testAPI}><Text>COME ON COME ON COME ON NOW TOUCH ME, BABY</Text></TouchableOpacity>
+
+
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
           <TextInput style={baseStyles.input}
             placeholder='leave a note ...'

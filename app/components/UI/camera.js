@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {Icon} from 'react-native-elements'
+import { RNS3 } from 'react-native-aws3'
+
+
 export default class Cam extends React.Component {
   constructor(props) {
     super(props);
@@ -22,14 +25,42 @@ export default class Cam extends React.Component {
         orientation: Camera.constants.Orientation.auto,
         flashMode: Camera.constants.FlashMode.auto,
       },
-      isRecording: false
+      isRecording: false,
+      image_url: ''
     };
-  }
 
-  takePicture = () => {
+    this.takePicture = this.takePicture.bind(this)
+  }
+  takePicture () {
     if (this.camera) {
       this.camera.capture()
-        .then((data) => console.log(data))
+        .then((data) => {
+
+          const file = {
+            uri: data.path,
+            name: 'photo.jpg',
+            type: 'image/jpeg'
+          };
+
+          const options = {
+            keyPrefix: 'uploads/',
+            bucket: 'later-chat',
+            region: 'us-west-1',
+            accessKey:  'AKIAIWDILJMSZWF6HQEA',
+            secretKey: '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',
+            successActionStatus: 201,
+          }
+
+          RNS3.put(file, options).then(response => {
+            console.log(response)
+            if (response.status !== 201) {
+              throw new Error('Failed to upload image', response);
+            }
+              this.setState({image_url: response.body.postResponse.location})
+              console.log(this.state.image_url)
+
+          })
+        })
         .catch(err => console.error(err));
     }
   }
@@ -72,18 +103,18 @@ export default class Cam extends React.Component {
     });
   }
 
-  // get typeIcon() {
-  //   let icon;
-  //   const { back, front } = Camera.constants.Type;
+  get typeIcon() {
+    let icon;
+    const { back, front } = Camera.constants.Type;
 
-  //   if (this.state.camera.type === back) {
-  //     icon = require('./assets/ic_camera_rear_white.png');
-  //   } else if (this.state.camera.type === front) {
-  //     icon = require('./assets/ic_camera_front_white.png');
-  //   }
+    if (this.state.camera.type === back) {
+      <Icon name='loop' size={35} color={'white'} />
+    } else if (this.state.camera.type === front) {
+      <Icon name='new releases' size={35} color={'white'} />
+    }
 
-  //   return icon;
-  // }
+    return icon;
+  }
 
   switchFlash = () => {
     let newFlashMode;
@@ -167,7 +198,7 @@ export default class Cam extends React.Component {
                 style={styles.captureButton}
                 onPress={this.takePicture}
             >
-              <Icon name='list' size={35} color={'white'} />
+              <Icon name='hd' size={35} color={'white'} />
             </TouchableOpacity>
             ||
             null
