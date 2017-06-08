@@ -4,22 +4,28 @@ import {
   TouchableOpacity,
   Text,
   Image,
+  FlatList,
   View
 } from 'react-native';
+import { List, ListItem } from "react-native-elements";
 
 import baseStyles from '../styles/styles';
 import Post from './post'
 
 export default class LocationFeed extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (
-      <View>
-        <Text>{this.props.location}</Text>
-        {this.props.posts.map(post => <Post post={post}/>)}
+      <View >
+        <View>
+          <Text>{this.props.location}</Text>
+        </View>
+        <FlatList
+          data={this.props.posts}
+          renderItem={({ item }) => (
+            <Post post={item} />
+          )}
+          keyExtractor={item => item.id}/>
       </View>
     )
   }

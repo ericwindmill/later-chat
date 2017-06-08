@@ -17,7 +17,12 @@ export default class Post extends Component {
   render() {
     return (
       <View>
-        <Text>{this.props.post.author.username}</Text>
+        <View>
+          <Text>{this.props.post.author.username}</Text>
+          <TouchableOpacity>
+            <Text>follow</Text>
+          </TouchableOpacity>
+        </View>
         <Text>{this.props.post.body}</Text>
       </View>
     );

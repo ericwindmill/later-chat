@@ -4,6 +4,8 @@ import {
   TouchableOpacity,
   Text,
   Image,
+  ScrollView,
+  Dimensions,
   View
 } from 'react-native';
 import LocationFeed from './location_feed'
@@ -17,16 +19,19 @@ export default class HomeFeed extends Component {
   }
 
   componentWillMount() {
-    this.props.requestAllPosts(["Dolores Park", "Cafe"]);
+    //replace this array with nearbyLocations slice of state
+    this.props.getFeed(["Dolores Park", "Cafe"]);
   }
 
   render() {
     return (
-      <View>
+      <ScrollView
+        horizontal={true}
+        pagingEnabled={true}>
         {Object.keys(this.props.posts).map(location => <LocationFeed
-                                                        location={location}
-                                                        posts={this.props.posts[location]}/>)}
-      </View>
+          location={location}
+          posts={this.props.posts[location]}/>)}
+      </ScrollView>
     );
   };
 }
