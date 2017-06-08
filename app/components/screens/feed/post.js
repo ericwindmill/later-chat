@@ -14,13 +14,17 @@ export default class Post extends Component {
     super();
   }
 
+  follow() {
+    (this.props.post.author.id)
+  }
+
   render() {
     return (
       <View>
         <View>
           <Text>{this.props.post.author.username}</Text>
-          <TouchableOpacity>
-            <Text>follow</Text>
+          <TouchableOpacity onPress={this.toggleFollow}>
+            <Text>{this.follow()}</Text>
           </TouchableOpacity>
         </View>
         <Text>{this.props.post.body}</Text>
