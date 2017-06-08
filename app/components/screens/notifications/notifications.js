@@ -12,29 +12,20 @@ export default class Notifications extends Component {
     //   initialPosition: 'unknown',
     //   lastPosition: 'unknown',
     // };
+    this.fetchGoogle = this.fetchGoogle.bind(this);
   }
 
-  // componentDidMount() {
-  //   // console.log(this.props.receiveLocation);
-  //   navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       var initialPosition = position;
-  //       this.setState({initialPosition});
-  //       this.props.receiveLocation(initialPosition);
-  //     },
-  //     (error) => alert(JSON.stringify(error)),
-  //     {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-  //   );
-  //   this.watchID = navigator.geolocation.watchPosition((position) => {
-  //     var lastPosition = position;
-  //     this.setState({lastPosition});
-  //     this.props.receiveLocation(lastPosition);
-  //   });
-  // }
-  //
-  // componentWillUnmount() {
-  //   navigator.geolocation.clearWatch(this.watchID);
-  // }
+  componentDidMount() {
+    this.fetchGoogle();
+  }
+
+  async fetchGoogle() {
+    let lat = this.props.location.coords.latitude;
+    let lng = this.props.location.coords.longitude;
+    let response = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lng+'&radius=500&key=AIzaSyDBH-I807okFiwNi3VqRYFuHpdOYH4DXX4');
+    let res = await response.json();
+    console.log(res);
+  }
 
 
   render() {
