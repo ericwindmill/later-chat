@@ -10,7 +10,7 @@ import {
   ImagePickerIOS
 } from 'react-native';
 import baseStyles from '../styles/styles'
-import Camera from 'react-native-camera';
+import Cam from '../../UI/camera';
 
 
 export default class NewPost extends Component {
@@ -23,20 +23,9 @@ export default class NewPost extends Component {
     }
 
     this.selectRecipients = this.selectRecipients.bind(this)
-    this.testAPI = this.testAPI.bind(this)
+    this.renderCamera = this.renderCamera.bind(this)
   }
 
-  testAPI () {
-    console.log('state:', this.state)
-    console.log('props:', this.props)
-    this.props.createPost({
-      body: this.state.body,
-      location: this.props.location[0],
-      image_url: ' ',
-      author_id: this.props.currentUser.id,
-      public: false
-    })
-  }
 
   selectRecipients () {
     this.props.navigation.navigate('SelectRecipients')
@@ -48,13 +37,17 @@ export default class NewPost extends Component {
     }, error => console.error(error))
   }
 
+  renderCamera () {
+    this.props.navigation.navigate('Cam')
+  }
+
   render () {
-    console.log(ImagePickerIOS)
     return (
     <KeyboardAvoidingView style={styles.container}
       behavior='padding'>
-      <Camera />
-      <TouchableOpacity onPress={this.pickImage}><Text>TOUCH ME FOR CAMERA</Text></TouchableOpacity>
+
+      <TouchableOpacity onPress={this.renderCamera}><Text>TOUCH ME FOR CAMERA</Text></TouchableOpacity>
+      <TouchableOpacity onPress={this.pickImage}><Text>TOUCH ME FOR CAMERA ROLL</Text></TouchableOpacity>
       <TouchableOpacity onPress={this.testAPI}><Text>COME ON COME ON COME ON NOW TOUCH ME, BABY</Text></TouchableOpacity>
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
           <TextInput style={baseStyles.input}

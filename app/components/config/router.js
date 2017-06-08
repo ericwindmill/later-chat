@@ -16,6 +16,7 @@ import SignUpContainer from '../screens/auth/signup_container';
 import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
 import SplashScreenContainer from '../screens/auth/splash_container';
+import Cam from '../UI/camera';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
@@ -23,6 +24,9 @@ export const newPostNav = StackNavigator({
   },
   SelectRecipients: {
     screen: SelectRecipients
+  },
+  Cam: {
+    screen: Cam
   }
 })
 
