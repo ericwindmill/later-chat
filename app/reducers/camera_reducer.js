@@ -5,7 +5,8 @@ import { RECEIVE_PHOTO } from '../actions/camera_actions';
 const CameraReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_PHOTO:
-      return merge({}, state, action.photoUrl);
+      console.log('in the reducer!', action.photoUrl)
+      return merge({}, state, {url: action.photoUrl});
     default:
       return state;
   }

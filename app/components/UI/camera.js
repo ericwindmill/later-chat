@@ -69,7 +69,7 @@ export default class Cam extends React.Component {
   }
 
   handleCapture (imageUrl) {
-    this.props.capturePhoto(image_url)
+    this.props.capturePhoto(imageUrl)
     this.props.navigation.goBack()
   }
 

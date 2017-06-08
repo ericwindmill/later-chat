@@ -28,7 +28,6 @@ export default class NewPost extends Component {
   }
  
   componentDidMount () {
-    console.log(this.props.navigation.state)
   }
 
 
@@ -51,7 +50,6 @@ export default class NewPost extends Component {
   }
 
   render () {
-    console.log(this.props)
     return (
     <KeyboardAvoidingView style={styles.container}
       behavior='padding'>
