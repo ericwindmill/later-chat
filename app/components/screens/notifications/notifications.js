@@ -30,6 +30,7 @@ export default class Notifications extends Component {
       places_nearby.push(res.results[i].name);
     }
     console.log(places_nearby);
+    this.props.receiveGooglePlaces({places: places_nearby});
   }
 
 

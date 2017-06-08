@@ -2,17 +2,19 @@ import { connect } from 'react-redux';
 
 import Notifications from './notifications';
 
-import { receiveLocation } from '../../../actions/location_actions';
+import { receiveLocation, receiveGooglePlaces } from '../../../actions/location_actions';
 
 const mapStateToProps = ( state ) => {
   return {
-    location: state.location
+    location: state.location,
+    googlePlaces: state.googlePlaces
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receiveLocation: location => dispatch(receiveLocation(location))
+    receiveLocation: location => dispatch(receiveLocation(location)),
+    receiveGooglePlaces: places => dispatch(receiveGooglePlaces(places))
   };
 };
 
