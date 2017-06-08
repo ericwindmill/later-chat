@@ -1,6 +1,5 @@
 export const login = user => {
-  return fetch('https://localhost:3000/api/session', {
-  // return fetch('https://later-chat.herokuapp.com/api/session', {
+  return fetch('https://later-chat.herokuapp.com/api/session', {
     method: 'POST',
     body: JSON.stringify({ user }),
     headers: {
@@ -13,8 +12,7 @@ export const login = user => {
 };
 
 export const signup = user => {
-  return fetch('https://localhost:3000/api/users', {
-  // return fetch('https://later-chat.herokuapp.com/api/users', {
+  return fetch('https://later-chat.herokuapp.com/api/users', {
     method: 'POST',
     body: JSON.stringify({ user }),
     headers: {
@@ -26,8 +24,7 @@ export const signup = user => {
 };
 
 export const logout = user => {
-  return fetch('https://localhost:3000/api/session', {
-  // return fetch('https://later-chat.herokuapp.com/api/session', {
+  return fetch('https://later-chat.herokuapp.com/api/session', {
     method: 'DELETE',
   });
 };
