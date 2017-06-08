@@ -15,6 +15,11 @@ export default class Notifications extends Component {
     this.state = {
       searchStr: ""
     };
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch() {
+    
   }
 
   render() {
