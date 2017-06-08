@@ -30,6 +30,7 @@ export default class Cam extends React.Component {
     };
 
     this.takePicture = this.takePicture.bind(this)
+    this.handleCapture = this.handleCapture.bind(this)
   }
   takePicture () {
     if (this.camera) {
@@ -57,12 +58,19 @@ export default class Cam extends React.Component {
               throw new Error('Failed to upload image', response);
             }
               this.setState({image_url: response.body.postResponse.location})
-              console.log(this.state.image_url)
-
+              this.handleCapture(response.body.postResponse.location)
           })
+        })
+        .then(() => {
+          // console.log(this.state.image)
         })
         .catch(err => console.error(err));
     }
+  }
+
+  handleCapture (imageUrl) {
+    this.props.capturePhoto(image_url)
+    this.props.navigation.goBack()
   }
 
   startRecording = () => {
@@ -103,38 +111,38 @@ export default class Cam extends React.Component {
     });
   }
 
-  get typeIcon() {
-    let icon;
-    const { back, front } = Camera.constants.Type;
+  // get typeIcon() {
+  //   let icon;
+  //   const { back, front } = Camera.constants.Type;
 
-    if (this.state.camera.type === back) {
-      <Icon name='loop' size={35} color={'white'} />
-    } else if (this.state.camera.type === front) {
-      <Icon name='new releases' size={35} color={'white'} />
-    }
+  //   if (this.state.camera.type === back) {
+  //     <Icon name='loop' size={35} color={'white'} />
+  //   } else if (this.state.camera.type === front) {
+  //     <Icon name='new releases' size={35} color={'white'} />
+  //   }
 
-    return icon;
-  }
+  //   return icon;
+  // }
 
-  switchFlash = () => {
-    let newFlashMode;
-    const { auto, on, off } = Camera.constants.FlashMode;
+  // switchFlash = () => {
+  //   let newFlashMode;
+  //   const { auto, on, off } = Camera.constants.FlashMode;
 
-    if (this.state.camera.flashMode === auto) {
-      newFlashMode = on;
-    } else if (this.state.camera.flashMode === on) {
-      newFlashMode = off;
-    } else if (this.state.camera.flashMode === off) {
-      newFlashMode = auto;
-    }
+  //   if (this.state.camera.flashMode === auto) {
+  //     newFlashMode = on;
+  //   } else if (this.state.camera.flashMode === on) {
+  //     newFlashMode = off;
+  //   } else if (this.state.camera.flashMode === off) {
+  //     newFlashMode = auto;
+  //   }
 
-    this.setState({
-      camera: {
-        ...this.state.camera,
-        flashMode: newFlashMode,
-      },
-    });
-  }
+  //   this.setState({
+  //     camera: {
+  //       ...this.state.camera,
+  //       flashMode: newFlashMode,
+  //     },
+  //   });
+  // }
 
   // get flashIcon() {
   //   let icon;

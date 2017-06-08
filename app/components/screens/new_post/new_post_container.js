@@ -6,7 +6,8 @@ import NewPost from './new_post';
 const mapStateToProps = (state) => ({
   posts: state.posts,
   currentUser: state.session.currentUser,
-  location: ['Delores Park', 'Cafe', 'Puzzels Fun Dome']
+  photo: state.photo
+  
 })
 
 const mapDispatchToProps = (dispatch) => ({

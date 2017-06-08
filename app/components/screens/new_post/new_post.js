@@ -16,7 +16,6 @@ import Cam from '../../UI/camera';
 export default class NewPost extends Component {
   constructor () {
     super()
-
     this.state = {
       body: '',
       image_url: null
@@ -25,6 +24,11 @@ export default class NewPost extends Component {
     this.selectRecipients = this.selectRecipients.bind(this)
     this.renderCamera = this.renderCamera.bind(this)
     this.pickImage = this.pickImage.bind(this)
+    this.logMe = this.logMe.bind(this)
+  }
+ 
+  componentDidMount () {
+    console.log(this.props.navigation.state)
   }
 
 
@@ -42,11 +46,17 @@ export default class NewPost extends Component {
     this.props.navigation.navigate('Cam')
   }
 
+  logMe() {
+    console.log(this.props)
+  }
+
   render () {
+    console.log(this.props)
     return (
     <KeyboardAvoidingView style={styles.container}
       behavior='padding'>
 
+      <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
       <TouchableOpacity onPress={this.renderCamera}><Text>TOUCH ME FOR CAMERA</Text></TouchableOpacity>
       <TouchableOpacity onPress={this.pickImage}><Text>TOUCH ME FOR CAMERA ROLL</Text></TouchableOpacity>
 
