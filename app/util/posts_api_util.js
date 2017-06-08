@@ -11,3 +11,16 @@ export const fetchAllPosts = (locations) => {
     .then(res => res.json())
     .catch(error => console.log(error))
 }
+
+// add a post
+export const createNewPost = (post) => {
+  return fetch('https://later-chat.herokuapp.com/api/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .then(res => res.json())
+    .catch(error => console.log(error))
+}
