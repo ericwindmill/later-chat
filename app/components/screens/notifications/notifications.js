@@ -29,8 +29,7 @@ export default class Notifications extends Component {
   }
 
   render() {
-    console.log(this.props.location);
-    console.log(this.props.searchResults);
+    console.log(this.props);
     return (
       <View>
         <Text>
