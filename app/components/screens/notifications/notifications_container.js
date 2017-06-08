@@ -6,8 +6,7 @@ import { receiveLocation, receiveGooglePlaces } from '../../../actions/location_
 
 const mapStateToProps = ( state ) => {
   return {
-    location: state.location,
-    googlePlaces: state.googlePlaces
+    location: state.location
   };
 };
 

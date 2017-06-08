@@ -12,26 +12,24 @@ export default class Notifications extends Component {
     //   initialPosition: 'unknown',
     //   lastPosition: 'unknown',
     // };
-    this.fetchGoogle = this.fetchGoogle.bind(this);
+    // this.fetchGoogle = this.fetchGoogle.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchGoogle();
-  }
-
-  async fetchGoogle() {
-    let lat = this.props.location.coords.latitude;
-    let lng = this.props.location.coords.longitude;
-    let response = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lng+'&radius=500&key=AIzaSyDBH-I807okFiwNi3VqRYFuHpdOYH4DXX4');
-    let res = await response.json();
-    let places_nearby = [];
-    for (var i = 0; i < res.results.length; i++) {
-      // console.log(res.results[i].name)
-      places_nearby.push(res.results[i].name);
-    }
-    console.log(places_nearby);
-    this.props.receiveGooglePlaces({places: places_nearby});
-  }
+  // componentDidMount() {
+  //   this.fetchGoogle();
+  // }
+  //
+  // async fetchGoogle() {
+  //   let lat = this.props.location.coords.latitude;
+  //   let lng = this.props.location.coords.longitude;
+  //   let response = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lng+'&radius=500&key=AIzaSyDBH-I807okFiwNi3VqRYFuHpdOYH4DXX4');
+  //   let res = await response.json();
+  //   let places_nearby = [];
+  //   for (var i = 1; i < 5; i++) {
+  //     places_nearby.push(res.results[i].name);
+  //   }
+  //   this.props.receiveGooglePlaces({places_nearby: places_nearby});
+  // }
 
 
   render() {
