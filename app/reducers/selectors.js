@@ -1,5 +1,5 @@
 import { values } from 'lodash';
 
-export const selectSearchResults = ({ searchResults }) => {
-  return values(searchResults) || [];
+export const selectSearchResults = ({ searchUsersResults }) => {
+  return values(searchUsersResults) || [];
 };

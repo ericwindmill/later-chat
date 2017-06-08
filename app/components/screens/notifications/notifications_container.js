@@ -9,7 +9,7 @@ import { selectSearchResults } from '../../../reducers/selectors';
 const mapStateToProps = ( state ) => {
   return {
     location: state.location,
-    searchResults: state.searchResults
+    searchResults: selectSearchResults(state)
   };
 };
 

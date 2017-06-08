@@ -8,7 +8,6 @@ export const requestSearch = searchStr => dispatch => {
 };
 
 export const receiveSearchResults = searchResults => {
-  console.log(searchResults);
   return {
   type: RECEIVE_SEARCH_RESULTS,
   searchResults
