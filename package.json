@@ -11,6 +11,7 @@
     "react-native": "0.44.2",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-elements": "0.12.2",
+    "react-native-google-places": "^2.1.0",
     "react-native-vector-icons": "^4.1.1",
     "react-navigation": "1.0.0-beta.11",
     "react-redux": "5.0.5",
