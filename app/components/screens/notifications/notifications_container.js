@@ -4,10 +4,12 @@ import Notifications from './notifications';
 
 import { receiveLocation, receiveGooglePlaces } from '../../../actions/location_actions';
 import { requestSearch, clearSearchResults } from '../../../actions/search_users_actions';
+import { selectSearchResults } from '../../../reducers/selectors';
 
 const mapStateToProps = ( state ) => {
   return {
-    location: state.location
+    location: state.location,
+    searchResults: selectSearchResults(state)
   };
 };
 

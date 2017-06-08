@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import baseStyles from '../styles/styles'
+import baseStyles from '../styles/styles';
 import {
   StyleSheet,
   Text,
@@ -19,7 +19,7 @@ export default class Notifications extends Component {
   }
 
   handleSearch(text) {
-    return e => this.setState({ searchStr: text }, (search) => {
+    this.setState({ searchStr: text }, (search) => {
       if(this.state.searchStr === "") {
         this.props.clearResults();
       } else {
@@ -30,6 +30,7 @@ export default class Notifications extends Component {
 
   render() {
     console.log(this.props.location);
+    console.log(this.props.searchResults);
     return (
       <View>
         <Text>
