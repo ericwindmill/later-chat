@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import SplashScreen from './splash';
 import ASYNC from '../../../util/async_util.js';
-import { receiveLocation } from '../../../actions/location_actions';
+import { receiveLocation, receiveGooglePlaces } from '../../../actions/location_actions';
 
 const mapStateToProps = ({ session }) => {
   return {
@@ -14,6 +14,7 @@ const mapStateToProps = ({ session }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     receiveLocation: location => dispatch(receiveLocation(location)),
+    receiveGooglePlaces: places => dispatch(receiveGooglePlaces(places)),
     setItem: ASYNC.setItem,
     getItem: ASYNC.getItem,
     removeItem: ASYNC.removeItem
