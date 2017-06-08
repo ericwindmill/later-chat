@@ -24,7 +24,12 @@ export default class Notifications extends Component {
     let lng = this.props.location.coords.longitude;
     let response = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lng+'&radius=500&key=AIzaSyDBH-I807okFiwNi3VqRYFuHpdOYH4DXX4');
     let res = await response.json();
-    console.log(res);
+    let places_nearby = [];
+    for (var i = 0; i < res.results.length; i++) {
+      // console.log(res.results[i].name)
+      places_nearby.push(res.results[i].name);
+    }
+    console.log(places_nearby);
   }
 
 
