@@ -5,6 +5,7 @@ import {
   StyleSheet
 } from 'react-native'
 import baseStyles from '../styles/styles'
+import merge from 'lodash/merge'
 
 export default class SplashScreen extends Component {
   constructor(props) {
@@ -72,6 +73,23 @@ export default class SplashScreen extends Component {
     this.props.receiveGooglePlaces({places_nearby: places_nearby});
   }
 
+
+  // The following functions are responsible for fetching documents from S3 for camera use.
+//     getInitialState() {
+//       return {
+//         documents: []
+//       }
+//     }
+
+//     componentDidMount() {
+//       FileStore.getResources() 
+//       .then((data) => { this.setState({ documents: data.documents })}
+//     }
+
+//     handleCreateDocument(document) {
+//       this.setState({ documents: merge([document], this.state.documents) });
+//     }
+
   render () {
 
     return(
@@ -80,7 +98,7 @@ export default class SplashScreen extends Component {
       </View>
     )
   }
-}
+ }
 
 const styles = StyleSheet.create({
   container: {
