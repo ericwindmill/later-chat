@@ -8,10 +8,10 @@ import {
 export default class Notifications extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      initialPosition: 'unknown',
-      lastPosition: 'unknown',
-    };
+    // this.state = {
+    //   initialPosition: 'unknown',
+    //   lastPosition: 'unknown',
+    // };
   }
 
   // componentDidMount() {
