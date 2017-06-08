@@ -7,10 +7,13 @@ export const requestSearch = searchStr => dispatch => {
   return APIUtil.fetchSearchUsers(searchStr).then(results => dispatch(receiveSearchResults(results)));
 };
 
-export const receiveSearchResults = searchResults => ({
+export const receiveSearchResults = searchResults => {
+  console.log(searchResults);
+  return {
   type: RECEIVE_SEARCH_RESULTS,
   searchResults
-});
+};
+};
 
 export const clearSearchResults = () => ({
   type: CLEAR_SEARCH_RESULTS,

@@ -1,5 +1,5 @@
-// for fetching all posts
 export const fetchSearchUsers = (searchStr) => {
+  // return fetch('localhost:3000/api/users?searchStr=' + searchStr, {
   return fetch('https://later-chat.herokuapp.com/api/users?searchStr=' + searchStr, {
     method: 'GET',
     headers: {
@@ -7,6 +7,6 @@ export const fetchSearchUsers = (searchStr) => {
       'Accept': 'application/json'
     }
   })
-    .then(res => res.json())
-    .catch(error => console.log(error));
+  .then(res => res.json())
+  .catch(error => console.log(error));
 };
