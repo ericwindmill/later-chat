@@ -9,9 +9,6 @@ import baseStyles from '../styles/styles'
 export default class SplashScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      position: 'unknown',
-    };
     this.fetchGoogle = this.fetchGoogle.bind(this);
   }
 
@@ -19,7 +16,6 @@ export default class SplashScreen extends Component {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         var initialPosition = position;
-        this.setState(() => {position: initialPosition});
         this.props.receiveLocation(initialPosition);
       },
       (error) => alert(JSON.stringify(error)),
