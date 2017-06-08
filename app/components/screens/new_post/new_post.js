@@ -10,6 +10,8 @@ import {
   ImagePickerIOS
 } from 'react-native';
 import baseStyles from '../styles/styles'
+import Camera from 'react-native-camera';
+
 
 export default class NewPost extends Component {
   constructor () {
@@ -42,7 +44,7 @@ export default class NewPost extends Component {
 
   pickImage () {
     ImagePickerIOS.openSelectDialog({}, imgUri => {
-      this.setState({image_url: imgUri })
+      this.setState({image_url: imgUri})
     }, error => console.error(error))
   }
 
@@ -51,6 +53,7 @@ export default class NewPost extends Component {
     return (
     <KeyboardAvoidingView style={styles.container}
       behavior='padding'>
+      <Camera />
       <TouchableOpacity onPress={this.pickImage}><Text>TOUCH ME FOR CAMERA</Text></TouchableOpacity>
       <TouchableOpacity onPress={this.testAPI}><Text>COME ON COME ON COME ON NOW TOUCH ME, BABY</Text></TouchableOpacity>
       <View style={[baseStyles.inputContainer, styles.inputContainer]}>
