@@ -1,41 +1,59 @@
 import React, { Component } from 'react';
+import baseStyles from '../styles/styles';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  KeyboardAvoidingView,
+  TouchableOpacity
 } from 'react-native';
 
 export default class Notifications extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   initialPosition: 'unknown',
-    //   lastPosition: 'unknown',
-    // };
-    this.fetchGoogle = this.fetchGoogle.bind(this);
+    this.state = {
+      searchStr: ""
+    };
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchGoogle();
+  handleSearch(text) {
+    this.setState({ searchStr: text }, (search) => {
+      if(this.state.searchStr === "") {
+        this.props.clearResults();
+      } else {
+        this.props.requestSearch(this.state.searchStr);
+      }
+    });
   }
-
-  async fetchGoogle() {
-    let lat = this.props.location.coords.latitude;
-    let lng = this.props.location.coords.longitude;
-    let response = await fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+','+lng+'&radius=500&key=AIzaSyDBH-I807okFiwNi3VqRYFuHpdOYH4DXX4');
-    let res = await response.json();
-    console.log(res);
-  }
-
 
   render() {
-    console.log(this.props.location);
+    console.log(this.props);
     return (
       <View>
         <Text>
           Notifications
         </Text>
+        <View>
+          <TextInput
+            style={baseStyles.input}
+            placeholder='Search Users'
+            onChangeText={(text) => this.handleSearch(text)}
+          />
+        </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 60,
+    justifyContent: 'flex-end'
+  },
+  inputContainer: {
+
+  }
+});
