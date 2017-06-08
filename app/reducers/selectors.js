@@ -1,9 +1,11 @@
-export const followedPosts = (posts, leaders) => {
-  let leaderPosts = [];
-  posts.forEach(post => {
-    if (leaders.includes(post.author.id)) {
-      leaderPosts.push(post)
-    }
-  })
+export const followedPosts = (posts, leader_ids) => {
+  let leaderPosts = {};
+  Object.keys(posts).forEach(location => {
+    leaderPosts[location] = [];
+    posts[location].forEach(post => {
+      if (leader_ids.includes(post.author.id)) {
+        leaderPosts[location].push(post)
+      }
+    })})
   return leaderPosts
 }

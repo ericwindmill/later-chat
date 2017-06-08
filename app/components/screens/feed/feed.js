@@ -14,21 +14,23 @@ import baseStyles from '../styles/styles';
 
 
 export default class HomeFeed extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   componentWillMount() {
-    //replace this array with nearbyLocations slice of state
+    //TODO: replace this array with nearbyLocations slice of state
     this.props.getFeed(["Dolores Park", "Cafe"]);
   }
 
   render() {
+    window.props = this.props
     return (
       <ScrollView
         horizontal={true}
         pagingEnabled={true}>
-        {Object.keys(this.props.posts).map(location => <LocationFeed
+        {Object.keys(this.props.posts).map((location, id) => <LocationFeed
+          key={id}
           location={location}
           posts={this.props.posts[location]}/>)}
       </ScrollView>

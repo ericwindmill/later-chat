@@ -17,6 +17,7 @@ export default class App extends Component {
       lastPosition: 'unknown',
     };
     this.store = configureStore();
+    window.store = this.store
   }
 
   componentDidMount() {
