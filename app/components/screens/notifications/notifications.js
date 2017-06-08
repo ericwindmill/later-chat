@@ -18,8 +18,14 @@ export default class Notifications extends Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch() {
-    
+  handleSearch(text) {
+    return e => this.setState({ searchStr: text }, (search) => {
+      if(this.state.searchStr === "") {
+        this.props.clearResults();
+      } else {
+        this.props.requestSearch(this.state.searchStr);
+      }
+    });
   }
 
   render() {
@@ -33,7 +39,7 @@ export default class Notifications extends Component {
           <TextInput
             style={baseStyles.input}
             placeholder='Search Users'
-            onChangeText={(text) => this.setState({searchStr: text})}
+            onChangeText={(text) => this.handleSearch(text)}
           />
         </View>
       </View>
