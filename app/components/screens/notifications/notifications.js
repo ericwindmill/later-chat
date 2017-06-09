@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ListView,
   TextInput,
   KeyboardAvoidingView,
   TouchableOpacity
@@ -16,6 +17,7 @@ export default class Notifications extends Component {
       searchStr: ""
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.renderSearchResults = this.renderSearchResults.bind(this);
   }
 
   handleSearch(text) {
@@ -28,8 +30,20 @@ export default class Notifications extends Component {
     });
   }
 
+  renderSearchResults() {
+    if (this.props.searchResults.length > 0) {
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      let source = ds.cloneWithRows(this.props.searchResults);
+      return (
+        <ListView
+          dataSource={source}
+          renderRow={(rowData) => <Text>{rowData.username}</Text>}
+        />
+      );
+    }
+  }
+
   render() {
-    console.log(this.props);
     return (
       <View>
         <Text>
@@ -41,6 +55,9 @@ export default class Notifications extends Component {
             placeholder='Search Users'
             onChangeText={(text) => this.handleSearch(text)}
           />
+        </View>
+        <View>
+          {this.renderSearchResults()}
         </View>
       </View>
     );
