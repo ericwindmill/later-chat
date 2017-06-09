@@ -23,7 +23,6 @@ export default class Feed extends Component {
   }
 
   render() {
-    console.log(this.props.posts);
     return (
       <ScrollView
         horizontal={true}

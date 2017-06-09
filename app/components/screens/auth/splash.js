@@ -45,11 +45,14 @@ export default class SplashScreen extends Component {
   }
 
   async verifyToken(token) {
-    let accessToken = token
     try {
-      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
+      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+token);
       let res = await response.text();
       if (response.status >= 200 && response.status < 300) {
+        let userSession = await fetch('https://later-chat.herokuapp.com/api/session?auth_token%5D='+token);
+        let sessionRes = await userSession.json();
+        console.log(sessionRes);
+        this.props.receiveCurrentUser(sessionRes);
         //Verified token means user is logged in so we redirect him to home.
         this.props.navigation.navigate('Tabs');
       } else {
