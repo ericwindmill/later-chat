@@ -5,11 +5,26 @@ import {
   View,
   Image,
   TextInput,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles'
 
 export default class SelectRecipients extends Component {
+  constructor() {
+    super()
+
+    this.logMe = this.logMe.bind(this)
+    this.logState = this.logState.bind(this)
+  }
+
+
+  logMe() {
+    console.log(this.props)
+  }
+  logState() {
+    console.log(this.state)
+  }
   
   render () {
     return (
@@ -17,6 +32,16 @@ export default class SelectRecipients extends Component {
         <Text>
             HELLO FROM SELECT RECIPIENTS
         </Text>
+
+
+
+
+
+
+                    <View>
+                      <TouchableOpacity onPress={this.logState}><Text>TOUCH ME TO LOG State</Text></TouchableOpacity>
+                      <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
+                    </View>
       </View>
     );
   }

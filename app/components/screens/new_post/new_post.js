@@ -42,7 +42,7 @@ export default class NewPost extends Component {
   }
 
   selectRecipients () {
-    this.props.navigation.navigate('SelectRecipients')
+    this.props.navigation.navigate('SelectRecipientsContainer')
   }
 
   pickImage () {
