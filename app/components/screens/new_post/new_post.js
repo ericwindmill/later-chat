@@ -113,7 +113,10 @@ export default class NewPost extends Component {
               onChangeText={(text) => this.setState({body: text})}
             />
           </View>  
-          <Image style={styles.postImage} source={{uri: `${this.state.image_url}`}} />     
+          <Image style={styles.postImage} source={{uri: `${this.state.image_url}`}} />  
+
+          
+             
           <View style={styles.cameraOptions}> 
             <TouchableOpacity onPress={this.renderCamera} style={styles.cameraIcon}>
               <Icon name='ios-camera' size={40} color={'black'} type={'ionicon'} 

@@ -56,10 +56,10 @@ export default class SelectRecipients extends Component {
   }
 
   redirectToNewPost () {
-
+    this.props.navigation.goBack()
   }
   createPost () {
-
+    
   }
   
   render () {
@@ -98,11 +98,13 @@ const styles = StyleSheet.create({
     padding: 12,
     justifyContent: 'flex-end'
   },
+
+  //top nav
+  topNav: {
+
+  },
   item: {
     padding: 10,
     height: 44
-  },
-  styles: {
-    backgroundColor: 'red'
   }
 })
