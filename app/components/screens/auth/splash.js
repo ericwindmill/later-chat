@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 import {
   View,
-  Text,
   StyleSheet
 } from 'react-native'
 import baseStyles from '../styles/styles'
-import merge from 'lodash/merge'
+import { Icon } from 'react-native-elements'
 
 export default class SplashScreen extends Component {
   constructor(props) {
@@ -97,7 +96,8 @@ export default class SplashScreen extends Component {
 
     return(
       <View style={[baseStyles.container, styles.container]}>
-        <Text style={baseStyles.headlines}>WE GOT LOADING PAGES</Text>
+      <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+            style={styles.icon}/>
       </View>
     )
   }
@@ -105,7 +105,7 @@ export default class SplashScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'dodgerblue',
+    backgroundColor: '#5dad65',
     justifyContent: 'center',
     alignItems: 'center'
   }

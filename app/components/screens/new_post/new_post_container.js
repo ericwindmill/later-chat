@@ -6,7 +6,8 @@ import NewPost from './new_post';
 const mapStateToProps = (state) => ({
   posts: state.posts,
   currentUser: state.session.currentUser,
-  photo: state.photo
+  photo: state.photo,
+  location: state.location
   
 })
 

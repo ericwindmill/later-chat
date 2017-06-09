@@ -4,9 +4,11 @@ import {
   Text,
   TextInput,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView
 } from 'react-native';
 import baseStyles from '../styles/styles';
+import { Icon } from 'react-native-elements'
 
 class LogIn extends Component {
   constructor() {
@@ -40,8 +42,13 @@ class LogIn extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView 
+        style={styles.container}
+        behavior={'padding'}
+        >
         <View style={styles.inputsContainer}>
+          <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+            style={styles.icon}/>
           <View>
             {this.state.errors.map((error, i) => (
               <Text key={i}>{error}</Text>
@@ -67,20 +74,15 @@ class LogIn extends Component {
           <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
             onPress={this.logInPressed}
           >
-            <Text style={styles.buttonText}>LogIn</Text>
+            <Text style={styles.buttonText}>Log In</Text>
           </TouchableOpacity>
           <TouchableOpacity style={baseStyles.buttonContainer}
             onPress={this.redirectToSignUp}
           >
             <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={baseStyles.buttonContainer}
-            onPress={this.redirectToHome}
-          >
-            <Text style={baseStyles.buttonText}>ByPass for Dev</Text>
-          </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -89,11 +91,23 @@ export default LogIn;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'flex-end',
+    // justifyContent: 'flex-end',
     flex: 1,
-    padding: 60
+    padding: 60,
+    backgroundColor: '#a2d79f'
   },
   loginButton: {
-    marginBottom: 70
+    marginBottom: 40
+  },
+  icon: {
+    alignSelf: 'center',
+    marginBottom: 40
+  },
+  buttonsContainer: {
+    flex: 1,
+    // justifyContent: 'space-around'
+  },
+  onFous: {
+
   }
 });
