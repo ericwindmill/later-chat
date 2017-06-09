@@ -44,7 +44,7 @@ export default class Notifications extends Component {
               <Text>
                 {rowData.username}
               </Text>
-              <TouchableOpacity onPress={this.toggleFollow(rowData.id)}>
+              <TouchableOpacity onPress={() => this.toggleFollow(rowData.id)}>
                 <Text>{this.followButtonText(rowData.id)}</Text>
               </TouchableOpacity>
             </View>
@@ -67,9 +67,11 @@ export default class Notifications extends Component {
   }
 
   following(id) {
-    if (this.props.currentUser.followers[id]) {
+    if (this.props.currentUser.leaders[id]) {
+      console.log("true");
       return true;
     } else {
+      console.log("false");
       return false;
     }
   }
