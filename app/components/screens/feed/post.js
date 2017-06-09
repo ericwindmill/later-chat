@@ -18,14 +18,14 @@ export default class Post extends Component {
   following() {
     // TODO: connect user's leaders array to this function and to post_container
     // return this.props.currentUser.leaders.includes(this.props.post.author.id)
-    return [1,5].includes(this.props.post.author.id)
+    return [62].includes(this.props.post.author.id)
   }
 
   followButtonText() {
     if (this.following()) {
-      return 'Following'
+      return 'Following';
     } else {
-      return 'Follow'
+      return 'Follow';
     }
   }
 
@@ -33,11 +33,11 @@ export default class Post extends Component {
     const follow = {
       follower_id: this.props.currentUser.id,
       leader_id: this.props.post.author.id
-    }
+    };
     if (this.following()) {
-      this.props.requestUnfollow(follow)
+      this.props.unfollow(follow);
     } else {
-      this.props.requestFollow(follow)
+      this.props.follow(follow);
     }
   }
 
