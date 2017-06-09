@@ -8,7 +8,7 @@ import {
   Dimensions,
   View
 } from 'react-native';
-import LocationFeed from './location_feed'
+import LocationFeed from './location_feed';
 
 import baseStyles from '../styles/styles';
 
@@ -19,9 +19,7 @@ export default class Feed extends Component {
   }
 
   componentDidMount() {
-    //TODO: replace this array with nearbyLocations slice of state
     this.props.getFeed(this.props.location.places_nearby);
-    // this.props.getFeed(["Mission Dolores Park", "Cafe"]);
   }
 
   render() {
@@ -36,5 +34,5 @@ export default class Feed extends Component {
           posts={this.props.posts[location]}/>)}
       </ScrollView>
     );
-  };
+  }
 }

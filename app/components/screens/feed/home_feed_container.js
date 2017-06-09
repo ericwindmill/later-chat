@@ -8,7 +8,7 @@ import Feed from './feed';
 
 const mapStateToProps = (state) => ({
   posts: followedPosts(state.posts, [61,62]),
-  currentUser: state.session.currentUser,
+  // currentUser: state.session.currentUser,
   location: state.location
 });
 
