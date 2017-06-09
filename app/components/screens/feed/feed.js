@@ -19,12 +19,13 @@ export default class Feed extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location);
     //TODO: replace this array with nearbyLocations slice of state
-    this.props.getFeed(["Dolores Park", "Cafe"]);
+    this.props.getFeed(this.props.location.places_nearby);
+    // this.props.getFeed(["Mission Dolores Park", "Cafe"]);
   }
 
   render() {
+    console.log(this.props.posts);
     return (
       <ScrollView
         horizontal={true}

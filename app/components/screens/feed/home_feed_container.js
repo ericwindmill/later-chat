@@ -7,7 +7,7 @@ import Feed from './feed';
 // TODO: make sure this is passing the array of followers and the posts correctly, once we set up that slice of state
 
 const mapStateToProps = (state) => ({
-  posts: followedPosts(state.posts, [1,5]),
+  posts: followedPosts(state.posts, [61,62]),
   currentUser: state.session.currentUser,
   location: state.location
 });
