@@ -15,8 +15,3 @@ export const followedPosts = (posts, leader_ids) => {
     })})
   return leaderPosts;
 };
-// 
-// export const followers = ({ session }) => {
-//   debugger
-//   return values(session.currentUser.followers) || [];
-// };

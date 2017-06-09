@@ -19,6 +19,7 @@ export default class Notifications extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
     this.toggleFollow = this.toggleFollow.bind(this);
+    this.followButtonText = this.followButtonText.bind(this);
   }
 
   handleSearch(text) {
@@ -44,7 +45,7 @@ export default class Notifications extends Component {
                 {rowData.username}
               </Text>
               <TouchableOpacity onPress={this.toggleFollow(rowData.id)}>
-                <Text>Follow / Unfollow</Text>
+                <Text>{this.followButtonText(rowData.id)}</Text>
               </TouchableOpacity>
             </View>
           }
@@ -68,11 +69,15 @@ export default class Notifications extends Component {
   following(id) {
     // TODO: connect user's leaders array to this function and to post_container
     // return this.props.currentUser.leaders.includes(this.props.post.author.id)
-    return [62].includes(id);
+    if (this.props.currentUser.followers[id]) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  followButtonText() {
-    if (this.following()) {
+  followButtonText(id) {
+    if (this.following(id)) {
       return 'Following';
     } else {
       return 'Follow';
