@@ -5,13 +5,14 @@ export const fetchFollow = (follow) => {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: {
-      follow
-    }
+    ///not sure if we need this, commented out for now
+    // body: {
+    //   follow
+    // }
   })
     .then(res => res.json())
-    .catch(error => console.log(error))
-}
+    .catch(error => console.log(error));
+};
 
 export const fetchUnfollow = (follow) => {
   //we're sending follower / leader data in the 'follow' regardless
@@ -25,10 +26,11 @@ export const fetchUnfollow = (follow) => {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: {
-      follow
-    }
+    ///not sure if we need this, commented out for now
+    // body: {
+    //   follow
+    // }
   })
     .then(res => res.json())
-    .catch(error => console.log(error))
-}
+    .catch(error => console.log(error));
+};
