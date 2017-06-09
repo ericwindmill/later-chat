@@ -17,6 +17,7 @@ import SelectRecipients from '../screens/new_post/select_recipients';
 import LogInContainer from '../screens/auth/login_container';
 import SplashScreenContainer from '../screens/auth/splash_container';
 import CamContainer from '../UI/camera_container';
+import CamRollContainer from '../UI/camera_roll_container';
 import NotificationsContainer from '../screens/notifications/notifications_container';
 
 export const newPostNav = StackNavigator({
@@ -28,6 +29,9 @@ export const newPostNav = StackNavigator({
   },
   Cam: {
     screen: CamContainer
+  },
+  CamRoll: {
+    screen: CamRollContainer
   }
 })
 
