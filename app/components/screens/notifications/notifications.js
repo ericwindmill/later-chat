@@ -18,6 +18,7 @@ export default class Notifications extends Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
+    this.toggleFollow = this.toggleFollow.bind(this);
   }
 
   handleSearch(text) {
@@ -37,10 +38,23 @@ export default class Notifications extends Component {
       return (
         <ListView
           dataSource={source}
-          renderRow={(rowData) => <Text>{rowData.username}</Text>}
+          renderRow={(rowData) =>
+            <View>
+              <Text>
+                {rowData.username}
+              </Text>
+              <TouchableOpacity onPress={this.toggleFollow}>
+                <Text>Follow / Unfollow</Text>
+              </TouchableOpacity>
+            </View>
+          }
         />
       );
     }
+  }
+
+  toggleFollow() {
+    console.log("hey");
   }
 
   render() {
