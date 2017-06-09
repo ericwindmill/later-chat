@@ -10,8 +10,13 @@ export const followedPosts = (posts, leader_ids) => {
     leaderPosts[location] = [];
     posts[location].forEach(post => {
       if (leader_ids.includes(post.author.id)) {
-        leaderPosts[location].push(post)
+        leaderPosts[location].push(post);
       }
     })})
-  return leaderPosts
-}
+  return leaderPosts;
+};
+// 
+// export const followers = ({ session }) => {
+//   debugger
+//   return values(session.currentUser.followers) || [];
+// };
