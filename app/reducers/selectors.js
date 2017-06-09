@@ -1,3 +1,9 @@
+import { values } from 'lodash';
+
+export const selectSearchResults = ({ searchUsersResults }) => {
+  return values(searchUsersResults) || [];
+};
+
 export const followedPosts = (posts, leader_ids) => {
   let leaderPosts = {};
   Object.keys(posts).forEach(location => {

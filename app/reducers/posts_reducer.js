@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import {
   RECEIVE_POSTS,
-  RECEIVE_ERRORS
+  RECEIVE_ERRORS,
+  CREATE_POST
 } from '../actions/posts_actions';
 
 const PostsReducer = (state = {}, action) => {
@@ -10,6 +11,8 @@ const PostsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_POSTS:
       return merge({}, state, action.posts);
+    case CREATE_POST:
+      return merge({}, state, action.post)
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, {
