@@ -67,8 +67,6 @@ export default class Notifications extends Component {
   }
 
   following(id) {
-    // TODO: connect user's leaders array to this function and to post_container
-    // return this.props.currentUser.leaders.includes(this.props.post.author.id)
     if (this.props.currentUser.followers[id]) {
       return true;
     } else {
