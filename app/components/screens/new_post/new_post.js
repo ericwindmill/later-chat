@@ -22,7 +22,8 @@ export default class NewPost extends Component {
       image_url: null,
       author_id: '',
       public: false,
-      recipients: []
+      recipients: [],
+      selectRecipients: []
     }
     this.selectRecipients = this.selectRecipients.bind(this)
     this.renderCamera = this.renderCamera.bind(this)
@@ -41,8 +42,10 @@ export default class NewPost extends Component {
     )
   }
 
+
+
   selectRecipients () {
-    this.props.navigation.navigate('SelectRecipientsContainer')
+    this.props.navigation.navigate('SelectRecipientsContainer', {state: this.state})
   }
 
   pickImage () {
@@ -92,7 +95,7 @@ export default class NewPost extends Component {
 
   render () {
     return (
-    <View style={baseStyles.screen}
+    <View style={[baseStyles.screen, styles.screen]}
       behavior='padding'>
 
       <View style={baseStyles.topNav}>
@@ -139,18 +142,13 @@ export default class NewPost extends Component {
 
 
 const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: '#c1a4cd'
+  },
   container: {
     padding: 10,
   },
   //Post Preview
-  // postPreviewContainer: {
-  //   flex: 2,
-  //   borderWidth: 1,
-  //   backgroundColor: 'blue',
-  //   padding: 12,
-  //   justifyContent: 'space-between',
-  //   alignItems: 'center'
-  // },
   postImage: {
     height: 250,
     width: 250,

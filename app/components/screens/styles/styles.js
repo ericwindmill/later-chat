@@ -23,7 +23,8 @@ const baseStyles = {
   input: {
     height: 50,
     margin: 2,
-    padding: 10
+    padding: 10,
+    color: 'black'
   },
   buttonContainer: {
     height: 50,
