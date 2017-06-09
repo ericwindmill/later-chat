@@ -21,7 +21,7 @@ const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
   // defining 'nextState' to be used when pushing or removing leader_id from
   // currentUser.leaders
-  const nextState = merge({}, state)
+  const nextState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
@@ -29,8 +29,8 @@ const SessionReducer = (state = nullUser, action) => {
         currentUser
       });
     case RECEIVE_FOLLOW:
-      nextState.leaders.push(action.leader_id)
-      return nextState
+      nextState.leaders.push(action.leader_id);
+      return nextState;
     case REMOVE_FOLLOW:
       // find the index of the leader_id and remove it from the leaders array
       delete nextState.currentUser.leaders[action.leader_id];
