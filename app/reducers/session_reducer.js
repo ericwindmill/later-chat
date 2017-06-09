@@ -29,8 +29,7 @@ const SessionReducer = (state = nullUser, action) => {
         currentUser
       });
     case RECEIVE_FOLLOW:
-      debugger;
-      nextState.leaders.push(action.leader_id);
+      nextState.currentUser.leaders[action.leader_id.id] = action.leader_id;
       return nextState;
     case REMOVE_FOLLOW:
       // find the index of the leader_id and remove it from the leaders array
