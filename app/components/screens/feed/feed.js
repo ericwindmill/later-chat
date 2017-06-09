@@ -13,18 +13,18 @@ import LocationFeed from './location_feed'
 import baseStyles from '../styles/styles';
 
 
-export default class HomeFeed extends Component {
+export default class Feed extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    console.log(this.props.location);
     //TODO: replace this array with nearbyLocations slice of state
     this.props.getFeed(["Dolores Park", "Cafe"]);
   }
 
   render() {
-    window.props = this.props
     return (
       <ScrollView
         horizontal={true}

@@ -70,7 +70,7 @@ export default class SplashScreen extends Component {
     for (var i = 1; i < 5; i++) {
       places_nearby.push(res.results[i].name);
     }
-    this.props.receiveGooglePlaces({places_nearby: places_nearby});
+    await this.props.receiveGooglePlaces({places_nearby: places_nearby});
   }
 
 
@@ -82,7 +82,7 @@ export default class SplashScreen extends Component {
 //     }
 
 //     componentDidMount() {
-//       FileStore.getResources() 
+//       FileStore.getResources()
 //       .then((data) => { this.setState({ documents: data.documents })}
 //     }
 

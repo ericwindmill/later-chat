@@ -5,7 +5,8 @@ import Feed from './feed';
 
 const mapStateToProps = (state) => ({
   posts: state.posts,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  location: state.location
 })
 
 const mapDispatchToProps = (dispatch) => ({
