@@ -7,6 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import baseStyles from '../styles/styles';
+import { Icon } from 'react-native-elements'
 
 class SignUp extends Component {
   constructor() {
@@ -44,6 +45,8 @@ class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
+       <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+            style={styles.icon}/>
         <View style={styles.inputsContainer}>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
@@ -89,9 +92,14 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-end',
     flex: 1,
-    padding: 60
+    padding: 60,
+    backgroundColor: '#a2d79f'
   },
   loginButton: {
-    marginBottom: 70
+    marginBottom: 40
+  },
+  icon: {
+    alignSelf: 'center',
+    marginBottom: 40
   }
 })

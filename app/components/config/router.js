@@ -12,7 +12,7 @@ import LogOutContainer from '../screens/auth/logout_container';
 // Stack Screens
 import LogIn from '../screens/auth/login';
 import SignUpContainer from '../screens/auth/signup_container';
-import SelectRecipients from '../screens/new_post/select_recipients';
+import SelectRecipientsContainer from '../screens/new_post/select_recipients_container';
 import LogInContainer from '../screens/auth/login_container';
 import SplashScreenContainer from '../screens/auth/splash_container';
 import CamContainer from '../UI/camera_container';
@@ -23,8 +23,8 @@ export const newPostNav = StackNavigator({
   'Add Post': {
     screen: NewPostContainer
   },
-  SelectRecipients: {
-    screen: SelectRecipients
+  SelectRecipientsContainer: {
+    screen: SelectRecipientsContainer
   },
   Cam: {
     screen: CamContainer
