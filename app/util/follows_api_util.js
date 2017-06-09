@@ -1,14 +1,11 @@
 export const fetchFollow = (follow) => {
-  return fetch('https://later-chat.herokuapp.com/api/follows', {
+  console.log(follow);
+  return fetch('https://later-chat.herokuapp.com/api/follows?follower_id=' + follow.follower_id + '&leader_id=' + follow.leader_id, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
-    },
-    ///not sure if we need this, commented out for now
-    // body: {
-    //   follow
-    // }
+    }
   })
     .then(res => res.json())
     .catch(error => console.log(error));
@@ -20,16 +17,12 @@ export const fetchUnfollow = (follow) => {
   //however, the follows#destroy method only recognizes a url ...api/follows/:wildcard
   //so it's just some random number. the number doesn't matter, because it destroys the follow
   //based on the follower and leader
-  return fetch('https://later-chat.herokuapp.com/api/follows/1', {
+  return fetch('https://later-chat.herokuapp.com/api/follows/1?follower_id=' + follow.follower_id + '&leader_id=' + follow.leader_id, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    ///not sure if we need this, commented out for now
-    // body: {
-    //   follow
-    // }
   })
     .then(res => res.json())
     .catch(error => console.log(error));

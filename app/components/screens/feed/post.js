@@ -12,13 +12,16 @@ import baseStyles from '../styles/styles';
 export default class Post extends Component {
   constructor() {
     super();
-    this.toggleFollow = this.toggleFollow.bind(this)
+    this.toggleFollow = this.toggleFollow.bind(this);
+    this.following = this.following.bind(this);
   }
 
   following() {
-    // TODO: connect user's leaders array to this function and to post_container
-    // return this.props.currentUser.leaders.includes(this.props.post.author.id)
-    return [62].includes(this.props.post.author.id)
+    if (this.props.currentUser.leaders[this.props.post.author.id]) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   followButtonText() {
