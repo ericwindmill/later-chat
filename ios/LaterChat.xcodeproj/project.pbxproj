@@ -49,6 +49,7 @@
 		CE73D593995544BE9F39B585 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B45C19DF617442D9838B8A09 /* MaterialIcons.ttf */; };
 		D03D2F09D66148F18B665E15 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5743FB26E5C84EDCB8727DE6 /* MaterialCommunityIcons.ttf */; };
 		E3E7FA1F6D3945FC9973D004 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 495F3D9E39DE4C7A9CA948BD /* Ionicons.ttf */; };
+		2AD65BDF160946BF9C1C7DE9 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047545AC81244AFAEE6291F /* libRCTCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +305,8 @@
 		B45C19DF617442D9838B8A09 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		CFE9328331B348AD9A39B52A /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		D99D8B603CC04316ADD60532 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		6E10F62641904B87B058E588 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; name = "RCTCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		6047545AC81244AFAEE6291F /* libRCTCamera.a */ = {isa = PBXFileReference; name = "libRCTCamera.a"; path = "libRCTCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

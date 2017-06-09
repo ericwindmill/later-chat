@@ -1,6 +1,6 @@
 // for fetching all posts
 export const fetchAllPosts = (locations) => {
-  locations = locations.map(loc => loc.replace(" ", "%20")).join('&locations[]=')
+  locations = locations.map(loc => loc.replace(/ /g, "%20")).join('&locations[]=')
   return fetch('https://later-chat.herokuapp.com/api/posts?type=post&locations[]=' + locations, {
     method: 'GET',
     headers: {

@@ -5,28 +5,32 @@ import { Icon } from 'react-native-elements'
 
 // Tab Screens
 import HomeFeedContainer from '../screens/feed/home_feed_container';
-import PublicFeed from '../screens/feed/public_feed';
+import PublicFeedContainer from '../screens/feed/public_feed_container';
 import NewPostContainer from '../screens/new_post/new_post_container';
 import MapScreen from '../screens/map/map';
 import LogOutContainer from '../screens/auth/logout_container';
 // Stack Screens
 import LogIn from '../screens/auth/login';
 import SignUpContainer from '../screens/auth/signup_container';
-import SelectRecipients from '../screens/new_post/select_recipients';
+import SelectRecipientsContainer from '../screens/new_post/select_recipients_container';
 import LogInContainer from '../screens/auth/login_container';
 import SplashScreenContainer from '../screens/auth/splash_container';
-import Cam from '../UI/camera';
+import CamContainer from '../UI/camera_container';
+import CamRollContainer from '../UI/camera_roll_container';
 import NotificationsContainer from '../screens/notifications/notifications_container';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
     screen: NewPostContainer
   },
-  SelectRecipients: {
-    screen: SelectRecipients
+  SelectRecipientsContainer: {
+    screen: SelectRecipientsContainer
   },
   Cam: {
-    screen: Cam
+    screen: CamContainer
+  },
+  CamRoll: {
+    screen: CamRollContainer
   }
 })
 
@@ -40,7 +44,7 @@ export const Tabs = TabNavigator({
       }
   },
   Discover: {
-    screen: PublicFeed
+    screen: PublicFeedContainer
   },
   'Add Post': {
     screen: newPostNav

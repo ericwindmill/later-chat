@@ -4,10 +4,12 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CREATE_POST = 'CREATE_POST';
 
-export const receivePosts = posts => ({
+export const receivePosts = posts => {
+  return {
   type: RECEIVE_POSTS,
   posts
-});
+};
+};
 
 export const receiveNewPost = post => ({
   type: CREATE_POST,
