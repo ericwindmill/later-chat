@@ -37,7 +37,8 @@ export default class Notifications extends Component {
       return (
         <ListView
           dataSource={source}
-          renderRow={(rowData) => <Text>{rowData.username}</Text>}/>
+          renderRow={(rowData) => <Text>{rowData.username}</Text>}
+        />
       );
     }
   }
