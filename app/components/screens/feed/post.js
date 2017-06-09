@@ -13,10 +13,11 @@ export default class Post extends Component {
   constructor() {
     super();
     this.toggleFollow = this.toggleFollow.bind(this);
+    this.following = this.following.bind(this);
   }
 
   following() {
-    if (this.props.currentUser.followers[this.props.post.author.id]) {
+    if (this.props.currentUser.leaders[this.props.post.author.id]) {
       return true;
     } else {
       return false;
