@@ -27,7 +27,7 @@ class LogIn extends Component {
     this.props.login({ username: this.state.username,
                        password: this.state.password
           })
-    .then(user => this.props.navigation.navigate('Tabs'))
+    .then(user => this.props.navigation.navigate('Tabs'));
   }
 
   redirectToSignUp() {
@@ -49,7 +49,7 @@ class LogIn extends Component {
           </View>
           <Text>{this.state.errors}</Text>
           <View style={baseStyles.inputContainer}>
-            
+
             <TextInput style={baseStyles.input}
               placeholder='username'
               onChangeText={(text) => this.setState({username: text})}
@@ -81,11 +81,11 @@ class LogIn extends Component {
           </TouchableOpacity>
         </View>
       </View>
-    )
+    );
   }
 }
 
-export default LogIn
+export default LogIn;
 
 const styles = StyleSheet.create({
   container: {
@@ -96,4 +96,4 @@ const styles = StyleSheet.create({
   loginButton: {
     marginBottom: 70
   }
-})
+});
