@@ -6,8 +6,8 @@ import Post from './post';
 
 const mapStateToProps = (state, ownProps )=> ({
   post: ownProps.post,
-  // currentUser: state.currentUser
-})
+  currentUser: state.session.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
   follow: follow => dispatch(requestFollow(follow)),
@@ -15,6 +15,6 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(Post)
+)(Post);

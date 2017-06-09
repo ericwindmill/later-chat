@@ -12,7 +12,7 @@ const PostsReducer = (state = {}, action) => {
     case RECEIVE_POSTS:
       return merge({}, state, action.posts);
     case CREATE_POST:
-      return merge({}, state, action.post)
+      return merge({}, state, action.post);
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, {

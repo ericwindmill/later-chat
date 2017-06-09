@@ -8,23 +8,21 @@ import {
   Dimensions,
   View
 } from 'react-native';
-import LocationFeed from './location_feed'
+import LocationFeed from './location_feed';
 
 import baseStyles from '../styles/styles';
 
 
-export default class HomeFeed extends Component {
+export default class Feed extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
-    //TODO: replace this array with nearbyLocations slice of state
-    this.props.getFeed(["Dolores Park", "Cafe"]);
+  componentDidMount() {
+    this.props.getFeed(this.props.location.places_nearby);
   }
 
   render() {
-    window.props = this.props
     return (
       <ScrollView
         horizontal={true}
@@ -35,5 +33,5 @@ export default class HomeFeed extends Component {
           posts={this.props.posts[location]}/>)}
       </ScrollView>
     );
-  };
+  }
 }

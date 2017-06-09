@@ -45,11 +45,14 @@ export default class SplashScreen extends Component {
   }
 
   async verifyToken(token) {
-    let accessToken = token
     try {
-      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+accessToken);
+      let response = await fetch('https://later-chat.herokuapp.com/api/verify?session%5Baccess_token%5D='+token);
       let res = await response.text();
       if (response.status >= 200 && response.status < 300) {
+        let userSession = await fetch('https://later-chat.herokuapp.com/api/session?auth_token%5D='+token);
+        let sessionRes = await userSession.json();
+        console.log(sessionRes);
+        this.props.receiveCurrentUser(sessionRes);
         //Verified token means user is logged in so we redirect him to home.
         this.props.navigation.navigate('Tabs');
       } else {
@@ -70,7 +73,7 @@ export default class SplashScreen extends Component {
     for (var i = 1; i < 5; i++) {
       places_nearby.push(res.results[i].name);
     }
-    this.props.receiveGooglePlaces({places_nearby: places_nearby});
+    await this.props.receiveGooglePlaces({places_nearby: places_nearby});
   }
 
 
@@ -82,7 +85,7 @@ export default class SplashScreen extends Component {
 //     }
 
 //     componentDidMount() {
-//       FileStore.getResources() 
+//       FileStore.getResources()
 //       .then((data) => { this.setState({ documents: data.documents })}
 //     }
 

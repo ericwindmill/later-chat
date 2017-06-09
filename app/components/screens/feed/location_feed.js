@@ -10,7 +10,7 @@ import {
 import { List, ListItem } from "react-native-elements";
 
 import baseStyles from '../styles/styles';
-import Post from './post'
+import PostContainer from './post_container';
 
 export default class LocationFeed extends Component {
 
@@ -23,10 +23,10 @@ export default class LocationFeed extends Component {
         <FlatList
           data={this.props.posts}
           renderItem={({ item }) => (
-            <Post post={item} />
+            <PostContainer post={item} />
           )}
           keyExtractor={item => item.id}/>
       </View>
-    )
+    );
   }
 }
