@@ -38,7 +38,7 @@ export default class Cam extends React.Component {
         .then((data) => {
           const file = {
             uri: data.path,
-            name: 'photo.jpg',
+            name: `photo${Math.floor((Math.random() * 10) + 1)}.jpg`,
             type: 'image/jpeg'
           };
 
