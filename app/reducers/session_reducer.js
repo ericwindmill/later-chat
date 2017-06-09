@@ -33,8 +33,9 @@ const SessionReducer = (state = nullUser, action) => {
       return nextState
     case REMOVE_FOLLOW:
       // find the index of the leader_id and remove it from the leaders array
-      let index = nextState.leaders.indexOf(action.leader_id);
-      nextState.leaders.splice(index, 1);
+      delete nextState.currentUser.leaders[action.leader_id];
+      // let index = nextState.currentUser.leaders[action.leader_id];
+      // nextState.currentUser.leaders.splice(index, 1);
       return nextState
     case RECEIVE_ERRORS:
       const errors = action.errors;
