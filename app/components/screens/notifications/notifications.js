@@ -43,7 +43,7 @@ export default class Notifications extends Component {
               <Text>
                 {rowData.username}
               </Text>
-              <TouchableOpacity onPress={this.toggleFollow}>
+              <TouchableOpacity onPress={this.toggleFollow(rowData.id)}>
                 <Text>Follow / Unfollow</Text>
               </TouchableOpacity>
             </View>
@@ -53,8 +53,30 @@ export default class Notifications extends Component {
     }
   }
 
-  toggleFollow() {
-    console.log("hey");
+  toggleFollow(id) {
+    const follow = {
+      follower_id: this.props.currentUser.id,
+      leader_id: id
+    };
+    if (this.following(id)) {
+      this.props.unfollow(follow);
+    } else {
+      this.props.follow(follow);
+    }
+  }
+
+  following(id) {
+    // TODO: connect user's leaders array to this function and to post_container
+    // return this.props.currentUser.leaders.includes(this.props.post.author.id)
+    return [62].includes(id);
+  }
+
+  followButtonText() {
+    if (this.following()) {
+      return 'Following';
+    } else {
+      return 'Follow';
+    }
   }
 
   render() {

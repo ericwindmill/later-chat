@@ -22,7 +22,7 @@ export const requestFollow = follow => dispatch => {
 
 export const requestUnfollow = follow => dispatch => {
   return (
-    APIUtil.fetchUnfsollow(follow)
+    APIUtil.fetchUnfollow(follow)
       .then(leader_id => dispatch(removeFollow(leader_id)))
   )
 }
