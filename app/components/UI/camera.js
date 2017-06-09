@@ -36,7 +36,6 @@ export default class Cam extends React.Component {
     if (this.camera) {
       this.camera.capture()
         .then((data) => {
-
           const file = {
             uri: data.path,
             name: 'photo.jpg',
@@ -53,7 +52,6 @@ export default class Cam extends React.Component {
           }
 
           RNS3.put(file, options).then(response => {
-            console.log(response)
             if (response.status !== 201) {
               throw new Error('Failed to upload image', response);
             }
@@ -62,7 +60,7 @@ export default class Cam extends React.Component {
           })
         })
         .then(() => {
-          // console.log(this.state.image)
+
         })
         .catch(err => console.error(err));
     }
