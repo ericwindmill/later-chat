@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements'
 
 // Tab Screens
 import HomeFeedContainer from '../screens/feed/home_feed_container';
+import PublicFeedContainer from '../screens/feed/public_feed_container';
 import PublicFeed from '../screens/feed/public_feed';
 import NewPostContainer from '../screens/new_post/new_post_container';
 import MapScreen from '../screens/map/map';
@@ -40,7 +41,7 @@ export const Tabs = TabNavigator({
       }
   },
   Discover: {
-    screen: PublicFeed
+    screen: PublicFeedContainer
   },
   'Add Post': {
     screen: newPostNav
