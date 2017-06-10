@@ -15,7 +15,7 @@ import PostContainer from './post_container';
 import baseStyles from '../styles/styles';
 
 
-export default class FeedIndex extends Component {
+export default class HomeFeed extends Component {
   constructor(props) {
     super(props);
   }
@@ -42,7 +42,9 @@ export default class FeedIndex extends Component {
             renderItem={({ item }) => (
               <PostContainer post={item} />
             )}
-            keyExtractor={item => item.id} />
+            keyExtractor={item => item.id}
+            removeClippedSubviews={false}
+             />
 
         </View>       
       </View>
