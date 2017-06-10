@@ -5,14 +5,14 @@ import HomeFeed from './home_feed';
 
 const mapStateToProps = (state) => {
 
-  let leaders = []
-  Object.keys(state.session.currentUser.leaders).forEach((leaderId) => leaders.push(parseInt(leaderId)))
+  let leaders = [];
+  Object.keys(state.session.currentUser.leaders).forEach((leaderId) => leaders.push(parseInt(leaderId)));
   return {
     home: '',
     posts: followedPosts(state.posts, leaders),
     currentUser: state.session.currentUser,
     location: state.location
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({

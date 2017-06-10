@@ -23,7 +23,7 @@ export default class HomeFeed extends Component {
   }
 
   render() {
-    let closest = this.props.location.places_nearby[0]
+    let closest = this.props.location.places_nearby[0];
     return (
       <View style={[baseStyles.screen, styles.container]} >
         <View>
@@ -37,7 +37,7 @@ export default class HomeFeed extends Component {
             removeClippedSubviews={false}
              />
 
-        </View>       
+        </View>
       </View>
     );
   }

@@ -24,9 +24,12 @@ const baseStyles = {
     marginBottom: 10
   },
   input: {
+    textAlign: 'center',
     height: 50,
     margin: 2,
+    marginTop: 0,
     padding: 10,
+    paddingTop: 2,
     color: 'black'
   },
   buttonContainer: {
