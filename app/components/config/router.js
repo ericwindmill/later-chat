@@ -32,7 +32,9 @@ export const newPostNav = StackNavigator({
   CamRoll: {
     screen: CamRollContainer
   }
-})
+},
+  { headerMode: 'none' }
+)
 
 export const Tabs = TabNavigator({
   Home: {
@@ -82,6 +84,4 @@ export const AuthNav = StackNavigator({
   }
 },
 { headerMode: 'none' }
-
-
 );
