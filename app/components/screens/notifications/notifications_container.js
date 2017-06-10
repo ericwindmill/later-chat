@@ -12,7 +12,8 @@ const mapStateToProps = ( state ) => {
   return {
     location: state.location,
     searchResults: selectSearchResults(state),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    notes: state.notes
   };
 };
 

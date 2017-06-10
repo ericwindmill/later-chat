@@ -93,6 +93,7 @@ export default class Notifications extends Component {
   }
 
   render() {
+    console.log(this.props.notes);
     return (
       <View>
         <Text>
