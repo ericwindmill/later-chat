@@ -19,7 +19,8 @@ export const createNewPost = (post) => {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
-    }
+    },
+    body: post
   })
     .then(res => res.json())
     .catch(error => console.log(error))

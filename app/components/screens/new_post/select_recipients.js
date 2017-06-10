@@ -70,8 +70,8 @@ export default class SelectRecipients extends Component {
     }
   }
 
-  createPost () {
-
+  createPost() {
+    this.props.createPost(this.state)
   }
 
   render () {
@@ -86,6 +86,7 @@ export default class SelectRecipients extends Component {
           <TouchableOpacity onPress={this.logState}><Text>TOUCH ME TO LOG State</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.getFollowers}><Text>Call getFollowess()</Text></TouchableOpacity>
+          <TouchableOpacity onPress={this.createPost}><Text>TOUCH ME TO CREATE A POST & NOTES</Text></TouchableOpacity>
         </View>
 
         <Text> Post to Public </Text>
