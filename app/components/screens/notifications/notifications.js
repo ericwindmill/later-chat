@@ -22,6 +22,14 @@ export default class Notifications extends Component {
     this.followButtonText = this.followButtonText.bind(this);
   }
 
+  componentDidMount() {
+    let data = {
+      user_id: this.props.currentUser.id,
+      locations: this.props.location.places_nearby
+    };
+    this.props.getNotes(data);
+  }
+
   handleSearch(text) {
     this.setState({ searchStr: text }, (search) => {
       if(this.state.searchStr === "") {

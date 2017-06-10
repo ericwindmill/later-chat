@@ -19,8 +19,11 @@ export const createNewPost = (post) => {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
-    }
+    },
+    body: JSON.stringify({ post })
   })
-    .then(res => res.json())
-    .catch(error => console.log(error))
-}
+    .then(res => {
+      return res.json();
+    })
+    .catch(error => console.log(error));
+};
