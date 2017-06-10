@@ -45,7 +45,7 @@ export default class Notifications extends Component {
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       let source = ds.cloneWithRows(this.props.searchResults);
       return (
-        <View style={baseStyles.screen}>
+        <View>
           <ListView
             dataSource={source}
             renderRow={(rowData) =>
@@ -78,10 +78,8 @@ export default class Notifications extends Component {
 
   following(id) {
     if (this.props.currentUser.leaders[id]) {
-      console.log("true");
       return true;
     } else {
-      console.log("false");
       return false;
     }
   }
@@ -95,7 +93,6 @@ export default class Notifications extends Component {
   }
 
   render() {
-    console.log(this.props.notes);
     return (
       <View>
         <Text>
@@ -115,14 +112,3 @@ export default class Notifications extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 60,
-    justifyContent: 'flex-end'
-  },
-  inputContainer: {
-
-  }
-});
