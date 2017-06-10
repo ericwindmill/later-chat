@@ -31,3 +31,12 @@ export const updateNote = noteId => dispatch => {
     })
   );
 };
+
+// export const updateNote = (noteId, locations) => dispatch => {
+//   return (
+//     APIUtil.updateNote(noteId)
+//     .then(note => {
+//       return dispatch(requestAllNotes(locations));
+//     })
+//   );
+// };

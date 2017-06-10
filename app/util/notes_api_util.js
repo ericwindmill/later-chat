@@ -14,7 +14,7 @@ export const fetchAllNotes = (data) => {
 };
 
 export const updateNote = (noteId) => {
-  return fetch('https://later-chat.herokuapp.com/api/posts?note_id=' + noteId, {
+  return fetch('https://later-chat.herokuapp.com/api/posts/1?note_id=' + noteId, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
