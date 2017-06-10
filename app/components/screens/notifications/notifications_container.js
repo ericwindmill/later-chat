@@ -6,7 +6,7 @@ import { receiveLocation, receiveGooglePlaces } from '../../../actions/location_
 import { requestSearch, clearSearchResults } from '../../../actions/search_users_actions';
 import { selectSearchResults } from '../../../reducers/selectors';
 import { requestFollow, requestUnfollow } from '../../../actions/follows_actions';
-import { requestAllNotes } from '../../../actions/notes_actions';
+import { requestAllNotes } from '../../../actions/note_actions';
 
 const mapStateToProps = ( state ) => {
   return {
