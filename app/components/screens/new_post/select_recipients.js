@@ -92,6 +92,7 @@ export default class SelectRecipients extends Component {
         <Text> All My Followers </Text>
 
         <FlatList
+          keyExtractor={(item, idx) => item.id}
           style={styles.list}
           data={this.state.followers}
           renderItem={({item}) =>
