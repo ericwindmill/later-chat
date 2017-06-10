@@ -126,10 +126,13 @@ export default class PublicFeed extends Component {
 
 const styles = StyleSheet.create({
   searchContainer: {
-    position: 'relative'
+    position: 'relative',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   searchResults: {
-    backgroundColor: '#FFFFFF',
+    width: 200
   },
   resultItem: {
     flexDirection: 'row',
