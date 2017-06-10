@@ -21,7 +21,7 @@ export default class SelectRecipients extends Component {
       image_url: null,
       author_id: '',
       public: false,
-      recipientIds: []
+      recipients: []
     }
 
     this.followers = []
@@ -61,17 +61,17 @@ export default class SelectRecipients extends Component {
   }
 
   addRecipient = (id) => () => {
-    if (this.state.recipientIds.indexOf(id) === -1) {
-      this.setState({ recipientIds: [...this.state.recipientIds, id]})
+    if (this.state.recipients.indexOf(id) === -1) {
+      this.setState({ recipients: [...this.state.recipients, id]})
     } else {
-      this.setState({ recipientIds: this.state.recipientIds.filter(
+      this.setState({ recipients: this.state.recipients.filter(
         el => el !== id )})
     }
   }
 
   createPost() {
     // can't send array in post body, need to convert to string first
-    this.setState({ recipientIds: this.state.recipientIds.toString()})
+    // this.setState({ recipientIds: this.state.recipientIds.toString()})
     this.props.createPost(this.state)
   }
 
