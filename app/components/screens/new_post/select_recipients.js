@@ -98,6 +98,7 @@ export default class SelectRecipients extends Component {
             <MyCheckBox
               style={styles.item}
               title={`${item.username}`}
+              addRecipient={this.addRecipient(`${item.id}`)}
               onPress={this.addRecipient(`${item.id}`)}
             />
           }
