@@ -14,7 +14,7 @@ export const fetchAllPosts = (locations) => {
 
 // add a post
 export const createNewPost = (post) => {
-  return fetch('https://later-chat.herokuapp.com/api/posts', {
+  return fetch('http://localhost:3000/api/posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,6 +22,8 @@ export const createNewPost = (post) => {
     },
     body: post
   })
-    .then(res => res.json())
+    .then(res => console.log(res.json()))
     .catch(error => console.log(error))
 }
+
+// return fetch('https://later-chat.herokuapp.com/api/posts', {

@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  createPost: post => dispatch(post(post))
+  createPost: post => dispatch(createPost(post))
 })
 
 
@@ -18,4 +18,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SelectRecipients)
-

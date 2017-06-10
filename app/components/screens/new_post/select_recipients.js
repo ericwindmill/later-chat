@@ -71,6 +71,8 @@ export default class SelectRecipients extends Component {
   }
 
   createPost() {
+    // can't send array in post body, need to convert to string first
+    this.setState({ recipientIds: this.state.recipientIds.toString()})
     this.props.createPost(this.state)
   }
 
@@ -101,7 +103,6 @@ export default class SelectRecipients extends Component {
               style={styles.item}
               title={`${item.username}`}
               addRecipient={this.addRecipient(`${item.id}`)}
-              onPress={this.addRecipient(`${item.id}`)}
             />
           }
         />
