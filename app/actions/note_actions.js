@@ -8,7 +8,6 @@ export const receiveNotes = notes => ({
 });
 
 export const requestAllNotes = locations => dispatch => {
-  console.log(APIUtil.fetchAllNotes);
   return (
     APIUtil.fetchAllNotes(locations)
     .then(posts => {

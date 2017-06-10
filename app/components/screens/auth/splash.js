@@ -50,7 +50,7 @@ export default class SplashScreen extends Component {
       if (response.status >= 200 && response.status < 300) {
         let userSession = await fetch('https://later-chat.herokuapp.com/api/session?auth_token%5D='+token);
         let sessionRes = await userSession.json();
-        console.log(sessionRes);
+
         this.props.receiveCurrentUser(sessionRes);
         //Verified token means user is logged in so we redirect him to home.
         this.props.navigation.navigate('Tabs');
@@ -105,7 +105,7 @@ export default class SplashScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#5dad65',
+    backgroundColor: '#00bfb2',
     justifyContent: 'center',
     alignItems: 'center'
   }

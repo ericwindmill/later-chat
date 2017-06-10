@@ -1,7 +1,10 @@
 const baseStyles = {
   // Screen flexes 'navs' and main content (container)
   screen: {
-    flex: 1
+    flex: 1,
+    marginTop: 25,
+    paddingTop: 15,
+    borderTopWidth: 1,
   },
   topNav: {
     alignItems: 'flex-end',
@@ -36,14 +39,30 @@ const baseStyles = {
   buttonText: {
     textAlign: 'center'
   },
-
-
+  followButton: {
+    borderWidth: 1,
+    height: 25,
+    backgroundColor: '#00bfb2',
+    borderRadius: 3,
+    padding: 3
+  },
+  followText: {
+    fontFamily: 'Avenir',
+    fontSize: 12
+  },
   link: {
     textAlign: 'center'
   },
-
   headlines: {
-    fontSize: 50
+    fontSize: 25,
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    paddingHorizontal: 12
+  },
+  headlineTwo: {
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: 'Avenir'
   }
 
 

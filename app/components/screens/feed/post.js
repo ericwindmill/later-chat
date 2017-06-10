@@ -48,14 +48,19 @@ export default class Post extends Component {
     return (
       <View style={styles.postContainer}>
 
-        <View style={styles.postContent}>
+        <View style={styles.postHeader}>
           <Text style={styles.postUsername}>{this.props.post.author.username}</Text>
-          <Text>{this.props.post.body}</Text>
+          <TouchableOpacity style={baseStyles.followButton} onPress={this.toggleFollow}>
+           <Text style={baseStyles.followText}>{this.followButtonText()}</Text>
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={this.toggleFollow}>
-          <Text>{this.followButtonText()}</Text>
-        </TouchableOpacity>
+        <View style={styles.postContent}>
+          <Text style={styles.postText}>{this.props.post.body}</Text>
+          <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />  
+        </View>
+
+
 
         
       </View>
@@ -67,9 +72,37 @@ export default class Post extends Component {
 const styles = StyleSheet.create({
   postContainer: {
     flex: 1,
+    justifyContent: 'space-between',
+    borderTopWidth: 1,
+    borderColor: 'grey',
+    padding: 12,
+    alignItems: 'center'
+  },
+  postHeader: {
+    paddingBottom: 10,
+    width: 350,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderWidth: 1
+    alignItems: 'center'
+  },
+  postContent: {
+    flex: 1,
+    width: 300
+  },
+  postImage: {
+    height: 200,
+    width: 200,
+    borderWidth: 1,
+    backgroundColor: 'grey'
+  },
+  postText: {
+    padding: 4
+  },
+  postUsername: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 })
 

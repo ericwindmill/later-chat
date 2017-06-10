@@ -45,19 +45,21 @@ export default class Notifications extends Component {
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       let source = ds.cloneWithRows(this.props.searchResults);
       return (
-        <ListView
-          dataSource={source}
-          renderRow={(rowData) =>
-            <View>
-              <Text>
-                {rowData.username}
-              </Text>
-              <TouchableOpacity onPress={() => this.toggleFollow(rowData.id)}>
-                <Text>{this.followButtonText(rowData.id)}</Text>
-              </TouchableOpacity>
-            </View>
-          }
-        />
+        <View style={baseStyles.screen}>
+          <ListView
+            dataSource={source}
+            renderRow={(rowData) =>
+              <View>
+                <Text>
+                  {rowData.username}
+                </Text>
+                <TouchableOpacity onPress={() => this.toggleFollow(rowData.id)}>
+                  <Text>{this.followButtonText(rowData.id)}</Text>
+                </TouchableOpacity>
+              </View>
+            }
+          />
+        </View>
       );
     }
   }

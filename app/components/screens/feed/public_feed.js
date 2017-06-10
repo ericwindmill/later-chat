@@ -20,22 +20,17 @@ export default class PublicFeed extends Component {
     super(props);
   }
 
-
-
   componentDidMount() {
     this.props.getFeed(this.props.location.places_nearby);
   }
 
-
-
   render() {
-
     let closest = this.props.location.places_nearby[0]
-    console.log(this.props.publicPosts)
     return (
-      <View >
+      <View style={baseStyles.screen} >
         <View>
-          <Text style={styles.locationHeader}>{this.props.location.places_nearby[0]}</Text>
+          <Text style={baseStyles.headlineTwo}>What's happening now at</Text>
+          <Text style={baseStyles.headlines}>{this.props.location.places_nearby[0]}</Text>
 
           <FlatList
             data={this.props.publicPosts[closest]}
@@ -51,27 +46,3 @@ export default class PublicFeed extends Component {
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  locationHeader: {
-    fontSize: 24,
-    textAlign: 'center'
-  }
-})
-/*
-      <ScrollView
-        horizontal={true}
-        pagingEnabled={true}>
-        {Object.keys(this.props.posts).map((location, id) => <LocationFeed
-          key={id}
-          location={location}
-          posts={this.props.posts[location]}/>)}
-      </ScrollView>*/
-
-       {/*<FlatList
-          data={this.props.posts[`${this.props.locations.places_nearby[0]}]}
-          renderItem={({ item }) => (
-            <PostContainer post={item} />
-          )}
-          keyExtractor={item => item.id}/>*/}

@@ -51,7 +51,7 @@ export default class CamRoll extends Component {
           })
         })
         .then(() => {
-          // console.log(this.state.image)
+          
         })
         .catch(err => console.error(err));
     }
