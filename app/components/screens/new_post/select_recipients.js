@@ -10,7 +10,7 @@ import {
   FlatList
 } from 'react-native';
 import baseStyles from '../styles/styles'
-import { CheckBox } from 'react-native-elements'
+import MyCheckBox from './checkbox.js'
 
 export default class SelectRecipients extends Component {
   constructor() {
@@ -82,13 +82,11 @@ export default class SelectRecipients extends Component {
           <TouchableOpacity style={styles.link} onPress={this.createPost}><Text>NEXT</Text></TouchableOpacity>
         </View>
 
-
         <View>
           <TouchableOpacity onPress={this.logState}><Text>TOUCH ME TO LOG State</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.getFollowers}><Text>Call getFollowess()</Text></TouchableOpacity>
         </View>
-
 
         <Text> Post to Public </Text>
         <Text> All My Followers </Text>
@@ -97,12 +95,11 @@ export default class SelectRecipients extends Component {
           style={styles.list}
           data={this.state.followers}
           renderItem={({item}) =>
-            <CheckBox
+            <MyCheckBox
               style={styles.item}
               title={`${item.username}`}
               onPress={this.addRecipient(`${item.id}`)}
-              checked={this.state.recipientIds.indexOf(item.id) !== -1}>
-            </CheckBox>
+            />
           }
         />
       </View>
