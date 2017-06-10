@@ -46,15 +46,39 @@ export default class Post extends Component {
 
   render() {
     return (
-      <View>
-        <View>
-          <Text>{this.props.post.author.username}</Text>
-          <TouchableOpacity onPress={this.toggleFollow}>
-            <Text>{this.followButtonText()}</Text>
-          </TouchableOpacity>
+      <View style={styles.postContainer}>
+
+        <View style={styles.postContent}>
+          <Text style={styles.postUsername}>{this.props.post.author.username}</Text>
+          <Text>{this.props.post.body}</Text>
         </View>
-        <Text>{this.props.post.body}</Text>
+
+        <TouchableOpacity onPress={this.toggleFollow}>
+          <Text>{this.followButtonText()}</Text>
+        </TouchableOpacity>
+
+        
       </View>
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  postContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderWidth: 1
+  }
+})
+
+
+        /*<View style={styles.postContent}>
+          <Text style={styles.postUsername}>{this.props.post.author.username}</Text>
+          <Text>{this.props.post.body}</Text>
+        </View>
+
+        <TouchableOpacity onPress={this.toggleFollow}>
+          <Text>{this.followButtonText()}</Text>
+        </TouchableOpacity>*/

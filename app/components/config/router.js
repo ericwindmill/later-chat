@@ -34,6 +34,18 @@ export const newPostNav = StackNavigator({
   }
 })
 
+// export const locationsNav = StackNavigator({
+//   1: {
+//     screen: HomeFeedContainer
+//   }
+//   // 2: {
+//   //   screen: Location2Feed
+//   // },
+//   // 3: {
+//   //   screen: Location3Feed
+//   // }
+// })
+
 
 export const Tabs = TabNavigator({
   Home: {

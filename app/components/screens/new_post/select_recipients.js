@@ -59,7 +59,7 @@ export default class SelectRecipients extends Component {
     this.props.navigation.goBack()
   }
   createPost () {
-    
+
   }
   
   render () {
@@ -76,7 +76,6 @@ export default class SelectRecipients extends Component {
           <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.getFollowers}><Text>Call getFollowess()</Text></TouchableOpacity>
         </View>
-
 
         <Text> Post to Public </Text>
         <Text> All My Followers </Text>
