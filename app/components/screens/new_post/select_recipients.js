@@ -80,8 +80,6 @@ export default class SelectRecipients extends Component {
   }
 
   createPost() {
-    // can't send array in post body, need to convert to string first
-    // this.setState({ recipientIds: this.state.recipientIds.toString()})
     this.props.createPost(this.state)
   }
 
