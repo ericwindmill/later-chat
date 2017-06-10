@@ -10,6 +10,7 @@ import {
   FlatList
 } from 'react-native';
 import baseStyles from '../styles/styles'
+import MyCheckBox from './checkbox.js'
 
 export default class SelectRecipients extends Component {
   constructor() {
@@ -20,14 +21,16 @@ export default class SelectRecipients extends Component {
       image_url: null,
       author_id: '',
       public: false,
-      recipients: [],
-      SelectRecipients: []
+      recipients: []
     }
+
+    this.followers = []
 
     this.logMe = this.logMe.bind(this)
     this.logState = this.logState.bind(this)
     this.getFollowers = this.getFollowers.bind(this)
     this.redirectToNewPost = this.redirectToNewPost.bind(this)
+    this.addRecipient = this.addRecipient.bind(this)
     this.createPost = this.createPost.bind(this)
   }
   logMe () { console.log(this.props) }
@@ -48,44 +51,59 @@ export default class SelectRecipients extends Component {
     this.getFollowers()
   }
   getFollowers () {
-    let followers = []
     Object.values(this.props.currentUser.followers).forEach(follow => {
-      followers.push(follow)
+      this.followers.push(follow)
     })
-    this.setState({SelectRecipients: followers})
   }
 
   redirectToNewPost () {
     this.props.navigation.goBack()
   }
-  createPost () {
-    
+
+  addRecipient = (id) => () => {
+    if (this.state.recipients.indexOf(id) === -1) {
+      this.setState({ recipients: [...this.state.recipients, id]})
+    } else {
+      this.setState({ recipients: this.state.recipients.filter(
+        el => el !== id )})
+    }
   }
-  
+
+  createPost() {
+    // can't send array in post body, need to convert to string first
+    // this.setState({ recipientIds: this.state.recipientIds.toString()})
+    this.props.createPost(this.state)
+  }
+
   render () {
     return (
-      <View style={[baseStyles.container, styles.container]}> 
+      <View style={[baseStyles.container, styles.container]}>
         <View style={baseStyles.topNav}>
           <TouchableOpacity style={styles.link} onPress={this.redirectToNewPost}><Text>BACK</Text></TouchableOpacity>
           <TouchableOpacity style={styles.link} onPress={this.createPost}><Text>NEXT</Text></TouchableOpacity>
         </View>
 
-
         <View>
           <TouchableOpacity onPress={this.logState}><Text>TOUCH ME TO LOG State</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
           <TouchableOpacity onPress={this.getFollowers}><Text>Call getFollowess()</Text></TouchableOpacity>
+          <TouchableOpacity onPress={this.createPost}><Text>TOUCH ME TO CREATE A POST & NOTES</Text></TouchableOpacity>
         </View>
-
 
         <Text> Post to Public </Text>
         <Text> All My Followers </Text>
+
         <FlatList
+          keyExtractor={(item, idx) => item.id}
           style={styles.list}
-          data={
-            this.state.SelectRecipients
+          data={this.followers}
+          renderItem={({item}) =>
+            <MyCheckBox
+              style={styles.item}
+              title={`${item.username}`}
+              addRecipient={this.addRecipient(`${item.id}`)}
+            />
           }
-          renderItem={({item}) => <Text style={styles.item}>{item.username}</Text>}
         />
       </View>
     );
