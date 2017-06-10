@@ -21,9 +21,10 @@ export default class SelectRecipients extends Component {
       image_url: null,
       author_id: '',
       public: false,
-      recipientIds: [],
-      followers: []
+      recipientIds: []
     }
+
+    this.followers = []
 
     this.logMe = this.logMe.bind(this)
     this.logState = this.logState.bind(this)
@@ -50,11 +51,9 @@ export default class SelectRecipients extends Component {
     this.getFollowers()
   }
   getFollowers () {
-    let followers = []
     Object.values(this.props.currentUser.followers).forEach(follow => {
-      followers.push(follow)
+      this.followers.push(follow)
     })
-    this.setState({followers})
   }
 
   redirectToNewPost () {
@@ -97,7 +96,7 @@ export default class SelectRecipients extends Component {
         <FlatList
           keyExtractor={(item, idx) => item.id}
           style={styles.list}
-          data={this.state.followers}
+          data={this.followers}
           renderItem={({item}) =>
             <MyCheckBox
               style={styles.item}

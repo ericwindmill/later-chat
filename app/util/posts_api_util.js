@@ -20,10 +20,13 @@ export const createNewPost = (post) => {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: post
+    body: JSON.stringify(post)
   })
-    .then(res => console.log(res.json()))
-    .catch(error => console.log(error))
-}
+    .then(res => {
+      console.log(res.json());
+      return res.json();
+    })
+    .catch(error => console.log(error));
+};
 
 // return fetch('https://later-chat.herokuapp.com/api/posts', {
