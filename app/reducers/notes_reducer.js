@@ -8,7 +8,7 @@ const NotesReducer = (state = {}, action) => {
     case RECEIVE_NOTES:
       return merge({}, state, action.notes);
     case RECEIVE_NOTE:
-      const nextState = merge({}, state);
+      let nextState = merge({}, state);
       for (var i = 0; i < nextState[action.note.location].length; i++) {
         if (nextState[action.note.location][i].id === action.note.id) {
           nextState[action.note.location][i].read_status = true;
