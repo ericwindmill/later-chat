@@ -10,6 +10,7 @@ import {
   FlatList
 } from 'react-native';
 import baseStyles from '../styles/styles'
+import { CheckBox } from 'react-native-elements'
 import MyCheckBox from './checkbox.js'
 
 export default class SelectRecipients extends Component {
@@ -30,7 +31,8 @@ export default class SelectRecipients extends Component {
     this.logState = this.logState.bind(this)
     this.getFollowers = this.getFollowers.bind(this)
     this.redirectToNewPost = this.redirectToNewPost.bind(this)
-    this.addRecipient = this.addRecipient.bind(this)
+    this.toggleRecipient = this.toggleRecipient.bind(this)
+    this.togglePublic = this.togglePublic.bind(this)
     this.createPost = this.createPost.bind(this)
   }
   logMe () { console.log(this.props) }
@@ -60,12 +62,20 @@ export default class SelectRecipients extends Component {
     this.props.navigation.goBack()
   }
 
-  addRecipient = (id) => () => {
+  toggleRecipient = (id) => () => {
     if (this.state.recipients.indexOf(id) === -1) {
       this.setState({ recipients: [...this.state.recipients, id]})
     } else {
       this.setState({ recipients: this.state.recipients.filter(
         el => el !== id )})
+    }
+  }
+
+  togglePublic() {
+    if (this.state.public === false) {
+      this.setState({ public: true })
+    } else {
+      this.setState({ public: false})
     }
   }
 
@@ -90,8 +100,12 @@ export default class SelectRecipients extends Component {
           <TouchableOpacity onPress={this.createPost}><Text>TOUCH ME TO CREATE A POST & NOTES</Text></TouchableOpacity>
         </View>
 
-        <Text> Post to Public </Text>
-        <Text> All My Followers </Text>
+        <CheckBox
+          style={styles.item}
+          title="Post to Public"
+          onPress={this.togglePublic}
+          checked={this.state.public}
+        />
 
         <FlatList
           keyExtractor={(item, idx) => item.id}
@@ -101,7 +115,7 @@ export default class SelectRecipients extends Component {
             <MyCheckBox
               style={styles.item}
               title={`${item.username}`}
-              addRecipient={this.addRecipient(`${item.id}`)}
+              toggleRecipient={this.toggleRecipient(`${item.id}`)}
             />
           }
         />
