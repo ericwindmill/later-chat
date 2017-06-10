@@ -14,7 +14,7 @@ export default class MyCheckbox extends Component {
 
     toggleCheckmark() {
         this.setState({checked: !this.state.checked});
-        this.props.addRecipient();
+        this.props.toggleRecipient();
     }
 
     render() {
