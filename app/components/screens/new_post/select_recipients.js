@@ -10,6 +10,7 @@ import {
   FlatList
 } from 'react-native';
 import baseStyles from '../styles/styles'
+import { CheckBox } from 'react-native-elements'
 
 export default class SelectRecipients extends Component {
   constructor() {
@@ -59,12 +60,12 @@ export default class SelectRecipients extends Component {
     this.props.navigation.goBack()
   }
   createPost () {
-    
+
   }
-  
+
   render () {
     return (
-      <View style={[baseStyles.container, styles.container]}> 
+      <View style={[baseStyles.container, styles.container]}>
         <View style={baseStyles.topNav}>
           <TouchableOpacity style={styles.link} onPress={this.redirectToNewPost}><Text>BACK</Text></TouchableOpacity>
           <TouchableOpacity style={styles.link} onPress={this.createPost}><Text>NEXT</Text></TouchableOpacity>
@@ -80,6 +81,12 @@ export default class SelectRecipients extends Component {
 
         <Text> Post to Public </Text>
         <Text> All My Followers </Text>
+
+          <CheckBox
+      title='Click Here'
+      checked={this.state.checked}
+    />
+
         <FlatList
           style={styles.list}
           data={
