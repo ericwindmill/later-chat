@@ -21,14 +21,15 @@ export default class SelectRecipients extends Component {
       image_url: null,
       author_id: '',
       public: false,
-      recipients: [],
-      SelectRecipients: []
+      recipientIds: [],
+      followers: []
     }
 
     this.logMe = this.logMe.bind(this)
     this.logState = this.logState.bind(this)
     this.getFollowers = this.getFollowers.bind(this)
     this.redirectToNewPost = this.redirectToNewPost.bind(this)
+    this.addRecipient = this.addRecipient.bind(this)
     this.createPost = this.createPost.bind(this)
   }
   logMe () { console.log(this.props) }
@@ -53,12 +54,22 @@ export default class SelectRecipients extends Component {
     Object.values(this.props.currentUser.followers).forEach(follow => {
       followers.push(follow)
     })
-    this.setState({SelectRecipients: followers})
+    this.setState({followers})
   }
 
   redirectToNewPost () {
     this.props.navigation.goBack()
   }
+
+  addRecipient = (id) => () => {
+    if (this.state.recipientIds.indexOf(id) === -1) {
+      this.setState({ recipientIds: [...this.state.recipientIds, id]})
+    } else {
+      this.setState({ recipientIds: this.state.recipientIds.filter(
+        el => el !== id )})
+    }
+  }
+
   createPost () {
 
   }
@@ -82,20 +93,17 @@ export default class SelectRecipients extends Component {
         <Text> Post to Public </Text>
         <Text> All My Followers </Text>
 
-          <CheckBox
-      title='Click Here'
-      checked={this.state.checked}
-    />
-
         <FlatList
           style={styles.list}
-          data={
-            this.state.SelectRecipients
-          }
+          data={this.state.followers}
           renderItem={({item}) =>
-          <CheckBox style={styles.item}
-                    title={`${item.username}`}
-                    checked={this.state.checked}></CheckBox>}
+            <CheckBox
+              style={styles.item}
+              title={`${item.username}`}
+              onPress={this.addRecipient(`${item.id}`)}
+              checked={this.state.recipientIds.indexOf(item.id) !== -1}>
+            </CheckBox>
+          }
         />
       </View>
     );
