@@ -92,7 +92,10 @@ export default class SelectRecipients extends Component {
           data={
             this.state.SelectRecipients
           }
-          renderItem={({item}) => <Text style={styles.item}>{item.username}</Text>}
+          renderItem={({item}) =>
+          <CheckBox style={styles.item}
+                    title={`${item.username}`}
+                    checked={this.state.checked}></CheckBox>}
         />
       </View>
     );
