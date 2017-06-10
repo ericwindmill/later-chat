@@ -45,11 +45,11 @@ export default class PublicFeed extends Component {
           <ListView
             dataSource={source}
             renderRow={(rowData) =>
-              <View>
+              <View style={styles.resultItem}>
                 <Text>
                   {rowData.username}
                 </Text>
-                <TouchableOpacity onPress={() => this.toggleFollow(rowData.id)}>
+                <TouchableOpacity style={baseStyles.followButton} onPress={() => this.toggleFollow(rowData.id)}>
                   <Text>{this.followButtonText(rowData.id)}</Text>
                 </TouchableOpacity>
               </View>
@@ -93,17 +93,19 @@ export default class PublicFeed extends Component {
     let closest = this.props.location.places_nearby[0];
     return (
       <View style={baseStyles.screen} >
-        <View>
+        <View style={styles.searchContainer}>
           <View>
-            <TextInput
-              style={baseStyles.input}
-              placeholder='Search Users'
-              onChangeText={(text) => this.handleSearch(text)}
-            />
-          </View>
-          <View>
-            {this.renderSearchResults()}
-          </View>
+            <View>
+              <TextInput
+                style={baseStyles.input}
+                placeholder='Search Users'
+                onChangeText={(text) => this.handleSearch(text)}
+                />
+            </View>
+            <View style={styles.searchResults}>
+              {this.renderSearchResults()}
+            </View>
+        </View>
           <Text style={baseStyles.headlineTwo}>What's happening now at</Text>
           <Text style={baseStyles.headlines}>{this.props.location.places_nearby[0]}</Text>
 
@@ -121,3 +123,17 @@ export default class PublicFeed extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  searchContainer: {
+    position: 'relative'
+  },
+  searchResults: {
+    backgroundColor: '#FFFFFF',
+  },
+  resultItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 5
+  }
+});
