@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-
 import { requestAllPosts } from '../../../actions/posts_actions';
-import Feed from './feed';
+import PublicFeed from './public_feed';
 
 const mapStateToProps = (state) => ({
-  posts: state.posts,
+  public: '',
+  publicPosts: state.posts,
   currentUser: state.session.currentUser,
   location: state.location
 });
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Feed);
+)(PublicFeed);

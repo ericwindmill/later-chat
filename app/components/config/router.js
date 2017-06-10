@@ -34,26 +34,30 @@ export const newPostNav = StackNavigator({
   }
 })
 
-
 export const Tabs = TabNavigator({
   Home: {
     screen: HomeFeedContainer,
-      navigationOptions: {
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => <Icon name='list' size={35} color={tintColor} />
-      }
+    navigationOptions: {
+      tabBarIcon: () => <Icon name='ios-planet-outline' size={30} type={'ionicon'} />
+    }
   },
   Discover: {
-    screen: PublicFeedContainer
+    screen: PublicFeedContainer,
+    navigationOptions: {
+      tabBarIcon: () => <Icon name='ios-search-outline' size={30} type={'ionicon'} />
+    }
   },
   'Add Post': {
-    screen: newPostNav
+    screen: newPostNav,
+    navigationOptions: {
+      tabBarIcon: () => <Icon name='ios-add-circle-outline' size={30} type={'ionicon'} />
+    }
   },
-  MapScreen: {
-    screen: MapScreen
-  },
-  Notifications: {
-    screen: NotificationsContainer
+  Me: {
+    screen: NotificationsContainer,
+    navigationOptions: {
+      tabBarIcon: () => <Icon name='md-person' size={30} type={'ionicon'} />
+    }
   },
   LogOut: {
     screen: LogOutContainer
@@ -76,4 +80,8 @@ export const AuthNav = StackNavigator({
   SignUpContainer: {
     screen: SignUpContainer
   }
-});
+},
+{ headerMode: 'none' }
+
+
+);

@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     flex: 1,
     padding: 60,
-    backgroundColor: '#a2d79f'
+    backgroundColor: '#00bfb2'
   },
   loginButton: {
     marginBottom: 40

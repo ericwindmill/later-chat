@@ -1,3 +1,4 @@
+
 import { connect } from 'react-redux';
 import SelectRecipients from './select_recipients';
 import { createPost } from '../../../actions/posts_actions'

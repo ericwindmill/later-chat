@@ -86,12 +86,8 @@ export default class NewPost extends Component {
     }
   }
 
-  logMe() {
-    console.log(this.props)
-  }
-  logState() {
-    console.log(this.state)
-  }
+  logMe() { console.log(this.props)}
+  logState() { console.log(this.state)}
 
   render () {
     return (

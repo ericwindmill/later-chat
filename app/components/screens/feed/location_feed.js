@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -18,8 +18,10 @@ export default class LocationFeed extends Component {
     return (
       <View >
         <View>
-          <Text>{this.props.location}</Text>
+          <Text style={styles.locationHeader}>{this.props.location}</Text>
         </View>
+
+
         <FlatList
           data={this.props.posts}
           renderItem={({ item }) => (
@@ -30,3 +32,10 @@ export default class LocationFeed extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  locationHeader: {
+    fontSize: 24,
+    textAlign: 'center'
+  }
+}) */
