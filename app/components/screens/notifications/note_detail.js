@@ -8,10 +8,11 @@ import {
   TextInput,
   KeyboardAvoidingView,
   TouchableOpacity,
-  FlatList,
-  Image
+  FlatList
 } from 'react-native';
-import {Icon} from 'react-native-elements'
+import {Icon} from 'react-native-elements';
+import Image from 'react-native-image-progress';
+import * as Progress from 'react-native-progress';
 
 export default class NoteDetail extends Component {
   constructor(props) {
@@ -39,7 +40,15 @@ export default class NoteDetail extends Component {
               <Text style={styles.noteAuthor}>{note.author.username}:</Text>
             </View>
             <Text style={styles.noteBody}>{note.body}</Text>
-            <Image style={styles.noteImage} source={{uri: `${note.image_url}`}} />
+              <Image
+                source={{ uri: `${this.props.post.image_url}` }}
+                indicator={Progress.Bar}
+                indicatorProps={{
+                  color: '#00bfb2',
+                  borderWidth: 0,
+                  unfilledColor: 'rgba(200, 200, 200, 0.6)'
+                }}
+                style={styles.noteImage}/>
         </View>
       </View>
     )
@@ -72,9 +81,8 @@ const styles = StyleSheet.create({
     fontWeight: '100'
   },
   noteImage: {
-    height: 400,
-    width: 325,
+    height: 360,
+    width: 480,
     alignSelf: 'center'
   },
-
 })
