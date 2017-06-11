@@ -1,5 +1,4 @@
 export const fetchFollow = (follow) => {
-  console.log(follow);
   return fetch('https://later-chat.herokuapp.com/api/follows?follower_id=' + follow.follower_id + '&leader_id=' + follow.leader_id, {
     method: 'POST',
     headers: {

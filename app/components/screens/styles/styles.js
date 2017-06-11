@@ -2,15 +2,13 @@ const baseStyles = {
   // Screen flexes 'navs' and main content (container)
   screen: {
     flex: 1,
-    marginTop: 25,
-    paddingTop: 15,
-    borderTopWidth: 1,
+    marginTop: 25
   },
   topNav: {
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    margin: 12,
-    height: 10
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 30
   },
   container: {
     flex: 1
@@ -24,9 +22,12 @@ const baseStyles = {
     marginBottom: 10
   },
   input: {
+    textAlign: 'center',
     height: 50,
     margin: 2,
+    marginTop: 0,
     padding: 10,
+    paddingTop: 2,
     color: 'black'
   },
   buttonContainer: {

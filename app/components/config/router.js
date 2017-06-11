@@ -18,6 +18,7 @@ import SplashScreenContainer from '../screens/auth/splash_container';
 import CamContainer from '../UI/camera_container';
 import CamRollContainer from '../UI/camera_roll_container';
 import NotificationsContainer from '../screens/notifications/notifications_container';
+import NoteDetail from '../screens/notifications/note_detail';
 
 export const newPostNav = StackNavigator({
   'Add Post': {
@@ -32,7 +33,20 @@ export const newPostNav = StackNavigator({
   CamRoll: {
     screen: CamRollContainer
   }
-})
+},
+  { headerMode: 'none' }
+)
+
+export const NoteNav = StackNavigator({
+  NotificationsContainer: {
+    screen: NotificationsContainer
+  },
+  NoteDetail: {
+    screen: NoteDetail
+  }
+},
+  {headerMode: 'none'}
+);
 
 export const Tabs = TabNavigator({
   Home: {
@@ -54,13 +68,10 @@ export const Tabs = TabNavigator({
     }
   },
   Me: {
-    screen: NotificationsContainer,
+    screen: NoteNav,
     navigationOptions: {
       tabBarIcon: () => <Icon name='md-person' size={30} type={'ionicon'} />
     }
-  },
-  LogOut: {
-    screen: LogOutContainer
   }
 });
 
@@ -82,6 +93,6 @@ export const AuthNav = StackNavigator({
   }
 },
 { headerMode: 'none' }
-
-
 );
+
+

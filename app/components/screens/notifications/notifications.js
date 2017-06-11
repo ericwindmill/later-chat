@@ -7,122 +7,62 @@ import {
   ListView,
   TextInput,
   KeyboardAvoidingView,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList,
+  Image
 } from 'react-native';
+import {Icon} from 'react-native-elements'
 
 export default class Notifications extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchStr: ""
-    };
-    this.handleSearch = this.handleSearch.bind(this);
-    this.renderSearchResults = this.renderSearchResults.bind(this);
-    this.toggleFollow = this.toggleFollow.bind(this);
-    this.followButtonText = this.followButtonText.bind(this);
+
   }
 
-  componentDidMount() {
-    let data = {
-      user_id: this.props.currentUser.id,
-      locations: this.props.location.places_nearby
-    };
-    this.props.getNotes(data);
-  }
-
-  handleSearch(text) {
-    this.setState({ searchStr: text }, (search) => {
-      if(this.state.searchStr === "") {
-        this.props.clearResults();
-      } else {
-        this.props.requestSearch(this.state.searchStr);
-      }
-    });
-  }
-
-  renderSearchResults() {
-    if (this.props.searchResults.length > 0) {
-      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-      let source = ds.cloneWithRows(this.props.searchResults);
-      return (
-        <View style={baseStyles.screen}>
-          <ListView
-            dataSource={source}
-            renderRow={(rowData) =>
-              <View>
-                <Text>
-                  {rowData.username}
-                </Text>
-                <TouchableOpacity onPress={() => this.toggleFollow(rowData.id)}>
-                  <Text>{this.followButtonText(rowData.id)}</Text>
-                </TouchableOpacity>
-              </View>
-            }
-          />
-        </View>
-      );
-    }
-  }
-
-  toggleFollow(id) {
-    const follow = {
-      follower_id: this.props.currentUser.id,
-      leader_id: id
-    };
-    if (this.following(id)) {
-      this.props.unfollow(follow);
-    } else {
-      this.props.follow(follow);
-    }
-  }
-
-  following(id) {
-    if (this.props.currentUser.leaders[id]) {
-      console.log("true");
-      return true;
-    } else {
-      console.log("false");
-      return false;
-    }
-  }
-
-  followButtonText(id) {
-    if (this.following(id)) {
-      return 'Following';
-    } else {
-      return 'Follow';
-    }
-  }
 
   render() {
-    console.log(this.props.notes);
+    let note = this.props.note.item
+    let location = this.props.location
+
     return (
-      <View>
-        <Text>
-          Notifications
-        </Text>
-        <View>
-          <TextInput
-            style={baseStyles.input}
-            placeholder='Search Users'
-            onChangeText={(text) => this.handleSearch(text)}
-          />
-        </View>
-        <View>
-          {this.renderSearchResults()}
-        </View>
+      <View style={styles.notificationContainer}>
+          <View style={styles.notifitcationContent}>
+            <Text style={styles.notification}> You have a note! </Text>
+            <Text style={styles.username}>from {note.author.username} at {location}</Text>
+          </View>
+          <View>
+            {note.read_status ? null : <Icon name='ios-alert' size={20} type={'ionicon'} />}
+          </View>
       </View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  notificationContainer: {
     flex: 1,
-    padding: 60,
-    justifyContent: 'flex-end'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    width: 350,
+    borderTopWidth: 1,
+    borderColor: '#AAA',
+    paddingVertical: 20
   },
-  inputContainer: {
-
+  notifitcationContent: {
+    flex: 1,
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    paddingHorizontal: 10
+  },
+  username: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+  },
+  notification: {
+    fontSize: 20,
+    fontFamily: 'Avenir',
   }
-});
+})
