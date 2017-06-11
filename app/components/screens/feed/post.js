@@ -105,13 +105,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 })
-
-
-        /*<View style={styles.postContent}>
-          <Text style={styles.postUsername}>{this.props.post.author.username}</Text>
-          <Text>{this.props.post.body}</Text>
-        </View>
-
-        <TouchableOpacity onPress={this.toggleFollow}>
-          <Text>{this.followButtonText()}</Text>
-        </TouchableOpacity>*/
