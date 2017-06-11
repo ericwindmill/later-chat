@@ -73,7 +73,7 @@ export default class PublicFeed extends Component {
   }
 
   following(id) {
-    if (this.props.currentUser.leaders[id]) {
+    if (this.props.currentUser.leaders && this.props.currentUser.leaders[id]) {
       return true;
     } else {
       return false;
