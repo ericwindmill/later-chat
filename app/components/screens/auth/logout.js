@@ -21,13 +21,12 @@ class LogOut extends Component {
 
   render() {
     return(
-      <View style={baseStyles.container}>
-        <TouchableOpacity style={baseStyles.buttonContainer}
-          onPress={this.handleLogOut}
-        >
-          <Text style={baseStyles.buttonText}>LOG OUT</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity
+        style={baseStyles.buttonContainer}
+        onPress={this.handleLogOut}
+      >
+        <Text style={baseStyles.buttonText}>LOG OUT</Text>
+      </TouchableOpacity>
     )
   }
 }
