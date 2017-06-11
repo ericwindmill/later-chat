@@ -15,3 +15,16 @@ export const followedPosts = (posts, leader_ids) => {
     })})
   return leaderPosts;
 };
+
+export const selectPublicPosts = (posts) => {
+  let publicPosts = {};
+  Object.keys(posts).forEach(location => {
+    publicPosts[location] = [];
+    posts[location].forEach(post => {
+      if (post.public === true) {
+        publicPosts[location].push(post);
+      }
+    });
+  });
+  return publicPosts;
+};

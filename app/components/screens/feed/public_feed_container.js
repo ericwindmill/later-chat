@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
+
+import PublicFeed from './public_feed';
 import { requestAllPosts } from '../../../actions/posts_actions';
 import { requestSearch, clearSearchResults } from '../../../actions/search_users_actions';
-import { selectSearchResults } from '../../../reducers/selectors';
 import { requestFollow, requestUnfollow } from '../../../actions/follows_actions';
-import PublicFeed from './public_feed';
+import { selectSearchResults, selectPublicPosts } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  publicPosts: state.posts,
+  publicPosts: selectPublicPosts(state.posts),
   currentUser: state.session.currentUser,
   searchResults: selectSearchResults(state),
   location: state.location
