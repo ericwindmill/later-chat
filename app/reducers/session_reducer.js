@@ -14,13 +14,8 @@ const nullUser = Object.freeze({
   errors: []
 });
 
-// TODO: make sure this works as intended: when a follow or unfollow happens,
-// the follow action hits this reducer and edit's the currentUser.leaders array
-
 const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
-  // defining 'nextState' to be used when pushing or removing leader_id from
-  // currentUser.leaders
   const nextState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
