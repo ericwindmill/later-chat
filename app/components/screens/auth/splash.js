@@ -75,28 +75,10 @@ export default class SplashScreen extends Component {
     await this.props.receiveGooglePlaces({places_nearby: places_nearby});
   }
 
-
-  // The following functions are responsible for fetching documents from S3 for camera use.
-//     getInitialState() {
-//       return {
-//         documents: []
-//       }
-//     }
-
-//     componentDidMount() {
-//       FileStore.getResources()
-//       .then((data) => { this.setState({ documents: data.documents })}
-//     }
-
-//     handleCreateDocument(document) {
-//       this.setState({ documents: merge([document], this.state.documents) });
-//     }
-
   render () {
-
     return(
       <View style={[baseStyles.container, styles.container]}>
-      <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+      <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'}
             style={styles.icon}/>
       </View>
     )
