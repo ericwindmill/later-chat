@@ -11,7 +11,6 @@ export default class MapScreen extends Component {
     return (
       <MapView
         style={styles.container}
-        provider={'google'}
         initialRegion={{
           latitude: 37.7596168,
           longitude: -122.4279981,
