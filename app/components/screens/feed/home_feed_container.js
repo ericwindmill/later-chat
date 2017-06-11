@@ -4,8 +4,9 @@ import { followedPosts } from '../../../reducers/selectors';
 import HomeFeed from './home_feed';
 
 const mapStateToProps = (state) => {
-  let leaders = Object.keys(state.session.currentUser.leaders);
-  if (leaders.length > 0) {
+  debugger;
+  if (state.session.currentUser.leaders) {
+    let leaders = Object.keys(state.session.currentUser.leaders);
     leaders.forEach((leaderId) => leaders.push(parseInt(leaderId)));
     return {
       posts: followedPosts(state.posts, leaders),
