@@ -65,6 +65,12 @@ export const Tabs = TabNavigator({
       tabBarIcon: () => <Icon name='ios-add-circle-outline' size={30} type={'ionicon'} />
     }
   },
+  Map: {
+    screen: MapScreen,
+    navigationOptions: {
+      tabBarIcon: () => <Icon name='ios-navigate-outline' size={30} type={'ionicon'} />
+    }
+  },
   Me: {
     screen: NoteNav,
     navigationOptions: {
