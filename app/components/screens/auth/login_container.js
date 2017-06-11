@@ -13,11 +13,7 @@ const mapStateToProps = ({ session }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: user => dispatch(login(user)),
-    signup: user => dispatch(signup(user)),
-    setItem: ASYNC.setItem,
-    getItem: ASYNC.getItem,
-    removeItem: ASYNC.removeItem
+    login: user => dispatch(login(user))
   };
 };
 
