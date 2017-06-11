@@ -3,10 +3,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
-  Image,
   View
 } from 'react-native';
 import baseStyles from '../styles/styles';
+import Image from 'react-native-image-progress';
+import * as Progress from 'react-native-progress';
 
 export default class Post extends Component {
   constructor() {
@@ -56,9 +57,16 @@ export default class Post extends Component {
 
         <View style={styles.postContent}>
           <Text style={styles.postText}>{this.props.post.body}</Text>
-          <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />
+            <Image
+              source={{ uri: `${this.props.post.image_url}` }}
+              indicator={Progress.Bar}
+              indicatorProps={{
+                color: '#00bfb2',
+                borderWidth: 0,
+                unfilledColor: 'rgba(200, 200, 200, 0.6)'
+              }}
+              style={styles.postImage}/>
         </View>
-
       </View>
     );
   }
@@ -87,9 +95,8 @@ const styles = StyleSheet.create({
     width: 300
   },
   postImage: {
-    height: 200,
-    width: 200,
-    borderWidth: 1
+    height: 240,
+    width: 320,
   },
   postText: {
     padding: 4
