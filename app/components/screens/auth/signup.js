@@ -20,7 +20,7 @@ class SignUp extends Component {
 
     this.signUpUser = this.signUpUser.bind(this);
     this.onSignUpPress = this.onSignUpPress.bind(this);
-    this.redirectToSignIn = this.redirectToSignIn.bind(this);
+    this.redirectToLogIn = this.redirectToLogIn.bind(this);
   }
 
   signUpUser() {
@@ -34,6 +34,7 @@ class SignUp extends Component {
     if (this.state.password === this.state.confirm_password) {
       this.signUpUser()
     } else {
+      // TODO: render auth errors
       console.log('passwords dont match')
     }
   }
@@ -45,7 +46,7 @@ class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
-       <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+       <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'}
             style={styles.icon}/>
         <View style={styles.inputsContainer}>
           <View style={baseStyles.inputContainer}>
@@ -76,9 +77,9 @@ class SignUp extends Component {
             <Text style={styles.buttonText}>Sign Up!</Text>
           </TouchableOpacity>
           <TouchableOpacity style={baseStyles.buttonContainer}
-            onPress={this.redirectToSignIn}
+            onPress={this.redirectToLogIn}
           >
-            <Text style={baseStyles.buttonText}>Already a member? Sign In!</Text>
+            <Text style={baseStyles.buttonText}>Already a member? Log In!</Text>
           </TouchableOpacity>
         </View>
       </View>

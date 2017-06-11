@@ -21,8 +21,6 @@ class LogIn extends Component {
 
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
-    this.redirectToHome = this.redirectToHome.bind(this);
-
   }
 
   logInPressed() {
@@ -36,18 +34,14 @@ class LogIn extends Component {
     this.props.navigation.navigate('SignUpContainer');
   }
 
-  redirectToHome() {
-    this.props.navigation.navigate('Tabs');
-  }
-
   render() {
     return (
-      <KeyboardAvoidingView 
+      <KeyboardAvoidingView
         style={styles.container}
         behavior={'padding'}
         >
         <View style={styles.inputsContainer}>
-          <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'} 
+          <Icon name='ios-planet' size={100} color={'black'} type={'ionicon'}
             style={styles.icon}/>
           <View>
             {this.state.errors.map((error, i) => (

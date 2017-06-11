@@ -6,7 +6,6 @@ import { requestFollow, requestUnfollow } from '../../../actions/follows_actions
 import PublicFeed from './public_feed';
 
 const mapStateToProps = (state) => ({
-  public: '',
   publicPosts: state.posts,
   currentUser: state.session.currentUser,
   searchResults: selectSearchResults(state),

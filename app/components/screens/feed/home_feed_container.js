@@ -4,15 +4,21 @@ import { followedPosts } from '../../../reducers/selectors';
 import HomeFeed from './home_feed';
 
 const mapStateToProps = (state) => {
-
-  let leaders = [];
-  Object.keys(state.session.currentUser.leaders).forEach((leaderId) => leaders.push(parseInt(leaderId)));
-  return {
-    home: '',
-    posts: followedPosts(state.posts, leaders),
-    currentUser: state.session.currentUser,
-    location: state.location
-  };
+  let leaders = Object.keys(state.session.currentUser.leaders);
+  if (leaders.length > 0) {
+    leaders.forEach((leaderId) => leaders.push(parseInt(leaderId)));
+    return {
+      posts: followedPosts(state.posts, leaders),
+      currentUser: state.session.currentUser,
+      location: state.location
+    };
+  } else {
+    return {
+      posts: [],
+      currentUser: state.session.currentUser,
+      location: state.location
+    };
+  }
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -11,6 +11,7 @@ import {
   FlatList
 } from 'react-native';
 import Notification from './notifications'
+import LogOut from '../auth/logout'
 
 export default class Notifications extends Component {
   constructor(props) {
@@ -45,12 +46,9 @@ export default class Notifications extends Component {
           )}
           keyExtractor={note => note.id}
           removeClippedSubviews={false}
-       />
-        <TouchableOpacity style={baseStyles.buttonContainer}
-          onPress={this.handleLogOut}
-        >
-          <Text style={baseStyles.buttonText}>LOG OUT</Text>
-        </TouchableOpacity>
+        />
+
+        <LogOut navigation={this.props.navigation} />
       </View>
     );
   }

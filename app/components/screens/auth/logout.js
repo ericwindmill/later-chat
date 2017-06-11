@@ -6,25 +6,25 @@ import {
   TouchableOpacity
 } from 'react-native'
 import baseStyles from '../styles/styles'
+import ASYNC from '../../../util/async_util.js';
 
 class LogOut extends Component {
-  constructor() {
-    super()
-
-    this.handleLogOut = this.handleLogOut.bind(this)
+  constructor(props) {
+    super(props);
+    this.handleLogOut = this.handleLogOut.bind(this);
   }
 
   handleLogOut() {
-    this.props.removeItem('token')
-    .then(this.props.navigation.navigate('LogIn'))
+    ASYNC.removeItem('token')
+      .then(this.props.navigation.navigate('LogIn'))
   }
 
   render() {
     return(
-      <View style={baseStyles.container}>  
+      <View style={baseStyles.container}>
         <TouchableOpacity style={baseStyles.buttonContainer}
           onPress={this.handleLogOut}
-        >  
+        >
           <Text style={baseStyles.buttonText}>LOG OUT</Text>
         </TouchableOpacity>
       </View>

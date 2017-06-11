@@ -91,6 +91,8 @@ export default class PublicFeed extends Component {
 
   render() {
     let closest = this.props.location.places_nearby[0];
+    let nearbyPosts = this.props.publicPosts[closest];
+    if (nearbyPosts) { nearbyPosts = nearbyPosts.reverse(); }
     return (
       <View style={baseStyles.screen} >
         <View style={styles.searchContainer}>
