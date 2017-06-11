@@ -31,6 +31,6 @@ export const requestAllPosts = locations => dispatch => {
 export const createPost = post => dispatch => {
   return (
     APIUtil.createNewPost(post)
-      .then(posts => dispatch(receiveNewPost(post)))
+      .then(post => dispatch(receiveNewPost(post)))
   )
 }
