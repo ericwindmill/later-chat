@@ -101,6 +101,8 @@ export default class NewPost extends Component {
           <View style={[baseStyles.inputContainer, styles.inputContainer]}>
             <TextInput style={baseStyles.input}
               placeholder='leave a note ...'
+              multiline = {true}
+              numberOfLines = {5}
               onChangeText={(text) => this.setState({body: text})}
             />
           </View>

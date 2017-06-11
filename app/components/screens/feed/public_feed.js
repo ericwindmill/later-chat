@@ -42,6 +42,9 @@ export default class PublicFeed extends Component {
       let source = ds.cloneWithRows(this.props.searchResults);
       return (
         <View>
+          <TouchableOpacity style={baseStyles.followButton} onPress={() => this.props.clearResults()}>
+            <Text>Tap to Hide</Text>
+          </TouchableOpacity>
           <ListView
             dataSource={source}
             renderRow={(rowData) =>
