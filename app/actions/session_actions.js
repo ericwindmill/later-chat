@@ -18,7 +18,7 @@ export const signup = user => dispatch => {
   return (
     APIUtil.signup(user).then(userJSON => {
       ASYNC.setItem('token', userJSON.auth_token);
-      let currentUser = { id: userJSON.id, username: userJSON.username };
+      let currentUser = { id: userJSON.id, username: userJSON.username, followers: {}, leaders: {} };
       if (userJSON.followers) {
         currentUser.followers = userJSON.followers;
       }
@@ -38,7 +38,7 @@ export const login = user => dispatch => {
     APIUtil.login(user).then(userJSON => {
       ASYNC.setItem('token', userJSON.auth_token);
       // let currentUser = { id: userJSON.id, username: userJSON.username, followers: userJSON.followers, leaders: userJSON.leaders };
-      let currentUser = { id: userJSON.id, username: userJSON.username };
+      let currentUser = { id: userJSON.id, username: userJSON.username, followers: {}, leaders: {} };
       if (userJSON.followers) {
         currentUser.followers = userJSON.followers;
       }
