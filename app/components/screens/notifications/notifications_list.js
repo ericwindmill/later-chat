@@ -37,6 +37,8 @@ export default class Notifications extends Component {
     let notes = this.props.notes[closestLocation]
     return (
       <View style={styles.notificationListContainer}>
+        <LogOut navigation={this.props.navigation} />
+
         <FlatList
           data={notes}
           renderItem={(note) => (
@@ -47,8 +49,6 @@ export default class Notifications extends Component {
           keyExtractor={note => note.id}
           removeClippedSubviews={false}
         />
-
-        <LogOut navigation={this.props.navigation} />
       </View>
     );
   }
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
     marginTop: 50,
     padding: 12,
   }
-})
+});
