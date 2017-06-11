@@ -3,11 +3,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
-  Image,
   View
 } from 'react-native';
 import baseStyles from '../styles/styles';
-import ProgressiveImage from 'react-native-progressive-image';
+import Image from 'react-native-image-progress';
+import * as Progress from 'react-native-progress';
 
 export default class Post extends Component {
   constructor() {
@@ -57,16 +57,16 @@ export default class Post extends Component {
 
         <View style={styles.postContent}>
           <Text style={styles.postText}>{this.props.post.body}</Text>
-          <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />
-          <Image style={styles.postImage} source={{uri: 'https://lorempixel.com/200/200'}} />
+            <Image
+              source={{ uri: `${this.props.post.image_url}` }}
+              indicator={Progress.Bar}
+              indicatorProps={{
+                color: '#00bfb2',
+                borderWidth: 0,
+                unfilledColor: 'rgba(200, 200, 200, 0.6)'
+              }}
+              style={styles.postImage}/>
         </View>
-
-        <ProgressiveImage
-          thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
-          imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
-          style={{ flex: 1, alignItems: 'stretch' }}
-        />
-
       </View>
     );
   }
@@ -95,9 +95,8 @@ const styles = StyleSheet.create({
     width: 300
   },
   postImage: {
-    height: 200,
-    width: 200,
-    borderWidth: 1
+    height: 240,
+    width: 320,
   },
   postText: {
     padding: 4
