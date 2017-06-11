@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Notifications from './notifications';
+import NotificationsList from './notifications_list';
 
 import { requestAllNotes } from '../../../actions/note_actions';
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationsList);

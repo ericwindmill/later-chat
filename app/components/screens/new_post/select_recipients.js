@@ -35,8 +35,6 @@ export default class SelectRecipients extends Component {
     this.togglePublic = this.togglePublic.bind(this)
     this.createPost = this.createPost.bind(this)
   }
-  logMe () { console.log(this.props) }
-  logState () { console.log(this.state) }
 
   // Pass the states through navigator from 'new_post'
   componentWillMount () {
