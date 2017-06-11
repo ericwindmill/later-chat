@@ -7,6 +7,7 @@ import {
   View
 } from 'react-native';
 import baseStyles from '../styles/styles';
+import ProgressiveImage from 'react-native-progressive-image';
 
 export default class Post extends Component {
   constructor() {
@@ -57,7 +58,14 @@ export default class Post extends Component {
         <View style={styles.postContent}>
           <Text style={styles.postText}>{this.props.post.body}</Text>
           <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />
+          <Image style={styles.postImage} source={{uri: 'https://lorempixel.com/200/200'}} />
         </View>
+
+        <ProgressiveImage
+          thumbnailSource={{ uri: 'http://i.imgur.com/O249H4P.png?bust' + Math.random() }}
+          imageSource={{ uri: 'http://i.imgur.com/741u15U.png?bust' + Math.random() }}
+          style={{ flex: 1, alignItems: 'stretch' }}
+        />
 
       </View>
     );
