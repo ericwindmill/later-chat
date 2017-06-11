@@ -4,11 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView,
-  TextInput,
-  KeyboardAvoidingView,
+  ScrollView,
   TouchableOpacity,
-  FlatList
 } from 'react-native';
 import {Icon} from 'react-native-elements';
 import Image from 'react-native-image-progress';
@@ -29,19 +26,20 @@ export default class NoteDetail extends Component {
   }
 
   render() {
+    console.log(this.props);
     let note = this.props.navigation.state.params.state.item;
     return (
       <View style={baseStyles.screen}>
         <TouchableOpacity style={[baseStyles.topNav, styles.topNav]} onPress={this.redirectToNotifications}>
           <Text>BACK</Text>
         </TouchableOpacity>
-        <View style={styles.noteContent}>
+        <ScrollView style={styles.noteContent}>
             <View style={styles.noteAuthorContainer}>
               <Text style={styles.noteAuthor}>{note.author.username}:</Text>
             </View>
             <Text style={styles.noteBody}>{note.body}</Text>
               <Image
-                source={{ uri: `${this.props.post.image_url}` }}
+                source={{ uri: `${note.image_url}` }}
                 indicator={Progress.Bar}
                 indicatorProps={{
                   color: '#00bfb2',
@@ -49,7 +47,7 @@ export default class NoteDetail extends Component {
                   unfilledColor: 'rgba(200, 200, 200, 0.6)'
                 }}
                 style={styles.noteImage}/>
-        </View>
+            </ScrollView>
       </View>
     )
   }
