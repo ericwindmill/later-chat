@@ -14,11 +14,14 @@ export const fetchAllNotes = (data) => {
 };
 
 export const updateNote = (noteId) => {
+  console.log("in api util");
   return fetch('https://later-chat.herokuapp.com/api/posts/1?note_id=' + noteId, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-  });
+  })
+  .then(res => res.json())
+  .catch(error => console.log(error));
 };

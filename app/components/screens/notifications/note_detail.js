@@ -19,13 +19,16 @@ export default class NoteDetail extends Component {
     this.redirectToNotifications = this.redirectToNotifications.bind(this)
   }
 
+  componentDidMount() {
+    this.props.navigation.state.params.updateNote(this.props.navigation.state.params.state.item.note_id);
+  }
+
   redirectToNotifications() {
-    this.props.navigation.goBack()
+    this.props.navigation.goBack();
   }
 
   render() {
     let note = this.props.navigation.state.params.state.item;
-    debugger;
     return (
       <View style={baseStyles.screen}>
         <TouchableOpacity style={[baseStyles.topNav, styles.topNav]} onPress={this.redirectToNotifications}>
