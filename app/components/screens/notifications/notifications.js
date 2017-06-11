@@ -19,7 +19,6 @@ export default class Notifications extends Component {
 
   }
 
-
   render() {
     let note = this.props.note.item
     let location = this.props.location
@@ -34,7 +33,6 @@ export default class Notifications extends Component {
             {note.read_status ? null : <Icon name='ios-alert' size={20} type={'ionicon'} />}
           </View>
       </View>
-
     );
   }
 }
