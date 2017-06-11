@@ -38,18 +38,21 @@
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* LaterChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LaterChatTests.m */; };
 		3E7E7D5D9E624C8DBF5A5437 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D99D8B603CC04316ADD60532 /* Entypo.ttf */; };
+		400B9A4965073B5C3225168E /* libPods-LaterChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 816857C25A691B3D8C5A81D0 /* libPods-LaterChat.a */; };
 		51B024FAA2AC456893FD7DB0 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9229874961FB41A982ED8295 /* Foundation.ttf */; };
+		5E4395CFAB3F7EC145B26BA6 /* libPods-LaterChat-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50361FD8F9A09C8FC20B2460 /* libPods-LaterChat-tvOS.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		7A201927CD3D38999FC47E7E /* libPods-LaterChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEA8F9210A9C7427B24750 /* libPods-LaterChatTests.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8FD2C13D7EDB44539E80E152 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10730238B7E44671AA71916E /* Octicons.ttf */; };
 		A77B8A185EE34C7F9BCA35D4 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE9328331B348AD9A39B52A /* libRNVectorIcons.a */; };
 		B9FC893D7D9D4AD2A9359774 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E5E2BCD051D4E37BE3B2F69 /* SimpleLineIcons.ttf */; };
+		BC29AE8FD9C81EB50C2AADEF /* libPods-LaterChat-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1516AA1E0704EA149F4736 /* libPods-LaterChat-tvOSTests.a */; };
 		BE59E83608664A4B84798850 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076C189654C44E4AABD2FBD4 /* EvilIcons.ttf */; };
 		C9E390E542DE40DD855C854F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F61C06F02494C07A920534B /* FontAwesome.ttf */; };
 		CE73D593995544BE9F39B585 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B45C19DF617442D9838B8A09 /* MaterialIcons.ttf */; };
 		D03D2F09D66148F18B665E15 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5743FB26E5C84EDCB8727DE6 /* MaterialCommunityIcons.ttf */; };
 		E3E7FA1F6D3945FC9973D004 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 495F3D9E39DE4C7A9CA948BD /* Ionicons.ttf */; };
-		2AD65BDF160946BF9C1C7DE9 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6047545AC81244AFAEE6291F /* libRCTCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +269,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		005E35AEC44C8958372656EE /* Pods-LaterChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat/Pods-LaterChat.release.xcconfig"; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
@@ -289,24 +293,33 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LaterChat/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LaterChat/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		214264303279FD4805509DE8 /* Pods-LaterChat-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat-tvOSTests/Pods-LaterChat-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* LaterChat-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LaterChat-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* LaterChat-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LaterChat-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BCDE184E83A4CE3703D9477 /* Pods-LaterChat-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat-tvOS/Pods-LaterChat-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3E5E2BCD051D4E37BE3B2F69 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		4937A7B67423FD6D0D9FF946 /* Pods-LaterChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat/Pods-LaterChat.debug.xcconfig"; sourceTree = "<group>"; };
 		495F3D9E39DE4C7A9CA948BD /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		50361FD8F9A09C8FC20B2460 /* libPods-LaterChat-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaterChat-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5743FB26E5C84EDCB8727DE6 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		6047545AC81244AFAEE6291F /* libRCTCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTCamera.a; sourceTree = "<group>"; };
-		6E10F62641904B87B058E588 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
+		6047545AC81244AFAEE6291F /* libRCTCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRCTCamera.a; path = libRCTCamera.a; sourceTree = "<group>"; };
+		6A8D9AAA9771B93497798EC0 /* Pods-LaterChat-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat-tvOS/Pods-LaterChat-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		6E10F62641904B87B058E588 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
+		73D61510720E973F67FCEC59 /* Pods-LaterChat-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChat-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChat-tvOSTests/Pods-LaterChat-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7CFEA8F9210A9C7427B24750 /* libPods-LaterChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaterChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F61C06F02494C07A920534B /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		816857C25A691B3D8C5A81D0 /* libPods-LaterChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaterChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8DBA07A4878E4772B2E436A9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		9229874961FB41A982ED8295 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		B45C19DF617442D9838B8A09 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		CFE9328331B348AD9A39B52A /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		D99D8B603CC04316ADD60532 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		6E10F62641904B87B058E588 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; name = "RCTCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		6047545AC81244AFAEE6291F /* libRCTCamera.a */ = {isa = PBXFileReference; name = "libRCTCamera.a"; path = "libRCTCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		DA1516AA1E0704EA149F4736 /* libPods-LaterChat-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LaterChat-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8207A4B5A5395C6ED84BCE0 /* Pods-LaterChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChatTests/Pods-LaterChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		F09D05B3C18E811B1AE3260B /* Pods-LaterChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaterChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaterChatTests/Pods-LaterChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				7A201927CD3D38999FC47E7E /* libPods-LaterChatTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +350,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				A77B8A185EE34C7F9BCA35D4 /* libRNVectorIcons.a in Frameworks */,
 				2AD65BDF160946BF9C1C7DE9 /* libRCTCamera.a in Frameworks */,
+				400B9A4965073B5C3225168E /* libPods-LaterChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +366,7 @@
 				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				5E4395CFAB3F7EC145B26BA6 /* libPods-LaterChat-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +374,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC29AE8FD9C81EB50C2AADEF /* libPods-LaterChat-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +511,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		58154FECFFC201FB016F69E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4937A7B67423FD6D0D9FF946 /* Pods-LaterChat.debug.xcconfig */,
+				005E35AEC44C8958372656EE /* Pods-LaterChat.release.xcconfig */,
+				3BCDE184E83A4CE3703D9477 /* Pods-LaterChat-tvOS.debug.xcconfig */,
+				6A8D9AAA9771B93497798EC0 /* Pods-LaterChat-tvOS.release.xcconfig */,
+				214264303279FD4805509DE8 /* Pods-LaterChat-tvOSTests.debug.xcconfig */,
+				73D61510720E973F67FCEC59 /* Pods-LaterChat-tvOSTests.release.xcconfig */,
+				F09D05B3C18E811B1AE3260B /* Pods-LaterChatTests.debug.xcconfig */,
+				E8207A4B5A5395C6ED84BCE0 /* Pods-LaterChatTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +599,8 @@
 				00E356EF1AD99517003FC87E /* LaterChatTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				70A062FA6178440E86F2131C /* Resources */,
+				58154FECFFC201FB016F69E7 /* Pods */,
+				B63E70EA6187B57CD057AE1B /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -583,6 +617,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B63E70EA6187B57CD057AE1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				816857C25A691B3D8C5A81D0 /* libPods-LaterChat.a */,
+				50361FD8F9A09C8FC20B2460 /* libPods-LaterChat-tvOS.a */,
+				DA1516AA1E0704EA149F4736 /* libPods-LaterChat-tvOSTests.a */,
+				7CFEA8F9210A9C7427B24750 /* libPods-LaterChatTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,9 +635,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "LaterChatTests" */;
 			buildPhases = (
+				5988FD435F66274D1902F8D9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				A18B94E53A2747161CC1EF65 /* [CP] Embed Pods Frameworks */,
+				955E5A3FFCB7A6AD34DAAE0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -608,10 +656,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "LaterChat" */;
 			buildPhases = (
+				7A59550EBB93350AC083E748 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				3013CC240BD60647E49381A6 /* [CP] Embed Pods Frameworks */,
+				8148A53A56D56A4EBD6BC8A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -626,10 +677,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaterChat-tvOS" */;
 			buildPhases = (
+				404B85969B4480DEE60DF086 /* [CP] Check Pods Manifest.lock */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
 				2D02E4791E0B4A5D006451C7 /* Resources */,
 				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				369F3F3F2F98BEB24A014D18 /* [CP] Embed Pods Frameworks */,
+				FD7B7E866DF38C124CBEF084 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -644,9 +698,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "LaterChat-tvOSTests" */;
 			buildPhases = (
+				68A25F3880C4B7B00F83E5AC /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				1A272049AEB7B18AB7A71371 /* [CP] Embed Pods Frameworks */,
+				FCE704A1CD02E2BD4D85942F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1019,6 +1076,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		1A272049AEB7B18AB7A71371 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat-tvOSTests/Pods-LaterChat-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1032,6 +1104,171 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		3013CC240BD60647E49381A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat/Pods-LaterChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		369F3F3F2F98BEB24A014D18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat-tvOS/Pods-LaterChat-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		404B85969B4480DEE60DF086 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5988FD435F66274D1902F8D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68A25F3880C4B7B00F83E5AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7A59550EBB93350AC083E748 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8148A53A56D56A4EBD6BC8A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat/Pods-LaterChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		955E5A3FFCB7A6AD34DAAE0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChatTests/Pods-LaterChatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A18B94E53A2747161CC1EF65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChatTests/Pods-LaterChatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE704A1CD02E2BD4D85942F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat-tvOSTests/Pods-LaterChat-tvOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD7B7E866DF38C124CBEF084 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LaterChat-tvOS/Pods-LaterChat-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1100,6 +1337,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09D05B3C18E811B1AE3260B /* Pods-LaterChatTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1127,6 +1365,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8207A4B5A5395C6ED84BCE0 /* Pods-LaterChatTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1151,6 +1390,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4937A7B67423FD6D0D9FF946 /* Pods-LaterChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1175,6 +1415,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 005E35AEC44C8958372656EE /* Pods-LaterChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1198,6 +1439,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BCDE184E83A4CE3703D9477 /* Pods-LaterChat-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1230,6 +1472,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A8D9AAA9771B93497798EC0 /* Pods-LaterChat-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1262,6 +1505,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214264303279FD4805509DE8 /* Pods-LaterChat-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1284,6 +1528,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73D61510720E973F67FCEC59 /* Pods-LaterChat-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

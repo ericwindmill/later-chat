@@ -8,7 +8,7 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import baseStyles from '../styles/styles';
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
 
 class LogIn extends Component {
   constructor() {
@@ -27,7 +27,10 @@ class LogIn extends Component {
     this.props.login({ username: this.state.username,
                        password: this.state.password
           })
-    .then(user => this.props.navigation.navigate('Tabs'));
+    .then(user => {
+      console.log("hi");
+      return this.props.navigation.navigate('Tabs');
+    });
   }
 
   redirectToSignUp() {
