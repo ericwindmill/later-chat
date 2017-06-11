@@ -24,12 +24,14 @@ export default class HomeFeed extends Component {
 
   render() {
     let closest = this.props.location.places_nearby[0];
+    let nearbyPosts = this.props.posts[closest];
+    if (nearbyPosts) { nearbyPosts = nearbyPosts.reverse(); }
     return (
       <View style={[baseStyles.screen, styles.container]} >
         <View>
           <Text style={baseStyles.headlines}>{this.props.location.places_nearby[0]}</Text>
           <FlatList
-            data={this.props.posts[closest]}
+            data={nearbyPosts}
             renderItem={({ item }) => (
               <PostContainer post={item} />
             )}

@@ -12,6 +12,7 @@
     "react-native-aws3": "0.0.8",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-elements": "0.12.2",
+    "react-native-image-placeholder": "^1.0.7",
     "react-native-vector-icons": "4.1.1",
     "react-navigation": "1.0.0-beta.11",
     "react-redux": "5.0.5",

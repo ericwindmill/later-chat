@@ -27,8 +27,6 @@ export default class SelectRecipients extends Component {
 
     this.followers = []
 
-    this.logMe = this.logMe.bind(this)
-    this.logState = this.logState.bind(this)
     this.getFollowers = this.getFollowers.bind(this)
     this.redirectToNewPost = this.redirectToNewPost.bind(this)
     this.toggleRecipient = this.toggleRecipient.bind(this)
