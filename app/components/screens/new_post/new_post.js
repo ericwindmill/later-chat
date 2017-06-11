@@ -39,7 +39,7 @@ export default class NewPost extends Component {
         author_id: this.props.currentUser.id,
         location: this.props.location.places_nearby[0]
       }
-    )
+    );
   }
 
 
@@ -108,14 +108,14 @@ export default class NewPost extends Component {
               placeholder='leave a note ...'
               onChangeText={(text) => this.setState({body: text})}
             />
-          </View>  
-          <Image style={styles.postImage} source={{uri: `${this.state.image_url}`}} />  
+          </View>
+          <Image style={styles.postImage} source={{uri: `${this.state.image_url}`}} />
 
-          
-             
-          <View style={styles.cameraOptions}> 
+
+
+          <View style={styles.cameraOptions}>
             <TouchableOpacity onPress={this.renderCamera} style={styles.cameraIcon}>
-              <Icon name='ios-camera' size={40} color={'black'} type={'ionicon'} 
+              <Icon name='ios-camera' size={40} color={'black'} type={'ionicon'}
                 style={styles.icon}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={this.pickImage} style={styles.cameraRoll}>
