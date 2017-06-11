@@ -36,16 +36,18 @@ export const signup = user => dispatch => {
 export const login = user => dispatch => {
   return (
     APIUtil.login(user).then(userJSON => {
-      ASYNC.setItem('token', userJSON.auth_token);
-      // let currentUser = { id: userJSON.id, username: userJSON.username, followers: userJSON.followers, leaders: userJSON.leaders };
-      let currentUser = { id: userJSON.id, username: userJSON.username, followers: {}, leaders: {} };
-      if (userJSON.followers) {
-        currentUser.followers = userJSON.followers;
+      if(userJSON.auth_token) {        
+        ASYNC.setItem('token', userJSON.auth_token);
+        // let currentUser = { id: userJSON.id, username: userJSON.username, followers: userJSON.followers, leaders: userJSON.leaders };
+        let currentUser = { id: userJSON.id, username: userJSON.username, followers: {}, leaders: {} };
+        if (userJSON.followers) {
+          currentUser.followers = userJSON.followers;
+        }
+        if (userJSON.leaders) {
+          currentUser.leaders = userJSON.leaders;
+        }
+        return dispatch(receiveCurrentUser(currentUser));
       }
-      if (userJSON.leaders) {
-        currentUser.leaders = userJSON.leaders;
-      }
-      return dispatch(receiveCurrentUser(currentUser));
     }, err => (
       dispatch(receiveErrors(err.responseJSON))
     ))
