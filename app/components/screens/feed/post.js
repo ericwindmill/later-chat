@@ -6,7 +6,6 @@ import {
   Image,
   View
 } from 'react-native';
-
 import baseStyles from '../styles/styles';
 
 export default class Post extends Component {
@@ -57,12 +56,9 @@ export default class Post extends Component {
 
         <View style={styles.postContent}>
           <Text style={styles.postText}>{this.props.post.body}</Text>
-          <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />  
+          <Image style={styles.postImage} source={{uri: `${this.props.post.image_url}`}} />
         </View>
 
-
-
-        
       </View>
     );
   }
@@ -93,8 +89,7 @@ const styles = StyleSheet.create({
   postImage: {
     height: 200,
     width: 200,
-    borderWidth: 1,
-    backgroundColor: 'grey'
+    borderWidth: 1
   },
   postText: {
     padding: 4
