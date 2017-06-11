@@ -4,6 +4,7 @@ import {
   Text,
   View
 } from 'react-native';
+import MapView from 'react-native-maps'
 
 export default class MapScreen extends Component {
   render() {
@@ -33,3 +34,10 @@ export default class MapScreen extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'flex-end',
+    flex: 1,
+  }
+});
