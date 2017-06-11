@@ -39,7 +39,7 @@ class SignUp extends Component {
     }
   }
 
-  redirectToSignIn() {
+  redirectToLogIn() {
     this.props.navigation.goBack()
   }
 

@@ -17,7 +17,7 @@ export default class Post extends Component {
   }
 
   following() {
-    if (this.props.currentUser.leaders[this.props.post.author.id]) {
+    if (this.props.currentUser.leaders && this.props.currentUser.leaders[this.props.post.author.id]) {
       return true;
     } else {
       return false;

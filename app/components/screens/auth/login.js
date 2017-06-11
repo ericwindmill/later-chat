@@ -28,7 +28,6 @@ class LogIn extends Component {
                        password: this.state.password
           })
     .then(user => {
-      console.log("hi");
       return this.props.navigation.navigate('Tabs');
     });
   }
