@@ -17,15 +17,18 @@ export default class NoteDetail extends Component {
   constructor(props) {
     super(props)
     this.redirectToNotifications = this.redirectToNotifications.bind(this)
-  }  
+  }
+
+  componentDidMount() {
+    this.props.navigation.state.params.updateNote(this.props.navigation.state.params.state.item.note_id);
+  }
 
   redirectToNotifications() {
-    this.props.navigation.goBack()
+    this.props.navigation.goBack();
   }
 
   render() {
-    let note = this.props.navigation.state.params.state.item
-    console.log(note)
+    let note = this.props.navigation.state.params.state.item;
     return (
       <View style={baseStyles.screen}>
         <TouchableOpacity style={[baseStyles.topNav, styles.topNav]} onPress={this.redirectToNotifications}>
@@ -42,7 +45,7 @@ export default class NoteDetail extends Component {
     )
   }
 }
-       
+
 const styles = StyleSheet.create({
   topNav: {
     paddingLeft: 15,
@@ -75,6 +78,3 @@ const styles = StyleSheet.create({
   },
 
 })
-       
-       
-       

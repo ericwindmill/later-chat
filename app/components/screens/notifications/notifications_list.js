@@ -28,7 +28,7 @@ export default class Notifications extends Component {
   }
 
   viewNote(note) {
-    this.props.navigation.navigate('NoteDetail', {state: note})
+    this.props.navigation.navigate('NoteDetail', {state: note, updateNote: this.props.updateNote});
   }
 
   render() {

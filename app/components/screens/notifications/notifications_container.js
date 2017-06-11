@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import NotificationsList from './notifications_list';
 
-import { requestAllNotes } from '../../../actions/note_actions';
+import { requestAllNotes, updateNote } from '../../../actions/note_actions';
 
 const mapStateToProps = ( state ) => {
   return {
@@ -14,7 +14,8 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getNotes: locations => dispatch(requestAllNotes(locations))
+    getNotes: locations => dispatch(requestAllNotes(locations)),
+    updateNote: noteId => dispatch(updateNote(noteId))
   };
 };
 
