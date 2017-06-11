@@ -72,9 +72,6 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarIcon: () => <Icon name='md-person' size={30} type={'ionicon'} />
     }
-  },
-  LogOut: {
-    screen: LogOutContainer
   }
 });
 

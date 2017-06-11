@@ -46,6 +46,11 @@ export default class Notifications extends Component {
           keyExtractor={note => note.id}
           removeClippedSubviews={false}
        />
+        <TouchableOpacity style={baseStyles.buttonContainer}
+          onPress={this.handleLogOut}
+        >
+          <Text style={baseStyles.buttonText}>LOG OUT</Text>
+        </TouchableOpacity>
       </View>
     );
   }
