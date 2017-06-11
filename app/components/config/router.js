@@ -8,9 +8,7 @@ import HomeFeedContainer from '../screens/feed/home_feed_container';
 import PublicFeedContainer from '../screens/feed/public_feed_container';
 import NewPostContainer from '../screens/new_post/new_post_container';
 import MapScreen from '../screens/map/map';
-import LogOutContainer from '../screens/auth/logout_container';
 // Stack Screens
-import LogIn from '../screens/auth/login';
 import SignUpContainer from '../screens/auth/signup_container';
 import SelectRecipientsContainer from '../screens/new_post/select_recipients_container';
 import LogInContainer from '../screens/auth/login_container';
@@ -94,5 +92,3 @@ export const AuthNav = StackNavigator({
 },
 { headerMode: 'none' }
 );
-
-
