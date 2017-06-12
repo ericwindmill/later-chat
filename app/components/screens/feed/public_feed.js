@@ -43,7 +43,7 @@ export default class PublicFeed extends Component {
       return (
         <View>
           <TouchableOpacity style={styles.collapseButton} onPress={() => this.props.clearResults()}>
-            <Text>Tap to Collapse</Text>
+            <Text>Tap to Close</Text>
           </TouchableOpacity>
           <ListView
             dataSource={source}
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   collapseButton: {
     borderWidth: 1,
     height: 25,
-    backgroundColor: '#bfb200',
+    backgroundColor: '#F1F1F1',
     borderRadius: 3,
     padding: 3,
     alignItems: 'center',
