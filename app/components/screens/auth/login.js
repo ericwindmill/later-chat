@@ -14,13 +14,14 @@ class LogIn extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
-      password: '',
+      username: 'username',
+      password: 'password',
       errors: []
     };
 
     this.logInPressed = this.logInPressed.bind(this);
     this.redirectToSignUp = this.redirectToSignUp.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   logInPressed() {
@@ -36,6 +37,28 @@ class LogIn extends Component {
 
   redirectToSignUp() {
     this.props.navigation.navigate('SignUpContainer');
+  }
+
+  handleDemo() {
+    let name = "Guest";
+    let password = "password";
+
+    for (let i = 0; i < name.length; i++) {
+      setTimeout(() => this.setState({username: name.slice(0, i + 1)}), (i * 100));
+    }
+
+    for (let j = 0; j < password.length; j++) {
+      setTimeout(() => this.setState({password: password.slice(0, j + 1)}), ((j + 5) * 100));
+    }
+
+    setTimeout(() => this.props.login({ username: this.state.username,
+                       password: this.state.password
+          })
+    .then(user => {
+      if(user) {
+        return this.props.navigation.navigate('Tabs');
+      }
+    }), 1400);
   }
 
   render() {
@@ -56,13 +79,13 @@ class LogIn extends Component {
           <View style={baseStyles.inputContainer}>
 
             <TextInput style={baseStyles.input}
-              placeholder='username'
+              placeholder={this.state.username}
               onChangeText={(text) => this.setState({username: text})}
             />
           </View>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
-              placeholder='password'
+              placeholder={this.state.password}
               secureTextEntry={true}
               onChangeText={(text) => this.setState({password: text})}
             />
@@ -78,6 +101,11 @@ class LogIn extends Component {
             onPress={this.redirectToSignUp}
           >
             <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={baseStyles.buttonContainer}
+            onPress={this.handleDemo}
+          >
+            <Text style={baseStyles.buttonText}>Demo Login</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
