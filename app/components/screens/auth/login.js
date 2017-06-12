@@ -14,8 +14,8 @@ class LogIn extends Component {
   constructor() {
     super();
     this.state = {
-      username: 'username',
-      password: 'password',
+      username: '',
+      password: '',
       errors: []
     };
 
@@ -79,13 +79,15 @@ class LogIn extends Component {
           <View style={baseStyles.inputContainer}>
 
             <TextInput style={baseStyles.input}
-              placeholder={this.state.username}
+              placeholder='username'
+              value={this.state.username}
               onChangeText={(text) => this.setState({username: text})}
             />
           </View>
           <View style={baseStyles.inputContainer}>
             <TextInput style={baseStyles.input}
-              placeholder={this.state.password}
+              placeholder='password'
+              value={this.state.password}
               secureTextEntry={true}
               onChangeText={(text) => this.setState({password: text})}
             />
