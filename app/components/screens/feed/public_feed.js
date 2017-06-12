@@ -147,9 +147,10 @@ const styles = StyleSheet.create({
   collapseButton: {
     borderWidth: 1,
     height: 25,
-    backgroundColor: '#00bfb2',
+    backgroundColor: '#bfb200',
     borderRadius: 3,
     padding: 3,
-
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
