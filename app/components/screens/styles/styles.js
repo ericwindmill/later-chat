@@ -29,7 +29,7 @@ const baseStyles = {
   inputContainer: {
     borderBottomWidth: 1,
     borderBottomColor: 'black',
-    marginBottom: 10
+    marginTop: 10
   },
   input: {
     textAlign: 'center',

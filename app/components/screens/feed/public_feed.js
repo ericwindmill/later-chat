@@ -100,10 +100,10 @@ export default class PublicFeed extends Component {
       <View style={baseStyles.screen} >
         <View style={styles.searchContainer}>
           <View>
-            <View>
+            <View style={styles.inputContainer}>
               <TextInput
                 style={baseStyles.input}
-                placeholder='Search Users'
+                placeholder='Find friends...'
                 onChangeText={(text) => this.handleSearch(text)}
                 />
             </View>
@@ -111,8 +111,11 @@ export default class PublicFeed extends Component {
               {this.renderSearchResults()}
             </View>
         </View>
+
+        <View style={styles.headerContainer}>
           <Text style={baseStyles.headlineTwo}>What's happening now at</Text>
           <Text style={baseStyles.headlines}>{this.props.location.places_nearby[0]}</Text>
+        </View>
 
           <FlatList
             data={this.props.publicPosts[closest]}
@@ -152,5 +155,14 @@ const styles = StyleSheet.create({
     padding: 3,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  inputContainer: {
+    borderBottomWidth: .5,
+    paddingTop: 10,
+    paddingBottom: 0,
+    marginBottom: 0
+  },
+  headerContainer: {
+    paddingTop: 25
   }
 });
