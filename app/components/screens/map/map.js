@@ -6,16 +6,24 @@ import {
 } from 'react-native';
 import MapView from 'react-native-maps';
 
+// # Coit Tower, 37.802374,-122.4080011
+// # Trick Dog, 37.7592213,-122.4133992
+// # Ferry Building Marketplace, 37.795274,-122.3956043
+// # Golden Gate Bridge, 37.8199286,-122.4804384
+// # Sutro Baths, 37.7804369,-122.5158768
+// # Alcatraz Island, 37.8269775,-122.4251388
+// # Mission Dolores Park, 37.7596168,-122.4290871
+
 export default class MapScreen extends Component {
   render() {
     return (
       <MapView
         style={styles.container}
         initialRegion={{
-          latitude: 37.7596168,
-          longitude: -122.4279981,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitude: 37.7576793,
+          longitude: -122.4476403,
+          latitudeDelta: 0.1752,
+          longitudeDelta: 0.08,
         }}
         showsUserLocation={true}
         >
