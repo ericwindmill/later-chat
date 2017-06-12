@@ -8,7 +8,17 @@ const baseStyles = {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: 30
+    height: 30,
+    marginTop: 20,
+    paddingHorizontal: 20
+  },
+  navLink: {
+    borderWidth: 0.5,
+    borderColor: "#6534ff"
+  },
+  navLinkText: {
+    fontSize: 16,
+    padding: 2,
   },
   container: {
     flex: 1

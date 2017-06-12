@@ -23,7 +23,8 @@ export default class NewPost extends Component {
       author_id: '',
       public: false,
       recipients: [],
-      selectRecipients: []
+      selectRecipients: [],
+      height: 25
     }
     this.selectRecipients = this.selectRecipients.bind(this)
     this.renderCamera = this.renderCamera.bind(this)
@@ -39,8 +40,6 @@ export default class NewPost extends Component {
       }
     );
   }
-
-
 
   selectRecipients () {
     this.props.navigation.navigate('SelectRecipientsContainer', {state: this.state})
@@ -89,8 +88,8 @@ export default class NewPost extends Component {
     <View style={[baseStyles.screen, styles.screen]}
       behavior='padding'>
 
-      <View style={baseStyles.topNav}>
-        <TouchableOpacity style={styles.link} onPress={this.selectRecipients}><Text>NEXT</Text></TouchableOpacity>
+      <View style={[baseStyles.topNav, styles.topNav]}>
+        <TouchableOpacity style={styles.link} onPress={this.selectRecipients}><Text style={styles.linkText}>NEXT</Text></TouchableOpacity>
       </View>
 
 
@@ -99,7 +98,7 @@ export default class NewPost extends Component {
 
         <View style={styles.newPostContent}>
           <View style={[baseStyles.inputContainer, styles.inputContainer]}>
-            <TextInput style={baseStyles.input}
+            <TextInput multiline={true} style={[baseStyles.input, styles.input]}
               placeholder='leave a note ...'
               multiline = {true}
               numberOfLines = {5}
@@ -107,8 +106,6 @@ export default class NewPost extends Component {
             />
           </View>
           <Image style={styles.postImage} source={{uri: `${this.state.image_url}`}} />
-
-
 
           <View style={styles.cameraOptions}>
             <TouchableOpacity onPress={this.renderCamera} style={styles.cameraIcon}>
@@ -131,10 +128,22 @@ export default class NewPost extends Component {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: '#c1a4cd'
+    backgroundColor: '#F1F1F1'
   },
   container: {
     padding: 10,
+  },
+  topNav: {
+    alignSelf: 'flex-end',
+    marginTop: 10,
+    paddingHorizontal: 20
+  },
+  link: {
+    borderWidth: 0.5
+  },
+  linkText: {
+    fontSize: 16,
+    padding: 2
   },
   //Post Preview
   postImage: {
@@ -146,7 +155,7 @@ const styles = StyleSheet.create({
   newPostContent: {
     flex: 1,
     padding: 12,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   cameraOptions: {
     margin: -10,
@@ -162,6 +171,11 @@ const styles = StyleSheet.create({
     padding: 10
   },
   inputContainer: {
-    borderBottomWidth: 0
+    borderBottomWidth: 0.5
+  },
+  input: {
+    fontSize: 20,
+    fontFamily: 'Avenir',
+    height: 100
   }
 })
