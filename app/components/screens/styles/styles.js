@@ -35,7 +35,8 @@ const baseStyles = {
     borderWidth: 1,
     borderColor: 'black',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 10
   },
   buttonText: {
     textAlign: 'center'

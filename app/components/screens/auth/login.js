@@ -97,12 +97,12 @@ class LogIn extends Component {
           >
             <Text style={styles.buttonText}>Log In</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={baseStyles.buttonContainer}
+          <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
             onPress={this.redirectToSignUp}
           >
             <Text style={baseStyles.buttonText}>Not a member? Sign Up!</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={baseStyles.buttonContainer}
+          <TouchableOpacity style={[baseStyles.buttonContainer, styles.loginButton]}
             onPress={this.handleDemo}
           >
             <Text style={baseStyles.buttonText}>Demo Login</Text>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#04bfb2'
   },
   loginButton: {
-    marginBottom: 40
+    marginBottom: 30
   },
   icon: {
     alignSelf: 'center',
