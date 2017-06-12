@@ -42,6 +42,9 @@ export default class PublicFeed extends Component {
       let source = ds.cloneWithRows(this.props.searchResults);
       return (
         <View>
+          <TouchableOpacity style={styles.collapseButton} onPress={() => this.props.clearResults()}>
+            <Text>Tap to Collapse</Text>
+          </TouchableOpacity>
           <ListView
             dataSource={source}
             renderRow={(rowData) =>
@@ -140,5 +143,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingTop: 5
+  },
+  collapseButton: {
+    borderWidth: 1,
+    height: 25,
+    backgroundColor: '#bfb200',
+    borderRadius: 3,
+    padding: 3,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });

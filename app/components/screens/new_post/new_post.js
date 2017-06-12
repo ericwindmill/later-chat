@@ -29,8 +29,6 @@ export default class NewPost extends Component {
     this.renderCamera = this.renderCamera.bind(this)
     this.pickImage = this.pickImage.bind(this)
     this.uploadImage = this.uploadImage.bind(this)
-    this.logMe = this.logMe.bind(this)
-    this.logState = this.logState.bind(this)
   }
 
   componentWillMount () {
@@ -86,9 +84,6 @@ export default class NewPost extends Component {
     }
   }
 
-  logMe() { console.log(this.props)}
-  logState() { console.log(this.state)}
-
   render () {
     return (
     <View style={[baseStyles.screen, styles.screen]}
@@ -106,6 +101,8 @@ export default class NewPost extends Component {
           <View style={[baseStyles.inputContainer, styles.inputContainer]}>
             <TextInput style={baseStyles.input}
               placeholder='leave a note ...'
+              multiline = {true}
+              numberOfLines = {5}
               onChangeText={(text) => this.setState({body: text})}
             />
           </View>
@@ -125,14 +122,6 @@ export default class NewPost extends Component {
 
         </View>
       </View>
-
-
-                    <View>
-                      <TouchableOpacity onPress={this.logState}><Text>TOUCH ME TO LOG State</Text></TouchableOpacity>
-                      <TouchableOpacity onPress={this.logMe}><Text>TOUCH ME TO LOG PROPS</Text></TouchableOpacity>
-                    </View>
-
-
     </View>
     );
   }
