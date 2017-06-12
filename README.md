@@ -56,6 +56,8 @@ One of the greatest challenges of this project was quickly learning new technolo
   * The database was built with Ruby on Rails. The rails app is simply a location for our React Native app to make RESTful API calls to our database. The Rails app additionally handles user authentication.
 * PostgreSQL
 
+[Backend Github](https://github.com/ericwindmill/later-chat-api)
+
 ### Additional
 * AWS S3 file storage for images
 * Jekyll for rapidly building demo page. 
