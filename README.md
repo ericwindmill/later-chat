@@ -19,7 +19,6 @@ Users will also be able to post notes to a 'discover' board and 'followers' boar
 Bulletin was made by Monte Jiran, Grey Keith, Nathan Li, and Eric Windmill 
 
 ![Public BoardGif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,h_450/v1497279751/later-chat/search_users_gif.gif)
-
 ![Map Gif](http://res.cloudinary.com/ericwindmill/image/upload/c_scale,h_450/v1497279745/later-chat/map_gif.gif)
 
 
